@@ -479,6 +479,128 @@ body:not(.panelMode) .mePage{padding:0}
   .prep{font-size:14px;padding:6px 0}
   .mealBtn{font-size:16px}
 }
+
+/* ---------- panel 1.5: etapy u góry i wiersze osób ---------- */
+.panel.p2{grid-template-rows:auto minmax(0,1fr)}
+.p2 .pHead{gap:10px;flex-wrap:nowrap}
+.p2 .pHead>div{flex:none!important;min-width:0!important}
+.p2 .pHead>.spacer{flex:1 1 auto!important}
+.pMini{display:flex;align-items:baseline;gap:8px;white-space:nowrap}
+.pMini b{font-size:30px;font-weight:700;letter-spacing:-.02em;line-height:1}
+.pMini span{font-size:16px;color:var(--ink-2)}
+.stTabs{flex-wrap:nowrap}
+.stTabs button{display:inline-flex;align-items:center;gap:7px;min-height:40px;padding:0 13px}
+.grpSeg{flex-wrap:nowrap}
+.grpSeg button{min-height:40px;padding:0 16px}
+.p2 .pHead .btn.yolk.icon{width:auto;padding:0 12px;gap:5px}
+.badgeN{font-size:14px;font-weight:700}
+.pGrid{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:12px;min-height:0}
+.pLeft{display:flex;flex-direction:column;gap:10px;min-height:0;min-width:0}
+.pStage{flex:none;min-width:0}
+.pStage .ribbon,.pStage .bank{margin:0}
+.st-clock,.st-week{height:clamp(150px,28vh,300px)}
+.prows{flex:1 1 auto;min-height:0;display:flex;flex-direction:column;gap:10px;overflow-y:auto;overscroll-behavior:contain}
+.prow{flex:1 1 0;min-height:124px;display:flex;border-radius:var(--r-xl);overflow:hidden;background:var(--tint)}
+.prowHead{width:196px;flex:none;background:var(--pc);color:var(--on);padding:12px 14px;display:flex;flex-direction:column;justify-content:center;gap:4px;box-sizing:border-box}
+.prowHead .top{display:flex;align-items:center;gap:10px;min-width:0}
+.prowHead .avatar{background:var(--on);color:var(--pc);width:44px;height:44px;font-size:22px;box-shadow:0 0 0 2px var(--on);flex:none}
+.prowHead .nm{display:flex;flex-direction:column;min-width:0}
+.prowHead .name{font-weight:700;font-size:19px;background:none;color:inherit;text-align:left;padding:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;line-height:1.15}
+.prowHead span.name{display:block}
+.prowHead .xp{font-size:13.5px;font-weight:600;opacity:.92}
+.prowHead .sub{font-size:13px;opacity:.9;line-height:1.3}
+.prowHead .goal{margin-top:6px;font-size:12.5px}
+.prowHead .goalReady{margin-top:6px;padding:7px 8px;font-size:14px}
+.prowBody{flex:1 1 auto;min-width:0;display:flex;gap:8px;padding:10px;overflow-x:auto;overflow-y:hidden;align-items:stretch;overscroll-behavior:contain}
+.prowBody>.free{align-self:center;padding:0 14px;white-space:nowrap}
+.prowBody .task{flex:none;width:152px;min-height:0;max-height:150px;flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:6px;position:relative;padding:10px 11px;text-align:left}
+.prowBody .task .pts{position:absolute;top:13px;right:11px}
+.prowBody .task .t{flex:none;width:100%}
+.prowBody .task b{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font-size:15px}
+.prowBody .task small{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.task.rem{background:#FFF4D6;box-shadow:inset 0 0 0 2px var(--yolk)}
+.task.rem .tick{border-color:var(--yolk);color:var(--yolk-ink)}
+.task.rem.done{background:var(--surface);box-shadow:none}
+.task.rem.done .tick{color:#fff}
+.prowBody .routine{flex:none;display:flex;flex-direction:column;justify-content:space-between;padding:8px 10px}
+.prowBody .routineHead{margin:0 2px 6px;font-size:14px}
+.prowBody .steps{display:flex;gap:6px}
+.prowBody .step{width:60px;min-height:0;flex:none;padding:5px 2px 4px}
+.prowBody .step .emo{font-size:25px}
+/* czas i pogoda */
+.stClock{height:100%;display:flex;gap:10px}
+.stTime{flex:1.25 1 0;background:var(--surface);border-radius:var(--r-xl);padding:10px 22px;display:flex;flex-direction:column;justify-content:center;gap:4px;min-width:0}
+.bigClock{font-size:clamp(60px,13vh,128px);font-weight:700;letter-spacing:-.04em;line-height:.92}
+.stDate{font-size:18px;font-weight:600}
+.stLeave{font-size:14px;color:var(--ink-2)}
+.stTime .leavePill{align-self:flex-start;margin-top:4px}
+.stWx{flex:1 1 0;background:var(--surface);border-radius:var(--r-xl);padding:10px 14px;display:flex;flex-direction:column;justify-content:center;gap:8px;min-width:0}
+.wxNow{display:flex;align-items:center;gap:12px}
+.wxE{font-size:42px;line-height:1}
+.wxNow b{font-size:32px;font-weight:700;display:block;line-height:1}
+.wxNow small{color:var(--ink-2);font-size:14px}
+.stWx .wear{align-self:flex-start;background:var(--surface-2)}
+.wxDays{display:flex;gap:6px}
+.wxD{flex:1 1 0;background:var(--surface-2);border-radius:12px;padding:5px 3px;display:flex;flex-direction:column;align-items:center;gap:1px;min-width:0}
+.wxD span{font-size:19px;line-height:1.15}
+.wxD b{font-size:15px}
+.wxD small{font-size:11.5px;color:var(--ink-2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+.wxNone{color:var(--ink-2);font-size:15px}
+/* tydzień na panelu */
+.stWeek{height:100%;display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px}
+.swDay{background:var(--surface);border-radius:16px;padding:8px 9px;display:flex;flex-direction:column;gap:5px;min-width:0;overflow:hidden}
+.swDay.today{box-shadow:inset 0 0 0 2px var(--cobalt)}
+.swH{display:flex;justify-content:space-between;align-items:baseline;gap:4px;font-size:13px;color:var(--ink-2)}
+.swH b{font-size:18px;color:var(--ink)}
+.swEv{display:block;width:100%;text-align:left;font-size:12.5px;line-height:1.3;padding:2px 0 2px 6px;border-left:3px solid var(--ec);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.swEv small{color:var(--ink-2)}
+.swMeal{margin-top:auto;font-size:12px;color:var(--ink-3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+@media (max-width:1100px){.stWeek{grid-template-columns:repeat(5,minmax(0,1fr))}.swDay:nth-child(n+6){display:none}.stTabs button:not(.on) .lbl{display:none}.stTabs button:not(.on){padding:0 11px}}
+@media (orientation:landscape) and (min-width:860px) and (max-width:1000px){.pGrid{grid-template-columns:minmax(0,1fr) 222px}.prowHead{width:170px}.prowBody .task{width:140px}}
+@media (orientation:landscape) and (max-height:820px){
+  .st-clock,.st-week{height:142px}
+  .bigClock{font-size:64px}
+  .stDate{font-size:16px}
+  .wxE{font-size:28px}.wxNow b{font-size:24px}.wxNow small{font-size:13px}
+  .stWx{gap:6px;padding:8px 12px}.stWx .wear{display:none}
+  .wxD{padding:3px 2px}.wxD span{font-size:16px}.wxD b{font-size:13.5px}.wxD small{font-size:11px}
+  .prow{min-height:112px}
+  .prowHead{padding:9px 12px}
+  .prowHead .avatar{width:38px;height:38px;font-size:19px}
+  .prowHead .name{font-size:17px}
+  .prowBody{padding:8px}
+}
+@media (max-width:860px),(orientation:portrait){
+  .pGrid{grid-template-columns:1fr;grid-template-rows:minmax(0,1fr) auto}
+  .p2 .pHead{flex-wrap:wrap;row-gap:8px}
+  .prow{min-height:132px}
+}
+@media (max-width:700px){
+  .panel.p2{height:auto}
+  .prows{overflow:visible}
+  .prow{flex-direction:column;min-height:0;flex:none}
+  .prowHead{width:auto;flex-direction:row;align-items:center;justify-content:space-between}
+  .prowHead .goal{flex:1;max-width:55%;margin:0}
+  .st-clock,.st-week{height:auto}
+  .stClock{flex-direction:column}
+  .stWeek{grid-template-columns:repeat(3,minmax(0,1fr))}.swDay:nth-child(n+4){display:none}
+  .stTabs .lbl{display:none}
+}
+/* formularze PL/EN, przypomnienia, specyfikacja avatarów */
+.enF input{background:#F5F9F7}
+.remBox .remSeg{background:var(--surface-2);flex-wrap:wrap}
+.remSeg label{padding:9px 13px;border-radius:var(--r-sm);font-weight:500;color:var(--ink-2);cursor:pointer}
+.remSeg label.on{background:var(--ink);color:#fff;font-weight:600}
+.stepEdit input[name=stepLabelEn]{max-width:38%;background:#F5F9F7}
+.avSpec{margin-top:10px;background:var(--surface-2);border-radius:var(--r-md);padding:10px 14px;font-size:13.5px;line-height:1.4;color:var(--ink-2)}
+.avSpec ul{margin:4px 0 0;padding-left:18px}
+.avSpec b{color:var(--ink)}
+/* kalendarz w pulpicie: nic nie wychodzi poza kafelek */
+.wkStrip{grid-template-columns:repeat(7,minmax(112px,1fr));overflow-x:auto;scroll-snap-type:x proximity;padding-bottom:4px}
+.dbox{scroll-snap-align:start;overflow:hidden}
+.dbox .dh{gap:6px;justify-content:flex-start}
+.dbox .ev small{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.wkEv{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
@@ -496,7 +618,7 @@ body:not(.panelMode) .mePage{padding:0}
       <div class="syncBadge" id="syncBadgeR" hidden></div>
       <button class="openPanel" data-page="panel"><span data-icon="tablet"></span>Otwórz panel ścienny</button>
       <div class="langSw seg" role="group" aria-label="Język"><button data-action="lang" data-l="pl" lang="pl">Polski</button><button data-action="lang" data-l="en" lang="en">English</button></div>
-      <div class="ver">Wersja 1.4, dane zapisane w tej przeglądarce</div>
+      <div class="ver">Wersja 1.5, dane zapisane w tej przeglądarce</div>
     </div>
   </aside>
   <main class="main" id="main"></main>
@@ -646,7 +768,7 @@ var qrcode = function() {
           e3 = m(t3);
           break;
         case "Kanji":
-          e3 = L(t3);
+          e3 = LT(t3);
           break;
         default:
           throw "mode:" + r3;
@@ -1194,7 +1316,7 @@ var __spreadValues = (a, b) => {
   return a;
 };
 var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
-const P = { home: '<path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><path d="M9 21v-8h6v8"/>', calendar: '<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/>', check: '<rect x="3" y="4" width="18" height="17" rx="2"/><path d="m8 13 3 3 5-6"/>', tick: '<path d="m5 12.5 4.5 4.5L19 7.5"/>', food: '<path d="M4 3v7M7 3v7M10 3v7M7 10v11M17 3v18M17 3c-4 3-4 10 0 10"/>', users: '<circle cx="9" cy="8" r="3"/><path d="M3 20v-2a6 6 0 0 1 12 0v2M17 11a3 3 0 0 0 0-6M18 14a5 5 0 0 1 3 5v1"/>', settings: '<circle cx="12" cy="12" r="3"/><path d="M19 13.5v-3l2-1-2-3-2 1-2.5-1.5V3h-5v3L7 7.5l-2-1-2 3 2 1v3l-2 1 2 3 2-1L9.5 18v3h5v-3l2.5-1.5 2 1 2-3z"/>', tablet: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M11 16h2"/>', expand: '<path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/>', menu: '<path d="M4 6h16M4 12h16M4 18h16"/>', plus: '<path d="M12 5v14M5 12h14"/>', clock: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>', bell: '<path d="M6 16V11a6 6 0 0 1 12 0v5l2 2H4z"/><path d="M10 21h4"/>', edit: '<path d="M4 20h4L19 9l-4-4L4 16z"/>', trash: '<path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/>', left: '<path d="m15 5-7 7 7 7"/>', right: '<path d="m9 5 7 7-7 7"/>', x: '<path d="M6 6l12 12M18 6 6 18"/>', lock: '<rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/>', repeat: '<path d="M4 12a8 8 0 0 1 14-5l2 2M20 12a8 8 0 0 1-14 5l-2-2"/><path d="M20 4v5h-5M4 20v-5h5"/>', star: '<path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/>' };
+const P = { sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>', bars: '<path d="M4 6h9M4 12h16M4 18h11"/>', home: '<path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><path d="M9 21v-8h6v8"/>', calendar: '<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/>', check: '<rect x="3" y="4" width="18" height="17" rx="2"/><path d="m8 13 3 3 5-6"/>', tick: '<path d="m5 12.5 4.5 4.5L19 7.5"/>', food: '<path d="M4 3v7M7 3v7M10 3v7M7 10v11M17 3v18M17 3c-4 3-4 10 0 10"/>', users: '<circle cx="9" cy="8" r="3"/><path d="M3 20v-2a6 6 0 0 1 12 0v2M17 11a3 3 0 0 0 0-6M18 14a5 5 0 0 1 3 5v1"/>', settings: '<circle cx="12" cy="12" r="3"/><path d="M19 13.5v-3l2-1-2-3-2 1-2.5-1.5V3h-5v3L7 7.5l-2-1-2 3 2 1v3l-2 1 2 3 2-1L9.5 18v3h5v-3l2.5-1.5 2 1 2-3z"/>', tablet: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M11 16h2"/>', expand: '<path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/>', menu: '<path d="M4 6h16M4 12h16M4 18h16"/>', plus: '<path d="M12 5v14M5 12h14"/>', clock: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>', bell: '<path d="M6 16V11a6 6 0 0 1 12 0v5l2 2H4z"/><path d="M10 21h4"/>', edit: '<path d="M4 20h4L19 9l-4-4L4 16z"/>', trash: '<path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/>', left: '<path d="m15 5-7 7 7 7"/>', right: '<path d="m9 5 7 7-7 7"/>', x: '<path d="M6 6l12 12M18 6 6 18"/>', lock: '<rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/>', repeat: '<path d="M4 12a8 8 0 0 1 14-5l2 2M20 12a8 8 0 0 1-14 5l-2-2"/><path d="M20 4v5h-5M4 20v-5h5"/>', star: '<path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/>' };
 const icon = (n, s = 20) => `<svg width="${s}" height="${s}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${P[n] || P.star}</svg>`;
 const KEY = "familyhub-v03", OLDKEY = "familyhub-v02", WXKEY = "familyhub-weather", PHOTOKEY = "familyhub-photos";
 const uid = () => crypto.randomUUID ? crypto.randomUUID() : String(Date.now()) + Math.random().toString(16).slice(2);
@@ -1223,7 +1345,7 @@ function applyLang() {
   document.documentElement.lang = lang;
 }
 applyLang();
-const DICT = { "Anuluj": "Cancel", "Aplikacja": "App", "Awatar": "Avatar", "Awatary": "Avatars", "Awatary od rodziców": "Avatars from parents", "Bank jest pusty. Dodaj pierwsze zadanie.": "The bank is empty. Add your first task.", "Bank zadań": "Task bank", "Bez celu": "No goal", "Brak wydarzeń z godziną": "No timed events", "Brak zadań na ten dzień": "No tasks for this day", "Brak zadań. Dodaj pierwsze przyciskiem u góry.": "No tasks yet. Add one with the button at the top.", "Burek": "Buddy", "Mruczek": "Whiskers", "Ośmiorniczka": "Octo", "Słoneczko": "Sunny", "Robo-Bip": "Robo-Beep", "Piłkarz": "Footballer", "Smoczek": "Little Dragon", "Rakieta": "Rocket", "Kosmonauta": "Astronaut", "Ufoludek": "Alien", "Pikselak": "Pixel Pal", "Kot ninja": "Ninja Cat", "Jednorożec": "Unicorn", "Lis DJ": "DJ Fox", "Ruchome": "Animated", "Ruchome legendarne": "Animated legends", "Na start": "Starter", "Zwierzaki": "Animals", "Legendarne": "Legendary", "Cel nagrody": "Reward goal", "Cena (XP)": "Price (XP)", "Cena 0 oznacza, że awatar jest dla wszystkich za darmo.": "A price of 0 makes the avatar free for everyone.", "Cena dotyczy całego poziomu w sklepie": "The price applies to the whole tier in the shop", "Cennik": "Prices", "Ceny": "Prices", "Ceny awatarów, nagród i punkty za zadania z banku ustawisz w jednym miejscu: Ustawienia, sekcja Cennik.": "Set avatar and reward prices, and points for bank tasks, in one place: Settings, Prices section.", "Co kupić?": "What do we need?", "Co na obiad": "What’s for dinner", "Co przygotować": "What to prepare", "Codziennie": "Every day", "Cofnij": "Undo", "Dane": "Data", "Dane przykładowe": "Sample data", "Data": "Date", "Dni robocze": "Weekdays", "Dni tygodnia": "Days of the week", "Do": "To", "Od": "From", "Do zatwierdzenia": "To approve", "Dodaj": "Add", "Dodaj do banku": "Add to bank", "Dodaj krok": "Add step", "Dodaj nagrody, na które dzieci mogą zbierać punkty": "Add rewards the kids can save points for", "Dodaj wydarzenie": "Add event", "Dodaj zdjęcia": "Add photos", "Dodaj zdjęcie": "Add photo", "Dom": "Home", "Domownicy": "Family", "Domownik": "Family member", "Domyślne ceny awatarów": "Default avatar prices", "Dopisz": "Add", "Dopisz do zakupów": "Add to shopping", "Dotknij ekranu, żeby wrócić do panelu": "Touch the screen to return to the panel", "Dotknij ekranu, żeby wybudzić": "Touch the screen to wake it", "Dotknij, żeby wpisać": "Tap to add", "Nasz dom": "Our home", "Dzieci kupują awatary za punkty. Rodzice mają wszystkie za darmo. Na panelu wystarczy dotknąć swojego awatara.": "Kids buy avatars with points. Parents get them all for free. On the panel, just tap your own avatar.", "Dzieci odhaczyły zadania. Punkty trafią na konto po zatwierdzeniu.": "The kids ticked off tasks. Points are added once you approve.", "Rodzic": "Parent", "Dzień później": "Next day", "Dzień wcześniej": "Previous day", "Dziś": "Today", "Jutro": "Tomorrow", "Jutro:": "Tomorrow:", "Teraz:": "Now:", "Dziś nic nie zaplanowano": "Nothing planned today", "Edytuj": "Edit", "Edytuj bank zadań": "Edit task bank", "Edytuj domownika": "Edit family member", "Edytuj nagrodę": "Edit reward", "Edytuj rutynę": "Edit routine", "Edytuj wydarzenie": "Edit event", "Edytuj zadanie": "Edit task", "Edytuj zadanie w banku": "Edit bank task", "Ekran startowy": "Start screen", "Gotowe": "Done", "Ikona": "Icon", "Ile punktów dostaje się za zadanie dodane z banku": "Points earned for a task added from the bank", "Ile punktów kosztuje nagroda": "How many points a reward costs", "Imię": "Name", "Jak często": "How often", "Jednorazowo": "One-off", "Jeszcze nikt nie odebrał nagrody": "No rewards claimed yet", "Język": "Language", "Kalendarz": "Calendar", "Kiedy widoczna": "When shown", "Kolor": "Colour", "Kopia zapasowa": "Backup", "Koszt (XP)": "Cost (XP)", "Kroki (dziecko odhacza obrazki)": "Steps (kids tick off the pictures)", "Kto": "Who", "Kto pierwszy, ten zbiera punkty": "First to do it gets the points", "Kto to zrobił?": "Who did it?", "Kto wybiera awatar?": "Who is choosing an avatar?", "Ktokolwiek": "Anyone", "Ktokolwiek (pierwszy chętny)": "Anyone (first to volunteer)", "Kupowanie awatarów wymaga PIN-u": "Buying avatars needs the PIN", "Lista jest pusta. Wpisz pierwszy produkt powyżej.": "The list is empty. Type the first item above.", "Lista zakupów": "Shopping list", "Masz": "You have", "Miejsce": "Place", "Miejscowość": "Town", "Moje wydarzenia dziś": "My events today", "Mój cel": "My goal", "Mój tydzień": "My week", "Na dziś wolne": "Nothing to do today", "Na dziś wolne 🎉": "Free today 🎉", "Na jutro": "For tomorrow", "Na razie są tylko wbudowane awatary. Dodaj zdjęcie zwierzaka, ulubionej zabawki albo rysunek dziecka.": "Only built-in avatars so far. Add a photo of a pet, a favourite toy or a child’s drawing.", "Nagroda": "Reward", "Nagrody": "Rewards", "Nakładające się wydarzenia": "Overlapping events", "Następny tydzień": "Next week", "Poprzedni tydzień": "Previous week", "Nawigacja": "Navigation", "Nazwa": "Name", "Nazwa domu": "Home name", "Nazwa kroku": "Step name", "Nic do przygotowania": "Nothing to prepare", "Nie zaplanowano": "Not planned", "Nieprawidłowy PIN, spróbuj jeszcze raz": "Wrong PIN, try again", "Nowa nagroda": "New reward", "Nowa rutyna": "New routine", "Nowe": "New", "Nowe wydarzenie": "New event", "Nowe zadanie": "New task", "Nowe zadanie w banku": "New bank task", "Nowy awatar do sklepu": "New avatar for the shop", "Nowy domownik": "New family member", "Nowy produkt": "New item", "Obiad": "Dinner", "Obiady": "Dinners", "Od kiedy": "Starting", "Odbierz": "Claim", "Odebrane nagrody": "Claimed rewards", "Odhaczaj zadania, buduj rutyny i zbieraj punkty na nagrody.": "Tick off tasks, build routines and save points for rewards.", "Odliczaj do wyjścia także w weekendy": "Count down to leaving at weekends too", "Odśwież pogodę": "Refresh weather", "Otwarcie ustawień": "Opening settings", "Otwórz panel ścienny": "Open wall panel", "0 wyłącza daną funkcję. Wygaszacz pokazuje zegar i zdjęcia, gdy nikt nie dotyka ekranu. Zegar co minutę lekko się przesuwa, żeby ekran się nie wypalał. Dopisz": "0 turns the feature off. The screensaver shows the clock and photos when nobody touches the screen. The clock shifts slightly every minute so the screen doesn’t burn in. Add", "do adresu, a aplikacja zawsze wystartuje w panelu.": "to the address and the app will always start on the panel.", "PIN chroni ustawienia, wyjście z panelu, zatwierdzanie zadań, odbieranie nagród i dodawanie awatarów do sklepu. To blokada przed dziećmi, a nie zabezpieczenie danych.": "The PIN protects settings, leaving the panel, approving tasks, claiming rewards and adding avatars to the shop. It keeps kids out; it doesn’t secure your data.", "PIN rodzica": "Parent PIN", "Panel ścienny": "Wall panel", "Pełny ekran": "Full screen", "Pierwsza litera imienia": "First letter of the name", "Plan dnia na osi czasu": "Day plan timeline", "Plan posiłków": "Meal plan", "Pobierz": "Download", "Pobierz wszystkie dane jako plik JSON (bez zdjęć)": "Download all data as a JSON file (without photos)", "Pogoda": "Weather", "Pojawi się w „Na jutro” dzień wcześniej": "Shows in “For tomorrow” the day before", "Posiłki": "Meals", "Posiłki i zakupy": "Meals and shopping", "Powrót do panelu po (min)": "Back to panel after (min)", "Powtarzaj w wybrane dni": "Repeat on chosen days", "Produkt": "Item", "Przeciągnij na osobę albo dotknij": "Drag onto a person or tap", "Przez cały dzień": "All day", "Przywróć": "Restore", "Pulpit": "Dashboard", "Punkty (XP)": "Points (XP)", "Punkty i cele": "Points and goals", "Punkty za całość": "Points for finishing", "Punkty za całą rutynę": "Points for the whole routine", "Rano (do 12:00)": "Mornings (until 12:00)", "Wieczorem (od 16:00)": "Evenings (from 16:00)", "Rodzic może zatwierdzać zadania i odbierać nagrody. Dziecko zbiera punkty.": "A parent can approve tasks and hand out rewards. A child collects points.", "Rodzice mają wszystkie awatary za darmo.": "Parents get every avatar for free.", "Rola": "Role", "Rutyna": "Routine", "Rutyna to stała lista kroków, np. poranek: łóżko, śniadanie, zęby, plecak. Dzieci odhaczają obrazki, a za całość dostają punkty.": "A routine is a fixed list of steps, e.g. morning: bed, breakfast, teeth, school bag. Kids tick off the pictures and earn points for finishing it.", "Rutyny": "Routines", "Rutyny na dziś": "Today’s routines", "Sklep z awatarami": "Avatar shop", "Sprawdź, czy zadanie jest zrobione. Punkty trafią na konto po zatwierdzeniu.": "Check the task is done. Points are added once you approve.", "Ten dzień jest wolny. Dodaj wydarzenie przyciskiem u góry.": "This day is free. Add an event with the button at the top.", "Ten tydzień": "This week", "Termin": "Due date", "Tryb nocny": "Night mode", "Tryb nocny do": "Night mode until", "Tryb nocny od": "Night mode from", "Twoje": "Yours", "Twój": "Yours", "Tydzień": "Week", "Ustaw PIN (4–6 cyfr)": "Set PIN (4–6 digits)", "Zmień PIN (4–6 cyfr)": "Change PIN (4–6 digits)", "Zostaw puste, by nie zmieniać": "Leave empty to keep it", "Ustaw miejscowość w ustawieniach, żeby widzieć pogodę": "Set your town in Settings to see the weather", "Ustawienia": "Settings", "Usuwa wszystko i wczytuje przykład": "Deletes everything and loads the example", "Usuń": "Delete", "Usuń PIN": "Remove PIN", "Usuń cyfrę": "Delete digit", "Usuń krok": "Remove step", "Usuń z banku": "Remove from bank", "Usuń zdjęcie": "Remove photo", "Używasz": "In use", "W tym tygodniu nic się nie nakłada": "Nothing overlaps this week", "Wczytaj": "Load", "Wczytaj kopię": "Load backup", "Wersja 1.4, dane zapisane w tej przeglądarce": "Version 1.4, data saved in this browser", "Wgraj zdjęcie": "Upload photo", "Zmień zdjęcie": "Change photo", "Wgraj zdjęcie albo rysunek i ustal cenę. Pojawi się w sklepie każdego dziecka.": "Upload a photo or drawing and set a price. It appears in every child’s shop.", "Więcej": "More", "Wolne": "Free", "Wróć": "Back", "Wróć do panelu": "Back to panel", "Wszyscy": "Everyone", "Wszystkie zadania": "All tasks", "Wybierz": "Choose", "Wybierz awatar": "Choose avatar", "Wybierz zdjęcie": "Choose photo", "Wydarzenia": "Events", "Wydarzenie": "Event", "Wygaszacz po (min)": "Screensaver after (min)", "Wyjście z domu": "Leaving home", "Wyjście za": "Leaving in", "Zadania": "Tasks", "Zadania dzieci wymagają zatwierdzenia przez rodzica": "Kids’ tasks need a parent’s approval", "Zadania i nagrody": "Tasks and rewards", "Zadania na dziś": "Today’s tasks", "Zadania tego dnia": "Tasks this day", "Zadania, które często dajesz domownikom. Na panelu i w zakładce Zadania przeciągasz je palcem na osobę.": "Tasks you hand out often. On the panel and in the Tasks tab, drag them onto a person.", "Zadanie": "Task", "Zakup trzeba potwierdzić drugim dotknięciem.": "Tap again to confirm a purchase.", "Zakupy": "Shopping", "Zamknij": "Close", "Zapisz": "Save", "Zapisz cennik": "Save prices", "Zapisz też w banku zadań, żeby później przeciągać je na domowników": "Also save it to the task bank so you can drag it onto family members later", "Zapisz ustawienia": "Save settings", "Zastępuje obecne dane": "Replaces the current data", "Zatwierdź": "Approve", "Zatwierdź wszystkie": "Approve all", "Zdjęcia do wygaszacza": "Screensaver photos", "Zdjęcia są zmniejszane i trzymane tylko w tej przeglądarce. Zmieści się ich kilkanaście.": "Photos are resized and kept only in this browser. There’s room for about a dozen.", "Zdjęcie": "Photo", "Zdjęcie jest kadrowane do kółka i zostaje w tej przeglądarce. Własne zdjęcie jest zawsze za darmo.": "The photo is cropped to a circle and stays in this browser. Your own photo is always free.", "Zdjęcie lub rysunek": "Photo or drawing", "Zmiana ceny nie zabiera awatarów, które dzieci już kupiły. 0 oznacza „za darmo”.": "Changing a price doesn’t take away avatars kids already bought. 0 means free.", "Zmień awatar": "Change avatar", "Zmień ceny": "Change prices", "Znajdź": "Find", "Zostaw puste, by usunąć": "Leave empty to remove", "Zrobione! Czeka na zatwierdzenie rodzica": "Done! Waiting for a parent to approve", "bez wydarzeń": "no events", "czeka na rodzica": "waiting for a parent", "np. 2580": "e.g. 2580", "np. Nasz kot": "e.g. Our cat", "np. Poranek": "e.g. Morning", "np. Umyj zęby": "e.g. Brush teeth", "np. Wyjście na lody": "e.g. Trip for ice cream", "np. Wynieś śmieci": "e.g. Take the rubbish out", "wszystkie za darmo": "all free", "wszystko kupione": "all bought", "za darmo": "free", "Wybierz cel nagrody poniżej": "Choose a reward goal below", "Ustaw cel": "Set goal", "Na dziś koniec planów": "No more plans today", "Jutro bez wydarzeń w kalendarzu": "No events tomorrow", "Brak wspólnych zadań na dziś": "No shared tasks today", ". Dotknij awatara, żeby go założyć albo kupić.": ". Tap an avatar to wear it or buy it.", "Awatar usunięty": "Avatar deleted", "Bank zadań zapisany": "Task bank saved", "Brak miejsca na kolejne zdjęcia. Usuń któreś, żeby dodać nowe.": "No room for more photos. Delete one to add new ones.", "Brak miejsca w przeglądarce. Usuń kilka zdjęć z wygaszacza lub sklepu.": "Browser storage is full. Delete some screensaver or shop photos.", "Brak połączenia z wyszukiwarką miejscowości": "Can’t reach the town search", "Dane wczytane": "Data loaded", "Dodaj co najmniej jeden krok": "Add at least one step", "Domownik zapisany": "Family member saved", "Koniec musi być później niż początek": "The end must be after the start", "Nagroda zapisana": "Reward saved", "Nie udało się pobrać pogody. Sprawdź połączenie z internetem.": "Couldn’t load the weather. Check the internet connection.", "Nie udało się wczytać tego pliku": "Couldn’t load this file", "Nie znaleziono takiej miejscowości": "Town not found", "Nowy cel ustawiony": "New goal set", "PIN musi mieć od 4 do 6 cyfr": "The PIN must have 4 to 6 digits", "PIN usunięty": "PIN removed", "Przywrócono domyślne ceny awatarów": "Default avatar prices restored", "Rutyna zapisana": "Routine saved", "Ustawienia zapisane": "Settings saved", "Wszystko zatwierdzone": "All approved", "Wybierz co najmniej jeden dzień": "Choose at least one day", "Wydarzenie usunięte": "Event deleted", "Wydarzenie zapisane": "Event saved", "Zadanie usunięte": "Task deleted", "Zapisano. Puste lub ujemne pola pominięto.": "Saved. Empty or negative fields were skipped.", "Cennik zapisany": "Prices saved", "Zadanie zapisane, jest też w banku": "Task saved and added to the bank", "Zadanie zapisane": "Task saved", "Awatar zapisany": "Avatar saved", "Awatar dodany do sklepu": "Avatar added to the shop", "to nie jest kopia Family Hub": "this is not a Family Hub backup", "Usunąć domownika? Jego zadania przejdą do „Ktokolwiek”.": "Delete this family member? Their tasks will move to “Anyone”.", "Usunąć ten awatar? Dzieci, które go kupiły, dostaną punkty z powrotem.": "Delete this avatar? Kids who bought it get their points back.", "Usunąć to wydarzenie?": "Delete this event?", "Usunąć to zadanie razem z historią?": "Delete this task and its history?", "Usunąć tę nagrodę?": "Delete this reward?", "Usunąć tę rutynę?": "Delete this routine?", "Usunąć wszystkie dane i wczytać przykład?": "Delete all data and load the example?", "Zastąpić obecne dane danymi z pliku?": "Replace the current data with the file?", "Dodawanie awatara do sklepu": "Adding an avatar to the shop", "Edycja awatara w sklepie": "Editing a shop avatar", "Wyjście z panelu": "Leaving the panel", "Zatwierdzanie zadań": "Approving tasks", "Zmiana cen": "Changing prices" };
+const DICT = { "Solistka": "Lead singer", "Tancerka": "Dancer", "Brokat": "Glitter", "Raperka": "Rapper", "Gwiazda": "Superstar", "Scena": "Stage", "Anuluj": "Cancel", "Aplikacja": "App", "Awatar": "Avatar", "Awatary": "Avatars", "Awatary od rodziców": "Avatars from parents", "Bank jest pusty. Dodaj pierwsze zadanie.": "The bank is empty. Add your first task.", "Bank zadań": "Task bank", "Bez celu": "No goal", "Brak wydarzeń z godziną": "No timed events", "Brak zadań na ten dzień": "No tasks for this day", "Brak zadań. Dodaj pierwsze przyciskiem u góry.": "No tasks yet. Add one with the button at the top.", "Burek": "Buddy", "Mruczek": "Whiskers", "Ośmiorniczka": "Octo", "Słoneczko": "Sunny", "Robo-Bip": "Robo-Beep", "Piłkarz": "Footballer", "Smoczek": "Little Dragon", "Rakieta": "Rocket", "Kosmonauta": "Astronaut", "Ufoludek": "Alien", "Pikselak": "Pixel Pal", "Kot ninja": "Ninja Cat", "Jednorożec": "Unicorn", "Lis DJ": "DJ Fox", "Ruchome": "Animated", "Ruchome legendarne": "Animated legends", "Na start": "Starter", "Zwierzaki": "Animals", "Legendarne": "Legendary", "Cel nagrody": "Reward goal", "Cena (XP)": "Price (XP)", "Cena 0 oznacza, że awatar jest dla wszystkich za darmo.": "A price of 0 makes the avatar free for everyone.", "Cena dotyczy całego poziomu w sklepie": "The price applies to the whole tier in the shop", "Cennik": "Prices", "Ceny": "Prices", "Ceny awatarów, nagród i punkty za zadania z banku ustawisz w jednym miejscu: Ustawienia, sekcja Cennik.": "Set avatar and reward prices, and points for bank tasks, in one place: Settings, Prices section.", "Co kupić?": "What do we need?", "Co na obiad": "What’s for dinner", "Co przygotować": "What to prepare", "Codziennie": "Every day", "Cofnij": "Undo", "Dane": "Data", "Dane przykładowe": "Sample data", "Data": "Date", "Dni robocze": "Weekdays", "Dni tygodnia": "Days of the week", "Do": "To", "Od": "From", "Do zatwierdzenia": "To approve", "Dodaj": "Add", "Dodaj do banku": "Add to bank", "Dodaj krok": "Add step", "Dodaj nagrody, na które dzieci mogą zbierać punkty": "Add rewards the kids can save points for", "Dodaj wydarzenie": "Add event", "Dodaj zdjęcia": "Add photos", "Dodaj zdjęcie": "Add photo", "Dom": "Home", "Domownicy": "Family", "Domownik": "Family member", "Domyślne ceny awatarów": "Default avatar prices", "Dopisz": "Add", "Dopisz do zakupów": "Add to shopping", "Dotknij ekranu, żeby wrócić do panelu": "Touch the screen to return to the panel", "Dotknij ekranu, żeby wybudzić": "Touch the screen to wake it", "Dotknij, żeby wpisać": "Tap to add", "Nasz dom": "Our home", "Dzieci kupują awatary za punkty. Rodzice mają wszystkie za darmo. Na panelu wystarczy dotknąć swojego awatara.": "Kids buy avatars with points. Parents get them all for free. On the panel, just tap your own avatar.", "Dzieci odhaczyły zadania. Punkty trafią na konto po zatwierdzeniu.": "The kids ticked off tasks. Points are added once you approve.", "Rodzic": "Parent", "Dzień później": "Next day", "Dzień wcześniej": "Previous day", "Dziś": "Today", "Jutro": "Tomorrow", "Jutro:": "Tomorrow:", "Teraz:": "Now:", "Dziś nic nie zaplanowano": "Nothing planned today", "Edytuj": "Edit", "Edytuj bank zadań": "Edit task bank", "Edytuj domownika": "Edit family member", "Edytuj nagrodę": "Edit reward", "Edytuj rutynę": "Edit routine", "Edytuj wydarzenie": "Edit event", "Edytuj zadanie": "Edit task", "Edytuj zadanie w banku": "Edit bank task", "Ekran startowy": "Start screen", "Gotowe": "Done", "Ikona": "Icon", "Ile punktów dostaje się za zadanie dodane z banku": "Points earned for a task added from the bank", "Ile punktów kosztuje nagroda": "How many points a reward costs", "Imię": "Name", "Jak często": "How often", "Jednorazowo": "One-off", "Jeszcze nikt nie odebrał nagrody": "No rewards claimed yet", "Język": "Language", "Kalendarz": "Calendar", "Kiedy widoczna": "When shown", "Kolor": "Colour", "Kopia zapasowa": "Backup", "Koszt (XP)": "Cost (XP)", "Kroki (dziecko odhacza obrazki)": "Steps (kids tick off the pictures)", "Kto": "Who", "Kto pierwszy, ten zbiera punkty": "First to do it gets the points", "Kto to zrobił?": "Who did it?", "Kto wybiera awatar?": "Who is choosing an avatar?", "Ktokolwiek": "Anyone", "Ktokolwiek (pierwszy chętny)": "Anyone (first to volunteer)", "Kupowanie awatarów wymaga PIN-u": "Buying avatars needs the PIN", "Lista jest pusta. Wpisz pierwszy produkt powyżej.": "The list is empty. Type the first item above.", "Lista zakupów": "Shopping list", "Masz": "You have", "Miejsce": "Place", "Miejscowość": "Town", "Moje wydarzenia dziś": "My events today", "Mój cel": "My goal", "Mój tydzień": "My week", "Na dziś wolne": "Nothing to do today", "Na dziś wolne 🎉": "Free today 🎉", "Na jutro": "For tomorrow", "Na razie są tylko wbudowane awatary. Dodaj zdjęcie zwierzaka, ulubionej zabawki albo rysunek dziecka.": "Only built-in avatars so far. Add a photo of a pet, a favourite toy or a child’s drawing.", "Nagroda": "Reward", "Nagrody": "Rewards", "Nakładające się wydarzenia": "Overlapping events", "Następny tydzień": "Next week", "Poprzedni tydzień": "Previous week", "Nawigacja": "Navigation", "Nazwa": "Name", "Nazwa domu": "Home name", "Nazwa kroku": "Step name", "Nic do przygotowania": "Nothing to prepare", "Nie zaplanowano": "Not planned", "Nieprawidłowy PIN, spróbuj jeszcze raz": "Wrong PIN, try again", "Nowa nagroda": "New reward", "Nowa rutyna": "New routine", "Nowe": "New", "Nowe wydarzenie": "New event", "Nowe zadanie": "New task", "Nowe zadanie w banku": "New bank task", "Nowy awatar do sklepu": "New avatar for the shop", "Nowy domownik": "New family member", "Nowy produkt": "New item", "Obiad": "Dinner", "Obiady": "Dinners", "Od kiedy": "Starting", "Odbierz": "Claim", "Odebrane nagrody": "Claimed rewards", "Odhaczaj zadania, buduj rutyny i zbieraj punkty na nagrody.": "Tick off tasks, build routines and save points for rewards.", "Odliczaj do wyjścia także w weekendy": "Count down to leaving at weekends too", "Odśwież pogodę": "Refresh weather", "Otwarcie ustawień": "Opening settings", "Otwórz panel ścienny": "Open wall panel", "0 wyłącza daną funkcję. Wygaszacz pokazuje zegar i zdjęcia, gdy nikt nie dotyka ekranu. Zegar co minutę lekko się przesuwa, żeby ekran się nie wypalał. Dopisz": "0 turns the feature off. The screensaver shows the clock and photos when nobody touches the screen. The clock shifts slightly every minute so the screen doesn’t burn in. Add", "do adresu, a aplikacja zawsze wystartuje w panelu.": "to the address and the app will always start on the panel.", "PIN chroni ustawienia, wyjście z panelu, zatwierdzanie zadań, odbieranie nagród i dodawanie awatarów do sklepu. To blokada przed dziećmi, a nie zabezpieczenie danych.": "The PIN protects settings, leaving the panel, approving tasks, claiming rewards and adding avatars to the shop. It keeps kids out; it doesn’t secure your data.", "PIN rodzica": "Parent PIN", "Panel ścienny": "Wall panel", "Pełny ekran": "Full screen", "Pierwsza litera imienia": "First letter of the name", "Plan dnia na osi czasu": "Day plan timeline", "Plan posiłków": "Meal plan", "Pobierz": "Download", "Pobierz wszystkie dane jako plik JSON (bez zdjęć)": "Download all data as a JSON file (without photos)", "Pogoda": "Weather", "Pojawi się w „Na jutro” dzień wcześniej": "Shows in “For tomorrow” the day before", "Posiłki": "Meals", "Posiłki i zakupy": "Meals and shopping", "Powrót do panelu po (min)": "Back to panel after (min)", "Powtarzaj w wybrane dni": "Repeat on chosen days", "Produkt": "Item", "Przeciągnij na osobę albo dotknij": "Drag onto a person or tap", "Przez cały dzień": "All day", "Przywróć": "Restore", "Pulpit": "Dashboard", "Punkty (XP)": "Points (XP)", "Punkty i cele": "Points and goals", "Punkty za całość": "Points for finishing", "Punkty za całą rutynę": "Points for the whole routine", "Rano (do 12:00)": "Mornings (until 12:00)", "Wieczorem (od 16:00)": "Evenings (from 16:00)", "Rodzic może zatwierdzać zadania i odbierać nagrody. Dziecko zbiera punkty.": "A parent can approve tasks and hand out rewards. A child collects points.", "Rodzice mają wszystkie awatary za darmo.": "Parents get every avatar for free.", "Rola": "Role", "Rutyna": "Routine", "Rutyna to stała lista kroków, np. poranek: łóżko, śniadanie, zęby, plecak. Dzieci odhaczają obrazki, a za całość dostają punkty.": "A routine is a fixed list of steps, e.g. morning: bed, breakfast, teeth, school bag. Kids tick off the pictures and earn points for finishing it.", "Rutyny": "Routines", "Rutyny na dziś": "Today’s routines", "Sklep z awatarami": "Avatar shop", "Sprawdź, czy zadanie jest zrobione. Punkty trafią na konto po zatwierdzeniu.": "Check the task is done. Points are added once you approve.", "Ten dzień jest wolny. Dodaj wydarzenie przyciskiem u góry.": "This day is free. Add an event with the button at the top.", "Ten tydzień": "This week", "Termin": "Due date", "Tryb nocny": "Night mode", "Tryb nocny do": "Night mode until", "Tryb nocny od": "Night mode from", "Twoje": "Yours", "Twój": "Yours", "Tydzień": "Week", "Ustaw PIN (4–6 cyfr)": "Set PIN (4–6 digits)", "Zmień PIN (4–6 cyfr)": "Change PIN (4–6 digits)", "Zostaw puste, by nie zmieniać": "Leave empty to keep it", "Ustaw miejscowość w ustawieniach, żeby widzieć pogodę": "Set your town in Settings to see the weather", "Ustawienia": "Settings", "Usuwa wszystko i wczytuje przykład": "Deletes everything and loads the example", "Usuń": "Delete", "Usuń PIN": "Remove PIN", "Usuń cyfrę": "Delete digit", "Usuń krok": "Remove step", "Usuń z banku": "Remove from bank", "Usuń zdjęcie": "Remove photo", "Używasz": "In use", "W tym tygodniu nic się nie nakłada": "Nothing overlaps this week", "Wczytaj": "Load", "Wczytaj kopię": "Load backup", "Wersja 1.5, dane zapisane w tej przeglądarce": "Version 1.5, data saved in this browser", "Wgraj zdjęcie": "Upload photo", "Zmień zdjęcie": "Change photo", "Wgraj zdjęcie albo rysunek i ustal cenę. Pojawi się w sklepie każdego dziecka.": "Upload a photo or drawing and set a price. It appears in every child’s shop.", "Więcej": "More", "Wolne": "Free", "Wróć": "Back", "Wróć do panelu": "Back to panel", "Wszyscy": "Everyone", "Wszystkie zadania": "All tasks", "Wybierz": "Choose", "Wybierz awatar": "Choose avatar", "Wybierz zdjęcie": "Choose photo", "Wydarzenia": "Events", "Wydarzenie": "Event", "Wygaszacz po (min)": "Screensaver after (min)", "Wyjście z domu": "Leaving home", "Wyjście za": "Leaving in", "Zadania": "Tasks", "Zadania dzieci wymagają zatwierdzenia przez rodzica": "Kids’ tasks need a parent’s approval", "Zadania i nagrody": "Tasks and rewards", "Zadania na dziś": "Today’s tasks", "Zadania tego dnia": "Tasks this day", "Zadania, które często dajesz domownikom. Na panelu i w zakładce Zadania przeciągasz je palcem na osobę.": "Tasks you hand out often. On the panel and in the Tasks tab, drag them onto a person.", "Zadanie": "Task", "Zakup trzeba potwierdzić drugim dotknięciem.": "Tap again to confirm a purchase.", "Zakupy": "Shopping", "Zamknij": "Close", "Zapisz": "Save", "Zapisz cennik": "Save prices", "Zapisz też w banku zadań, żeby później przeciągać je na domowników": "Also save it to the task bank so you can drag it onto family members later", "Zapisz ustawienia": "Save settings", "Zastępuje obecne dane": "Replaces the current data", "Zatwierdź": "Approve", "Zatwierdź wszystkie": "Approve all", "Zdjęcia do wygaszacza": "Screensaver photos", "Zdjęcia są zmniejszane i trzymane tylko w tej przeglądarce. Zmieści się ich kilkanaście.": "Photos are resized and kept only in this browser. There’s room for about a dozen.", "Zdjęcie": "Photo", "Zdjęcie jest kadrowane do kółka i zostaje w tej przeglądarce. Własne zdjęcie jest zawsze za darmo.": "The photo is cropped to a circle and stays in this browser. Your own photo is always free.", "Zdjęcie lub rysunek": "Photo or drawing", "Zmiana ceny nie zabiera awatarów, które dzieci już kupiły. 0 oznacza „za darmo”.": "Changing a price doesn’t take away avatars kids already bought. 0 means free.", "Zmień awatar": "Change avatar", "Zmień ceny": "Change prices", "Znajdź": "Find", "Zostaw puste, by usunąć": "Leave empty to remove", "Zrobione! Czeka na zatwierdzenie rodzica": "Done! Waiting for a parent to approve", "bez wydarzeń": "no events", "czeka na rodzica": "waiting for a parent", "np. 2580": "e.g. 2580", "np. Nasz kot": "e.g. Our cat", "np. Poranek": "e.g. Morning", "np. Umyj zęby": "e.g. Brush teeth", "np. Wyjście na lody": "e.g. Trip for ice cream", "np. Wynieś śmieci": "e.g. Take the rubbish out", "wszystkie za darmo": "all free", "wszystko kupione": "all bought", "za darmo": "free", "Wybierz cel nagrody poniżej": "Choose a reward goal below", "Ustaw cel": "Set goal", "Na dziś koniec planów": "No more plans today", "Jutro bez wydarzeń w kalendarzu": "No events tomorrow", "Brak wspólnych zadań na dziś": "No shared tasks today", ". Dotknij awatara, żeby go założyć albo kupić.": ". Tap an avatar to wear it or buy it.", "Awatar usunięty": "Avatar deleted", "Bank zadań zapisany": "Task bank saved", "Brak miejsca na kolejne zdjęcia. Usuń któreś, żeby dodać nowe.": "No room for more photos. Delete one to add new ones.", "Brak miejsca w przeglądarce. Usuń kilka zdjęć z wygaszacza lub sklepu.": "Browser storage is full. Delete some screensaver or shop photos.", "Brak połączenia z wyszukiwarką miejscowości": "Can’t reach the town search", "Dane wczytane": "Data loaded", "Dodaj co najmniej jeden krok": "Add at least one step", "Domownik zapisany": "Family member saved", "Koniec musi być później niż początek": "The end must be after the start", "Nagroda zapisana": "Reward saved", "Nie udało się pobrać pogody. Sprawdź połączenie z internetem.": "Couldn’t load the weather. Check the internet connection.", "Nie udało się wczytać tego pliku": "Couldn’t load this file", "Nie znaleziono takiej miejscowości": "Town not found", "Nowy cel ustawiony": "New goal set", "PIN musi mieć od 4 do 6 cyfr": "The PIN must have 4 to 6 digits", "PIN usunięty": "PIN removed", "Przywrócono domyślne ceny awatarów": "Default avatar prices restored", "Rutyna zapisana": "Routine saved", "Ustawienia zapisane": "Settings saved", "Wszystko zatwierdzone": "All approved", "Wybierz co najmniej jeden dzień": "Choose at least one day", "Wydarzenie usunięte": "Event deleted", "Wydarzenie zapisane": "Event saved", "Zadanie usunięte": "Task deleted", "Zapisano. Puste lub ujemne pola pominięto.": "Saved. Empty or negative fields were skipped.", "Cennik zapisany": "Prices saved", "Zadanie zapisane, jest też w banku": "Task saved and added to the bank", "Zadanie zapisane": "Task saved", "Awatar zapisany": "Avatar saved", "Awatar dodany do sklepu": "Avatar added to the shop", "to nie jest kopia Family Hub": "this is not a Family Hub backup", "Usunąć domownika? Jego zadania przejdą do „Ktokolwiek”.": "Delete this family member? Their tasks will move to “Anyone”.", "Usunąć ten awatar? Dzieci, które go kupiły, dostaną punkty z powrotem.": "Delete this avatar? Kids who bought it get their points back.", "Usunąć to wydarzenie?": "Delete this event?", "Usunąć to zadanie razem z historią?": "Delete this task and its history?", "Usunąć tę nagrodę?": "Delete this reward?", "Usunąć tę rutynę?": "Delete this routine?", "Usunąć wszystkie dane i wczytać przykład?": "Delete all data and load the example?", "Zastąpić obecne dane danymi z pliku?": "Replace the current data with the file?", "Dodawanie awatara do sklepu": "Adding an avatar to the shop", "Edycja awatara w sklepie": "Editing a shop avatar", "Wyjście z panelu": "Leaving the panel", "Zatwierdzanie zadań": "Approving tasks", "Zmiana cen": "Changing prices" };
 const PATS = [
   [/^(\d+) z (\d+) zrobione$/, "$1 of $2 done"],
   [/^Dziś: (\d+) z (\d+)$/, "Today: $1 of $2"],
@@ -1375,10 +1497,10 @@ const lum = (h) => {
 };
 const onColor = (h) => lum(h) > 0.42 ? "#16252E" : "#FFFFFF";
 const ANYONE = { id: "anyone", name: "Ktokolwiek", color: "#55666F", points: 0, role: "child", avatar: "emoji:🙋", owned: [] };
-const STEP_ICONS = ["🛏️", "🚽", "🪥", "🚿", "🛁", "👕", "🧦", "👟", "🧥", "🎒", "🥣", "🍎", "💧", "🍽️", "🧸", "📚", "✏️", "🎹", "⚽", "🐶", "🐱", "🌱", "🧹", "🗑️", "🧺", "📖", "😴", "⏰", "🙏", "💊"];
+const STEP_ICONS = ["🛏️", "🚽", "🦷", "🚿", "🛁", "👕", "🧦", "👟", "🧥", "🎒", "🥣", "🍎", "💧", "🍽️", "🧸", "📚", "✏️", "🎹", "⚽", "🐶", "🐱", "🌱", "🧹", "🗑️", "🧺", "📖", "😴", "⏰", "🙏", "💊"];
 const BANK_DEFAULT = () => [["🗑️", tx("Wynieś śmieci", "Take the rubbish out"), 8], ["🍽️", tx("Rozładuj zmywarkę", "Empty the dishwasher"), 10], ["🍴", tx("Nakryj do stołu", "Lay the table"), 5], ["🛏️", tx("Pościel łóżko", "Make your bed"), 5], ["🧸", tx("Posprzątaj pokój", "Tidy your room"), 20], ["🐟", tx("Nakarm rybki", "Feed the fish"), 5], ["🌱", tx("Podlej kwiatki", "Water the plants"), 5], ["🧺", tx("Rozwieś pranie", "Hang the washing"), 10], ["🧹", tx("Odkurz", "Hoover"), 15], ["🛒", tx("Pomóż przy zakupach", "Help with shopping"), 10]].map(([emoji, title, points]) => ({ id: uid(), emoji, title, points }));
-const SHOP_CATS = [["veg", "🥕", "Owoce i warzywa", "Fruit & veg"], ["bakery", "🥖", "Pieczywo", "Bakery"], ["meat", "🍗", "Mięso", "Meat"], ["deli", "🌭", "Wędliny i garmażerka", "Deli"], ["dairy", "🧀", "Nabiał i jajka", "Dairy & eggs"], ["pantry", "🥫", "Spiżarnia", "Cupboard"], ["sweets", "🍫", "Słodycze i przekąski", "Sweets & snacks"], ["drinks", "🧃", "Napoje", "Drinks"], ["frozen", "🧊", "Mrożonki", "Frozen"], ["home", "🧻", "Dom i chemia", "Household"], ["care", "🧴", "Higiena i kosmetyki", "Toiletries"], ["other", "🛒", "Inne", "Other"]];
-const BANK_ICONS = ["✅", "🗑️", "🍽️", "🍴", "🛏️", "🧸", "🐟", "🐶", "🐱", "🌱", "🧺", "🧹", "🧽", "🪣", "🛒", "🚗", "📚", "✏️", "🎹", "🪥", "👕", "🍳", "🥕", "🚲", "🧾", "📦", "💡", "🧤"];
+const SHOP_CATS = [["veg", "🥕", "Owoce i warzywa", "Fruit & veg"], ["bakery", "🥖", "Pieczywo", "Bakery"], ["meat", "🍗", "Mięso", "Meat"], ["deli", "🌭", "Wędliny i garmażerka", "Deli"], ["dairy", "🧀", "Nabiał i jajka", "Dairy & eggs"], ["pantry", "🥫", "Spiżarnia", "Cupboard"], ["sweets", "🍫", "Słodycze i przekąski", "Sweets & snacks"], ["drinks", "🥤", "Napoje", "Drinks"], ["frozen", "❄️", "Mrożonki", "Frozen"], ["home", "🧻", "Dom i chemia", "Household"], ["care", "🧴", "Higiena i kosmetyki", "Toiletries"], ["other", "🛒", "Inne", "Other"]];
+const BANK_ICONS = ["✅", "🗑️", "🍽️", "🍴", "🛏️", "🧸", "🐟", "🐶", "🐱", "🌱", "🧺", "🧹", "🧽", "🧼", "🛒", "🚗", "📚", "✏️", "🎹", "🦷", "👕", "🍳", "🥕", "🚲", "🧾", "📦", "💡", "🧤"];
 const AS = (bg, inner) => `<svg class="anim" viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" fill="${bg}"/>${inner}</svg>`;
 const BLINK = (inner, d = "4s") => `<g class="a" style="animation:av-blink ${d} infinite">${inner}</g>`;
 const TW = (x, y, r, del) => `<circle cx="${x}" cy="${y}" r="${r}" fill="#fff" class="a" style="animation:av-twinkle 1.8s ease-in-out ${del}s infinite"/>`;
@@ -1402,13 +1524,361 @@ const ANIM_TIERS = [
   { name: "Ruchome", cost: 150, items: ["cat", "dog", "octo", "sun", "robot", "ball", "dragon"] },
   { name: "Ruchome legendarne", cost: 300, items: ["rocket", "astro", "ufo", "pixel", "ninja", "unicorn", "foxdj"] }
 ];
+const IDOL = (o) => AS(o.bg, `${o.fx || ""}<g class="a" style="transform-origin:50% 100%;animation:av-nod ${o.beat || ".6s"} ease-in-out infinite alternate">` + (o.hair === "long" ? `<path d="M24 52q0-34 26-34t26 34v34H24z" fill="${o.hc}"/>` : "") + (o.hair === "buns" ? `<circle cx="28" cy="24" r="10" fill="${o.hc}"/><circle cx="72" cy="24" r="10" fill="${o.hc}"/>` : "") + (o.hair === "pony" ? `<g class="a" style="transform-origin:0% 0%;animation:av-flop 1.2s ease-in-out infinite"><path d="M70 34q22 6 14 40q-8-12-16-20z" fill="${o.hc}"/></g>` : "") + (o.hair === "twin" ? `<path d="M24 40q-12 20-4 42l10-4q-4-20 2-34z M76 40q12 20 4 42l-10-4q4-20-2-34z" fill="${o.hc}"/>` : "") + `<path d="M22 100q0-24 28-24t28 24z" fill="${o.top}"/><path d="M42 78l8 8 8-8" fill="none" stroke="${o.trim || "#fff"}" stroke-width="3" stroke-linejoin="round"/><rect x="44" y="64" width="12" height="14" rx="5" fill="${o.skin}"/><ellipse cx="50" cy="50" rx="22" ry="24" fill="${o.skin}"/><path d="M27 48q0-26 23-26t23 26q-9-11-23-12q-13 1-23 12z" fill="${o.hc}"/>` + (o.hair === "bob" ? `<path d="M27 46q-3 16 3 22l4-20zM73 46q3 16-3 22l-4-20z" fill="${o.hc}"/>` : "") + BLINK(`<ellipse cx="42" cy="51" rx="3.2" ry="4" fill="#1B1B22"/><ellipse cx="58" cy="51" rx="3.2" ry="4" fill="#1B1B22"/><circle cx="43.2" cy="49.5" r="1.2" fill="#fff"/><circle cx="59.2" cy="49.5" r="1.2" fill="#fff"/>`, o.blink || "3.8s") + `<circle cx="36" cy="58" r="3.6" fill="#FF8FA3" opacity=".55"/><circle cx="64" cy="58" r="3.6" fill="#FF8FA3" opacity=".55"/><path d="M45 61q5 5 10 0" fill="none" stroke="#9A2F45" stroke-width="2.2" stroke-linecap="round"/>` + (o.acc || "") + `</g>${o.front || ""}`);
+const MIC = `<g class="a" style="transform-origin:50% 100%;animation:av-wave 1.2s ease-in-out infinite"><rect x="70" y="66" width="5" height="20" rx="2.5" fill="#2B2B33" transform="rotate(-18 72 76)"/><circle cx="69" cy="64" r="6" fill="#C9CED6"/><path d="M65 62h8M65 65h8" stroke="#9AA3AE" stroke-width="1"/></g>`;
+const PHONES = `<path d="M27 50q0-30 23-30t23 30" fill="none" stroke="#16252E" stroke-width="4"/><rect x="22" y="44" width="9" height="15" rx="4" fill="#16252E"/><rect x="69" y="44" width="9" height="15" rx="4" fill="#16252E"/><circle cx="26.5" cy="51.5" r="2" fill="#29D3C2" class="a" style="animation:av-pulse 1s ease-in-out infinite"/>`;
+const CLIP = (x, y) => `<path d="M${x} ${y - 6}l2 4 4 2-4 2-2 4-2-4-4-2 4-2z" fill="#FFD84D" class="a" style="animation:av-twinkle 1.6s ease-in-out infinite"/>`;
+const NOTES = `<text x="10" y="40" font-size="14" fill="#fff" class="a" style="animation:av-note 2.2s ease-out infinite">♪</text><text x="80" y="34" font-size="12" fill="#fff" class="a" style="animation:av-note 2.2s ease-out 1.1s infinite">♫</text>`;
+const LIGHTS = (c) => `<path d="M8 0l14 40H2z" fill="${c}" opacity=".35" class="a" style="animation:av-beam 1.4s ease-in-out infinite"/><path d="M92 0l6 40H78z" fill="${c}" opacity=".35" class="a" style="animation:av-beam 1.4s ease-in-out .7s infinite"/>`;
+Object.assign(ANIM, {
+  idol1: { name: "Solistka", svg: IDOL({ bg: "#B5179E", hair: "long", hc: "#2A1A12", skin: "#F2C6A0", top: "#FFC23D", trim: "#B5179E", fx: LIGHTS("#FFE27A"), acc: MIC, front: NOTES }) },
+  idol2: { name: "Tancerka", svg: IDOL({ bg: "#2A46D6", hair: "pony", hc: "#E0A040", skin: "#FBD9BE", top: "#FF5C8A", beat: ".4s", acc: CLIP(64, 30), front: `${TW(14, 20, 1.8, 0)}${TW(86, 74, 1.6, 0.6)}` }) },
+  idol3: { name: "Neon", svg: IDOL({ bg: "#16252E", hair: "long", hc: "#7B5CFF", skin: "#C98B62", top: "#29D3C2", trim: "#16252E", acc: PHONES, fx: `${TW(14, 16, 1.6, 0)}${TW(84, 20, 1.8, 0.5)}${TW(88, 60, 1.4, 1)}`, front: NOTES }) },
+  idol4: { name: "Brokat", svg: IDOL({ bg: "#FF7A59", hair: "buns", hc: "#1B1B22", skin: "#8D5A3B", top: "#FFFFFF", trim: "#FF7A59", acc: CLIP(40, 28) + CLIP(62, 26), front: `${TW(12, 60, 2, 0)}${TW(88, 46, 2, 0.4)}${TW(20, 16, 1.6, 0.8)}${TW(80, 14, 1.6, 1.2)}` }) },
+  idol5: { name: "Raperka", svg: IDOL({ bg: "#1F9D66", hair: "bob", hc: "#5B2A86", skin: "#F2C6A0", top: "#16252E", trim: "#FFC23D", beat: ".45s", acc: MIC + `<path d="M28 34q22-16 44 0l-2 6q-20-12-40 0z" fill="#FFC23D"/>` }) },
+  idol6: { name: "Gwiazda", svg: IDOL({ bg: "#FFC23D", hair: "twin", hc: "#C2185B", skin: "#FBD9BE", top: "#B5179E", trim: "#FFE27A", fx: LIGHTS("#FFFFFF"), acc: MIC + CLIP(50, 22), front: `${TW(12, 84, 2, 0)}${TW(90, 86, 2, 0.5)}` + NOTES }) }
+});
+ANIM_TIERS.push({ name: "Scena", cost: 120, items: ["idol1", "idol2", "idol3", "idol4", "idol5", "idol6"] });
+const CDICT = {
+  "Szkoła": "School",
+  "Przedszkole": "Nursery",
+  "Odbiór ze szkoły": "School pickup",
+  "Odbiór ze szkoły i zakupy": "School pickup and shopping",
+  "Odbiór z przedszkola": "Nursery pickup",
+  "Odwiezienie do szkoły": "School drop-off",
+  "Zawieźć do szkoły": "School drop-off",
+  "Wywiadówka": "Parents evening",
+  "Zebranie w szkole": "School meeting",
+  "Dzień otwarty": "Open day",
+  "Wycieczka szkolna": "School trip",
+  "Wycieczka": "Trip",
+  "Ferie": "School holidays",
+  "Wakacje": "Holidays",
+  "Dzień wolny": "Day off",
+  "Koniec szkoły": "School finishes",
+  "Pierwszy dzień szkoły": "First day of school",
+  "WF": "PE",
+  "Basen": "Swimming",
+  "Pływanie": "Swimming",
+  "Lekcja pływania": "Swimming lesson",
+  "Piłka nożna": "Football",
+  "Trening": "Training",
+  "Trening piłki": "Football training",
+  "Mecz": "Match",
+  "Taniec": "Dance",
+  "Lekcja tańca": "Dance class",
+  "Balet": "Ballet",
+  "Gimnastyka": "Gymnastics",
+  "Karate": "Karate",
+  "Judo": "Judo",
+  "Tenis": "Tennis",
+  "Rower": "Cycling",
+  "Jazda na rowerze": "Bike ride",
+  "Rolki": "Rollerblading",
+  "Łyżwy": "Ice skating",
+  "Harcerstwo": "Scouts",
+  "Zbiórka": "Scouts meeting",
+  "Skauci": "Scouts",
+  "Brownies": "Brownies",
+  "Cubs": "Cubs",
+  "Beavers": "Beavers",
+  "Lekcja pianina": "Piano lesson",
+  "Pianino": "Piano",
+  "Gitara": "Guitar",
+  "Lekcja gitary": "Guitar lesson",
+  "Skrzypce": "Violin",
+  "Śpiew": "Singing",
+  "Chór": "Choir",
+  "Szkoła polska": "Polish school",
+  "Polska szkoła": "Polish school",
+  "Korepetycje": "Tutoring",
+  "Angielski": "English",
+  "Matematyka": "Maths",
+  "Kodowanie": "Coding",
+  "Plastyka": "Art",
+  "Teatr": "Drama",
+  "Zajęcia": "Class",
+  "Zajęcia dodatkowe": "Club",
+  "Lekarz": "Doctor",
+  "Wizyta u lekarza": "Doctor appointment",
+  "Dentysta": "Dentist",
+  "Wizyta u dentysty": "Dentist appointment",
+  "Szczepienie": "Vaccination",
+  "Optyk": "Optician",
+  "Okulista": "Optician",
+  "Fryzjer": "Hairdresser",
+  "Weterynarz": "Vet",
+  "Apteka": "Pharmacy",
+  "Urodziny": "Birthday",
+  "Impreza urodzinowa": "Birthday party",
+  "Przyjęcie": "Party",
+  "Impreza": "Party",
+  "Nocowanie": "Sleepover",
+  "Goście": "Guests",
+  "Wizyta u babci": "Visit to Grandma",
+  "Babcia": "Grandma",
+  "Dziadek": "Grandpa",
+  "Kino": "Cinema",
+  "Wyjście do kina": "Cinema trip",
+  "Kościół": "Church",
+  "Msza": "Mass",
+  "Spacer": "Walk",
+  "Park": "Park",
+  "Plac zabaw": "Playground",
+  "Zoo": "Zoo",
+  "Lot": "Flight",
+  "Wyjazd": "Trip away",
+  "Lotnisko": "Airport",
+  "Spotkanie": "Meeting",
+  "Spotkanie online": "Online meeting",
+  "Praca": "Work",
+  "Wyjście": "Going out",
+  "Zakupy": "Shopping",
+  "Zakupy w Lidlu": "Shopping at Lidl",
+  "Zakupy spożywcze": "Food shopping",
+  "Tankowanie": "Fuel",
+  "Przegląd auta": "Car service",
+  "Serwis auta": "Car service",
+  "Myjnia": "Car wash",
+  "Śmieciarka": "Bin day",
+  "Wywóz śmieci": "Bin day",
+  "Dostawa": "Delivery",
+  "Kurier": "Courier",
+  "Hydraulik": "Plumber",
+  "Elektryk": "Electrician",
+  "Rachunki": "Bills",
+  "Czynsz": "Rent",
+  "Wynieś śmieci": "Take the rubbish out",
+  "Wystaw śmieci": "Put the bins out",
+  "Wystaw kosze": "Put the bins out",
+  "Schowaj kosze": "Bring the bins in",
+  "Rozładuj zmywarkę": "Empty the dishwasher",
+  "Załaduj zmywarkę": "Load the dishwasher",
+  "Nakryj do stołu": "Lay the table",
+  "Sprzątnij ze stołu": "Clear the table",
+  "Pościel łóżko": "Make your bed",
+  "Posprzątaj pokój": "Tidy your room",
+  "Posprzątaj zabawki": "Tidy up toys",
+  "Nakarm rybki": "Feed the fish",
+  "Nakarm kota": "Feed the cat",
+  "Nakarm psa": "Feed the dog",
+  "Wyprowadź psa": "Walk the dog",
+  "Podlej kwiatki": "Water the plants",
+  "Podlej ogród": "Water the garden",
+  "Rozwieś pranie": "Hang the washing",
+  "Zdejmij pranie": "Bring the washing in",
+  "Złóż pranie": "Fold the washing",
+  "Wstaw pranie": "Put a wash on",
+  "Pranie": "Laundry",
+  "Odkurz": "Hoover",
+  "Odkurzanie": "Hoovering",
+  "Umyj naczynia": "Wash the dishes",
+  "Wytrzyj naczynia": "Dry the dishes",
+  "Zmyj naczynia": "Wash the dishes",
+  "Pomóż przy zakupach": "Help with shopping",
+  "Pomóż przy obiedzie": "Help with dinner",
+  "Pomóż w kuchni": "Help in the kitchen",
+  "Zetrzyj kurze": "Dust",
+  "Umyj łazienkę": "Clean the bathroom",
+  "Wyczyść łazienkę": "Clean the bathroom",
+  "Umyj samochód": "Wash the car",
+  "Skoś trawę": "Mow the lawn",
+  "Grabienie liści": "Rake the leaves",
+  "Posprzątaj ogród": "Tidy the garden",
+  "Wynieś recykling": "Take out the recycling",
+  "Segreguj śmieci": "Sort the recycling",
+  "Odrób lekcje": "Do your homework",
+  "Odrabianie lekcji": "Homework",
+  "Zadanie domowe": "Homework",
+  "Czytanie": "Reading",
+  "Poczytaj książkę": "Read a book",
+  "Czytaj 20 minut": "Read for 20 minutes",
+  "Ćwicz na pianinie": "Practise piano",
+  "Nauka słówek": "Learn spellings",
+  "Literowanie": "Spellings",
+  "Tabliczka mnożenia": "Times tables",
+  "Spakuj plecak": "Pack your bag",
+  "Spakuj strój na WF": "Pack your PE kit",
+  "Strój na WF": "PE kit",
+  "Strój sportowy": "Sports kit",
+  "Przygotuj strój na WF": "Get your PE kit ready",
+  "Przygotuj ubrania na jutro": "Lay out clothes for tomorrow",
+  "Przygotuj mundurek": "Get your uniform ready",
+  "Spakuj strój na basen": "Pack your swimming kit",
+  "Strój na basen": "Swimming kit",
+  "Weź bidon": "Take a water bottle",
+  "Weź drugie śniadanie": "Take your snack",
+  "Podpisz zgodę": "Sign the permission slip",
+  "Zgoda na wycieczkę": "Trip permission slip",
+  "Oddaj książkę do biblioteki": "Return the library book",
+  "Zapłać za wycieczkę": "Pay for the trip",
+  "Kup prezent": "Buy a present",
+  "Zrób kartkę": "Make a card",
+  "Zadzwoń do babci": "Call Grandma",
+  "Wyrzuć śmieci": "Take the rubbish out",
+  "Opróżnij kosz": "Empty the bin",
+  "Poranek": "Morning",
+  "Rano": "Morning",
+  "Wieczór": "Evening",
+  "Wieczorem": "Evening",
+  "Po szkole": "After school",
+  "Przed snem": "Bedtime",
+  "Dobranoc": "Bedtime",
+  "Łóżko": "Bed",
+  "Toaleta": "Toilet",
+  "Zęby": "Teeth",
+  "Umyj zęby": "Brush your teeth",
+  "Myj zęby": "Brush your teeth",
+  "Prysznic": "Shower",
+  "Kąpiel": "Bath",
+  "Ubierz się": "Get dressed",
+  "Ubranie": "Clothes",
+  "Skarpetki": "Socks",
+  "Buty": "Shoes",
+  "Kurtka": "Coat",
+  "Plecak": "Bag",
+  "Śniadanie": "Breakfast",
+  "Owoc": "Fruit",
+  "Picie": "Drink",
+  "Woda": "Water",
+  "Wypij wodę": "Drink water",
+  "Zabawki": "Toys",
+  "Książki": "Books",
+  "Lekcje": "Homework",
+  "Sen": "Sleep",
+  "Spanie": "Sleep",
+  "Budzik": "Alarm",
+  "Modlitwa": "Prayers",
+  "Leki": "Medicine",
+  "Witaminy": "Vitamins",
+  "Uczesz się": "Brush your hair",
+  "Włosy": "Hair",
+  "Umyj ręce": "Wash your hands",
+  "Piżama": "Pyjamas",
+  "Załóż piżamę": "Put your pyjamas on",
+  "Wybór filmu na wieczór": "Pick the evening film",
+  "Wybór filmu": "Pick the film",
+  "Wyjście na lody": "Ice cream trip",
+  "Lody": "Ice cream",
+  "Pół godziny gier": "Half an hour of games",
+  "Gry": "Games",
+  "Pizza": "Pizza",
+  "Pizza na kolację": "Pizza for dinner",
+  "Nowa książka": "New book",
+  "Kino z rodzicami": "Cinema with parents",
+  "Późniejsze spanie": "Later bedtime",
+  "Wybór obiadu": "Choose dinner",
+  "Kieszonkowe": "Pocket money",
+  "Zabawka": "Toy",
+  "Wyjście do parku trampolin": "Trampoline park",
+  "Nocowanie u kolegi": "Sleepover at a friend’s",
+  "Spaghetti bolognese": "Spaghetti bolognese",
+  "Spaghetti": "Spaghetti",
+  "Zupa pomidorowa": "Tomato soup",
+  "Pomidorowa": "Tomato soup",
+  "Rosół": "Chicken soup",
+  "Barszcz": "Beetroot soup",
+  "Żurek": "Sour rye soup",
+  "Ogórkowa": "Pickle soup",
+  "Zupa": "Soup",
+  "Kurczak z ryżem": "Chicken and rice",
+  "Kurczak": "Chicken",
+  "Pizza domowa": "Homemade pizza",
+  "Schabowy": "Pork schnitzel",
+  "Kotlet schabowy": "Pork schnitzel",
+  "Kotlety mielone": "Meatballs",
+  "Mielone": "Meatballs",
+  "Gołąbki": "Cabbage rolls",
+  "Pierogi": "Pierogi",
+  "Pierogi ruskie": "Potato and cheese pierogi",
+  "Naleśniki": "Pancakes",
+  "Placki ziemniaczane": "Potato pancakes",
+  "Leniwe": "Lazy dumplings",
+  "Kopytka": "Potato dumplings",
+  "Bigos": "Hunter’s stew",
+  "Gulasz": "Goulash",
+  "Ryba": "Fish",
+  "Ryba z frytkami": "Fish and chips",
+  "Fish and chips": "Fish and chips",
+  "Frytki": "Chips",
+  "Burgery": "Burgers",
+  "Hamburgery": "Burgers",
+  "Tacos": "Tacos",
+  "Lasagne": "Lasagne",
+  "Makaron": "Pasta",
+  "Makaron z sosem": "Pasta with sauce",
+  "Zapiekanka": "Bake",
+  "Zapiekanka makaronowa": "Pasta bake",
+  "Curry": "Curry",
+  "Chili": "Chilli",
+  "Risotto": "Risotto",
+  "Sałatka": "Salad",
+  "Kanapki": "Sandwiches",
+  "Tosty": "Toasties",
+  "Jajecznica": "Scrambled eggs",
+  "Owsianka": "Porridge",
+  "Płatki": "Cereal",
+  "Pieczony kurczak": "Roast chicken",
+  "Obiad niedzielny": "Sunday roast",
+  "Pieczeń": "Roast",
+  "Grill": "Barbecue",
+  "Na mieście": "Eating out",
+  "Resztki": "Leftovers",
+  "Jedzenie na wynos": "Takeaway",
+  "Na wynos": "Takeaway",
+  "Kebab": "Kebab",
+  "Sushi": "Sushi",
+  "Mleko": "Milk",
+  "Jajka": "Eggs",
+  "Chleb": "Bread",
+  "Masło": "Butter",
+  "Ser": "Cheese",
+  "Jogurt": "Yoghurt",
+  "Banany": "Bananas",
+  "Jabłka": "Apples",
+  "Ziemniaki": "Potatoes",
+  "Pomidory": "Tomatoes",
+  "Ogórki": "Cucumbers",
+  "Cebula": "Onions",
+  "Ryż": "Rice",
+  "Cukier": "Sugar",
+  "Mąka": "Flour",
+  "Kawa": "Coffee",
+  "Herbata": "Tea",
+  "Sok": "Juice",
+  "Papier toaletowy": "Toilet roll",
+  "Proszek do prania": "Washing powder",
+  "Płyn do naczyń": "Washing-up liquid"
+};
+const CD_EN = {}, CD_PL = {};
+const cdKey = (s) => String(s || "").trim().toLowerCase().replace(/[.!]+$/, "").replace(/\s+/g, " ");
+Object.keys(CDICT).forEach((k) => {
+  CD_EN[cdKey(k)] = CDICT[k];
+  if (!CD_PL[cdKey(CDICT[k])]) CD_PL[cdKey(CDICT[k])] = k;
+});
+const cdEn = (s) => CD_EN[cdKey(s)] || "";
+const cdPl = (s) => CD_PL[cdKey(s)] || "";
+function LT(o, f) {
+  f = f || "title";
+  if (!o) return "";
+  const v = o[f] || "";
+  if (lang === "en") return o[f + "En"] || cdEn(v) || v;
+  if (!o[f + "En"] && !cdEn(v) && cdPl(v)) return cdPl(v);
+  return v;
+}
+const mealTxt = (d) => {
+  const v = state.meals[d] || "";
+  if (!v) return "";
+  return lang === "en" ? (state.mealsEn || {})[d] || cdEn(v) || v : v;
+};
+const enFld = (label, name, val, ph) => `<label class="f enF">${label}<input name="${name}" value="${esc(val || "")}" maxlength="100" data-en-of="${name.replace(/En$/, "")}" placeholder="${esc(ph || "")}"></label>`;
 const AV_TIERS = [
   { name: "Na start", cost: 0, items: ["🦊", "🐻", "🐼", "🐸", "🐱", "🐶", "🐰", "🐵"] },
   { name: "Zwierzaki", cost: 40, items: ["🦁", "🐯", "🐨", "🐷", "🐮", "🐧", "🦉", "🐢", "🐙", "🦔"] },
   { name: "Super", cost: 100, items: ["🦄", "🐲", "🦖", "🦕", "🐬", "🦈", "🦋", "🚀", "🤖", "⚽"] },
   { name: "Legendarne", cost: 250, items: ["👑", "🧙", "🦸", "🧜", "👽", "🐉", "🌈", "💎"] }
 ];
-const REWARD_ICONS = ["⭐", "🎬", "🍦", "🎮", "🍕", "🎨", "📱", "🧁", "🎁", "🛝", "🏊", "🎲", "📚", "💰"];
+const REWARD_ICONS = ["⭐", "🎬", "🍦", "🎮", "🍕", "🎨", "📱", "🧁", "🎁", "🎠", "🏊", "🎲", "📚", "💰"];
 const DEFAULTS = { homeName: "Nasz dom", leaveTime: "07:45", leaveWeekends: false, startPage: "dashboard", idleMinutes: 3, saverMinutes: 5, nightStart: "22:00", nightEnd: "06:30", parentPin: "", requireApproval: true, avatarPin: false, qrList: false, avPrices: {}, lang: "pl", lat: null, lon: null, locName: "" };
 function lastDays(n, days) {
   const out = [];
@@ -1451,13 +1921,13 @@ function sample() {
       { id: "rt1", name: tx("Poranek", "Morning"), person: "p3", when: "morning", days: wd, points: 20, log: {}, credited: cred, steps: [
         { id: "s1", icon: "🛏️", label: tx("Pościel łóżko", "Make bed") },
         { id: "s2", icon: "🥣", label: tx("Śniadanie", "Breakfast") },
-        { id: "s3", icon: "🪥", label: tx("Zęby", "Teeth") },
+        { id: "s3", icon: "🦷", label: tx("Zęby", "Teeth") },
         { id: "s4", icon: "👕", label: tx("Ubierz się", "Get dressed") },
         { id: "s5", icon: "🎒", label: tx("Plecak", "School bag") }
       ] },
       { id: "rt2", name: tx("Wieczór", "Evening"), person: "p3", when: "evening", days: all, points: 15, log: {}, credited: {}, steps: [
         { id: "s6", icon: "🛁", label: tx("Kąpiel", "Bath") },
-        { id: "s7", icon: "🪥", label: tx("Zęby", "Teeth") },
+        { id: "s7", icon: "🦷", label: tx("Zęby", "Teeth") },
         { id: "s8", icon: "🧸", label: tx("Zabawki", "Toys away") },
         { id: "s9", icon: "📖", label: tx("Czytanie", "Reading") }
       ] }
@@ -1471,6 +1941,8 @@ function sample() {
     catalog: []
   };
 }
+const EMOJI_FIX = { "🪥": "🦷", "🪣": "🧼", "🛝": "🎠", "🧃": "🥤", "🧊": "❄️", "🫖": "☕", "🫐": "🍇", "🫑": "🌶️", "🫓": "🥖", "🧈": "🧀", "🧄": "🧅", "🧇": "🥞" };
+const fixE = (e) => EMOJI_FIX[e] || e;
 function normalize(s) {
   if (!s || !Array.isArray(s.family) || !Array.isArray(s.events)) return sample();
   s.settings = Object.assign({}, DEFAULTS, s.settings || {});
@@ -1511,12 +1983,25 @@ function normalize(s) {
     return r;
   });
   s.meals = s.meals || {};
+  s.mealsEn = s.mealsEn || {};
   s.shopping = s.shopping || [];
   s.rewards = (s.rewards || []).map((r) => __spreadProps(__spreadValues({ emoji: "⭐" }, r), { cost: Number(r.cost) || 0 }));
   s.redemptions = s.redemptions || [];
   s.shopItems = s.shopItems || [];
   s.catalog = Array.isArray(s.catalog) ? s.catalog : [];
   s.bank = Array.isArray(s.bank) ? s.bank : BANK_DEFAULT();
+  s.routines.forEach((r) => r.steps.forEach((st) => {
+    st.icon = fixE(st.icon);
+  }));
+  s.bank.forEach((b) => {
+    b.emoji = fixE(b.emoji);
+  });
+  s.rewards.forEach((r) => {
+    r.emoji = fixE(r.emoji);
+  });
+  s.catalog.forEach((c) => {
+    if (c) c.e = fixE(c.e);
+  });
   return s;
 }
 let state;
@@ -1614,7 +2099,7 @@ function stable(v) {
   return "{" + Object.keys(v).sort().map((k) => JSON.stringify(k) + ":" + stable(v[k])).join(",") + "}";
 }
 function toRemote(s) {
-  const t = { settings: {}, meals: clean(s.meals) || {} }, base = Date.now() * 1e3;
+  const t = { settings: {}, meals: clean(s.meals) || {}, mealsEn: clean(s.mealsEn) || {} }, base = Date.now() * 1e3;
   for (const k of Object.keys(s.settings || {})) if (!LOCAL_KEYS.includes(k)) {
     const c = clean(s.settings[k]);
     if (c !== void 0) t.settings[k] = c;
@@ -1637,6 +2122,7 @@ function fromRemote(E) {
   });
   s.redemptions.reverse();
   s.meals = __spreadValues({}, E && E.meals || {});
+  s.mealsEn = __spreadValues({}, E && E.mealsEn || {});
   s.settings = __spreadValues({}, E && E.settings || {});
   LOCAL_KEYS.forEach((k) => {
     if (state && state.settings && state.settings[k] !== void 0) s.settings[k] = state.settings[k];
@@ -1669,6 +2155,7 @@ function diffTrees(L, E) {
   };
   cmp("settings/", L.settings, E.settings);
   cmp("meals/", L.meals, E.meals);
+  cmp("mealsEn/", L.mealsEn, E.mealsEn);
   COLS.forEach((c) => cmp(c + "/", L[c], E[c]));
   return u;
 }
@@ -2026,6 +2513,15 @@ const credit = (pid, pts) => {
   const p = state.family.find((x) => x.id === pid);
   if (p) p.points = Math.max(0, (p.points || 0) + pts);
 };
+const remN = (e) => {
+  if (e.remind === "none") return null;
+  if (e.remind !== void 0 && e.remind !== null && e.remind !== "") return Number(e.remind);
+  return e.notes ? 1 : null;
+};
+const remindersFor = (pid, d) => state.events.filter((e) => {
+  const n = remN(e);
+  return n !== null && addDays(d, n) === e.date && (e.remindWho || e.person) === pid;
+});
 const eventsOn = (d) => state.events.filter((e) => e.date === d).sort((a, b) => (a.start || "").localeCompare(b.start || ""));
 const weekDates = (s) => {
   const b = parseDate(s);
@@ -2243,9 +2739,9 @@ function weatherBits() {
 function tomorrowPrep() {
   const tm = tomorrow(), lines = [];
   eventsOn(tm).forEach((e) => {
-    if (e.notes) lines.push({ b: "📌", t: e.notes });
+    if (e.notes && e.remind !== "none") lines.push({ b: "🔔", t: LT(e, "notes") });
   });
-  state.family.concat([ANYONE]).forEach((p) => state.tasks.filter((t) => t.person === p.id && applies(t, tm) && !isRep(t) && !entry(t, tm)).forEach((t) => lines.push({ b: "✅", t: `${t.title} (${p.name})` })));
+  state.family.concat([ANYONE]).forEach((p) => state.tasks.filter((t) => t.person === p.id && applies(t, tm) && !isRep(t) && !entry(t, tm)).forEach((t) => lines.push({ b: "✅", t: `${LT(t)} (${p.name})` })));
   if (eventsOn(tm).some((e) => /\b(WF|PE)\b/i.test(e.title)) && !lines.some((l) => /strój|kit/i.test(l.t))) lines.push({ b: "👟", t: tx("Strój sportowy na WF", "PE kit") });
   const w = wxDay(tm);
   if (w && (/* @__PURE__ */ new Date()).getHours() >= 15) lines.push({ b: wxIcon(w.code)[0], t: `${tx("Jutro", "Tomorrow")} ${Math.round(w.min)}–${Math.round(w.max)}°. ${wear(w)}` });
@@ -2309,10 +2805,10 @@ function renderRibbon(d) {
   const blocks = ev.map((x) => {
     const p = person(x.e.person);
     const w = pct(x.en) - pct(x.s);
-    return `<button class="rbEv ${isT && x.en <= now ? "past" : ""} ${w < 4.5 ? "tiny" : ""}" style="left:${pct(x.s)}%;width:max(calc(${w}% - 3px),10px);top:${x.lane * LH}px;background:${p.color};color:${onColor(p.color)}" data-action="edit-event" data-id="${x.e.id}" title="${esc(x.e.start + " " + x.e.title + ", " + p.name)}"><b>${esc(x.e.title)}</b><small class="num">${esc(x.e.start)}${x.e.end ? "–" + esc(x.e.end) : ""}, ${esc(p.name)}</small></button>`;
+    return `<button class="rbEv ${isT && x.en <= now ? "past" : ""} ${w < 4.5 ? "tiny" : ""}" style="left:${pct(x.s)}%;width:max(calc(${w}% - 3px),10px);top:${x.lane * LH}px;background:${p.color};color:${onColor(p.color)}" data-action="edit-event" data-id="${x.e.id}" title="${esc(x.e.start + " " + x.e.title + ", " + p.name)}"><b>${esc(LT(x.e))}</b><small class="num">${esc(x.e.start)}${x.e.end ? "–" + esc(x.e.end) : ""}, ${esc(p.name)}</small></button>`;
   }).join("");
   const lv = isT && isLeaveDay(d) ? toMin(state.settings.leaveTime) : null;
-  return `<section class="ribbon" aria-label="Plan dnia na osi czasu">${untimed.length ? `<div class="rbAllDay">${untimed.map((e) => `<button class="chip" data-action="edit-event" data-id="${e.id}"><span class="avatar" style="width:12px;height:12px;background:${person(e.person).color}"></span>${esc(e.title)}</button>`).join("")}</div>` : ""}
+  return `<section class="ribbon" aria-label="Plan dnia na osi czasu">${untimed.length ? `<div class="rbAllDay">${untimed.map((e) => `<button class="chip" data-action="edit-event" data-id="${e.id}"><span class="avatar" style="width:12px;height:12px;background:${person(e.person).color}"></span>${esc(LT(e))}</button>`).join("")}</div>` : ""}
   <div class="rbTrack" style="height:${H}px"><div class="rbGrid">${hours.map((h) => `<i style="left:${pct(h * 60)}%"></i>`).join("")}</div>
   ${isT && now > S ? `<div class="rbPast" style="width:${pct(now)}%"></div>` : ""}
   ${lv !== null && lv > S && lv < E && lv > now ? `<div class="rbLeave" style="left:${pct(lv)}%"><span>Wyjście ${esc(state.settings.leaveTime)}</span></div>` : ""}
@@ -2323,14 +2819,14 @@ function renderRibbon(d) {
 function goalHtml(p) {
   const g = state.rewards.find((r) => r.id === p.goal);
   if (!g) return "";
-  if (p.points >= g.cost) return `<button class="goalReady" data-action="redeem" data-p="${p.id}" data-r="${g.id}">${g.emoji} Odbierz: ${esc(g.title)}</button>`;
-  return `<div class="goal"><div class="gt"><span>${g.emoji} ${esc(g.title)}</span><span class="num">${p.points}/${g.cost}</span></div><div class="goalBar"><i style="width:${Math.min(100, p.points / g.cost * 100)}%"></i></div></div>`;
+  if (p.points >= g.cost) return `<button class="goalReady" data-action="redeem" data-p="${p.id}" data-r="${g.id}">${g.emoji} Odbierz: ${esc(LT(g))}</button>`;
+  return `<div class="goal"><div class="gt"><span>${g.emoji} ${esc(LT(g))}</span><span class="num">${p.points}/${g.cost}</span></div><div class="goalBar"><i style="width:${Math.min(100, p.points / g.cost * 100)}%"></i></div></div>`;
 }
 function routineBlock(r) {
   const s = streak(r), done = !!r.credited[today()];
-  return `<div class="routine"><div class="routineHead"><span>${esc(r.name)}${done ? ' <span class="ok">✓</span>' : ""}</span><span class="num">${s ? `🔥 ${s}` : ""}</span></div><div class="steps">${r.steps.map((st) => {
+  return `<div class="routine"><div class="routineHead"><span>${esc(LT(r, "name"))}${done ? ' <span class="ok">✓</span>' : ""}</span><span class="num">${s ? `🔥 ${s}` : ""}</span></div><div class="steps">${r.steps.map((st) => {
     const ok = stepDone(r, st.id);
-    return `<button class="step ${ok ? "done" : ""}" data-action="step" data-r="${r.id}" data-s="${st.id}" aria-pressed="${ok}" aria-label="${esc(st.label)}"><span class="emo">${st.icon}</span><small>${esc(st.label)}</small></button>`;
+    return `<button class="step ${ok ? "done" : ""}" data-action="step" data-r="${r.id}" data-s="${st.id}" aria-pressed="${ok}" aria-label="${esc(LT(st, "label"))}"><span class="emo">${st.icon}</span><small>${esc(LT(st, "label"))}</small></button>`;
   }).join("")}</div></div>`;
 }
 function taskBtn(t, d) {
@@ -2339,7 +2835,7 @@ function taskBtn(t, d) {
   if (late) sub = `zaległe od ${niceDate(t.due)}`;
   else if (e && e.status === "pending") sub = `czeka na rodzica${t.person === "anyone" ? `, ${person(e.by).name}` : ""}`;
   else if (e && t.person === "anyone") sub = `zrobione przez: ${person(e.by).name}`;
-  return `<button class="task ${cls} ${late ? "late" : ""}" data-action="${t.person === "anyone" ? "task-anyone" : "task"}" data-id="${t.id}" data-d="${d}" aria-pressed="${!!e}"><span class="tick">${e && e.status === "pending" ? icon("clock", 17) : icon("tick", 18)}</span><span class="t"><b>${esc(t.title)}</b>${sub ? `<small>${esc(sub)}</small>` : ""}</span><span class="pts num">+${t.points}</span></button>`;
+  return `<button class="task ${cls} ${late ? "late" : ""}" data-action="${t.person === "anyone" ? "task-anyone" : "task"}" data-id="${t.id}" data-d="${d}" aria-pressed="${!!e}"><span class="tick">${e && e.status === "pending" ? icon("clock", 17) : icon("tick", 18)}</span><span class="t"><b>${esc(LT(t))}</b>${sub ? `<small>${esc(sub)}</small>` : ""}</span><span class="pts num">+${t.points}</span></button>`;
 }
 function personCol(p, d, withRoutines = true) {
   const pc = p.color, on = onColor(pc);
@@ -2359,43 +2855,83 @@ function head(title, sub, actions = "") {
   return `<header class="head"><div><h1>${title}</h1>${sub ? `<p>${sub}</p>` : ""}</div><div class="actions">${actions}</div></header>`;
 }
 const addBtns = () => `<button class="btn pri" data-action="new-event">${icon("plus", 18)} Wydarzenie</button><button class="btn" data-action="new-task">${icon("plus", 18)} Zadanie</button>`;
+let panelStage = "clock", panelGroup = "kids";
+function remTile(e, d) {
+  const n = remN(e), dn = e.remDone === d, when = n === 0 ? tx("Dziś", "Today") : n === 1 ? tx("Jutro", "Tomorrow") : tx("Pojutrze", "In 2 days");
+  return `<button class="task rem ${dn ? "done" : ""}" data-action="rem-done" data-id="${e.id}" data-d="${d}" aria-pressed="${dn}"><span class="tick">${dn ? icon("tick", 18) : icon("bell", 16)}</span><span class="t"><b>${esc(LT(e, "notes") || LT(e))}</b><small>${when}: ${esc(LT(e))}${e.start ? " " + esc(e.start) : ""}</small></span></button>`;
+}
+function personRow(p, d) {
+  const pc = p.color, on = onColor(pc), isAny = p.id === "anyone";
+  const rem = isAny ? "" : remindersFor(p.id, d).map((e) => remTile(e, d)).join("");
+  const rt = activeRoutines(p.id).map(routineBlock).join("");
+  const tk = tasksFor(p.id, d).map((t) => taskBtn(t, d)).join("");
+  return `<section class="prow" data-drop="${p.id}" style="--pc:${pc};--on:${on};--tint:${mix(pc, "#FFFFFF", 0.84)};--barbg:${on === "#FFFFFF" ? "rgba(255,255,255,.32)" : "rgba(22,37,46,.16)"}">
+    <div class="prowHead"><div class="top">${isAny ? `<span class="avatar">${initial(p)}</span><span class="name">${esc(p.name)}</span>` : `<button class="avatar" data-action="me" data-p="${p.id}" aria-label="${tx("Mój widok", "My view")}: ${esc(p.name)}">${initial(p)}</button><div class="nm"><button class="name" data-action="me" data-p="${p.id}">${esc(p.name)}</button><span class="xp num">${p.points} XP</span></div>`}</div>${isAny ? `<div class="sub">${tx("Kto pierwszy, ten zbiera punkty", "First come, first served")}</div>` : goalHtml(p)}</div>
+    <div class="prowBody">${rem + rt + tk || `<div class="free">${isAny ? tx("Brak wspólnych zadań na dziś", "No shared jobs today") : tx("Na dziś wolne 🎉", "Free today 🎉")}</div>`}</div></section>`;
+}
+function panelPeople(d) {
+  const kids = state.family.filter((p) => p.role !== "parent"), pars = state.family.filter((p) => p.role === "parent");
+  const anyOn = state.tasks.some((t) => t.person === "anyone" && applies(t, d));
+  let list;
+  if (!pars.length || !kids.length) list = state.family.concat(anyOn ? [ANYONE] : []);
+  else list = panelGroup === "parents" ? pars : kids.concat(anyOn ? [ANYONE] : []);
+  return list.map((p) => personRow(p, d)).join("");
+}
+function stageClock() {
+  const L = leaveInfo(), W = weatherBits(), c = wx && wx.cur ? wxIcon(wx.cur.code, wx.cur.day) : null;
+  const days = wx && wx.days ? wx.days.filter((x) => x.d >= today()).slice(0, 4) : [];
+  return `<section class="stClock"><div class="stTime"><div class="bigClock num">${hm()}</div><div class="stDate">${esc(longDate())}</div>${L.on ? `<div class="leavePill ${L.tone}"><span>${tx("Wyjście za", "Leaving in")}</span><b class="num">${L.label}</b></div>` : `<div class="stLeave">${esc(L.text)}</div>`}</div>
+  <div class="stWx">${c ? `<div class="wxNow"><span class="wxE">${c[0]}</span><div><b class="num">${Math.round(wx.cur.t)}°</b><small>${esc(c[1])}</small></div></div>${W.wearTxt ? `<div class="wear">${esc(W.wearTxt)}</div>` : ""}<div class="wxDays">${days.map((x, i) => `<div class="wxD"><small>${i === 0 ? tx("Dziś", "Today") : i === 1 ? tx("Jutro", "Tomorrow") : esc(DSHORT[dow(x.d)])}</small><span>${wxIcon(x.code)[0]}</span><b class="num">${Math.round(x.max)}°</b><small class="num">${Math.round(x.min)}°${(x.rain || 0) >= 30 ? ` · ${x.rain}%` : ""}</small></div>`).join("")}</div>` : `<div class="wxNone">${esc(W.line || tx("Ustaw miejscowość w ustawieniach, żeby widzieć pogodę", "Set your town in settings to see the weather"))}</div>`}</div></section>`;
+}
+function stageWeek() {
+  const ds = Array.from({ length: 7 }, (_, i) => addDays(today(), i));
+  return `<section class="stWeek">${ds.map((d, i) => {
+    const ev = eventsOn(d), m = mealTxt(d);
+    return `<div class="swDay ${i === 0 ? "today" : ""}"><div class="swH"><span>${i === 0 ? tx("Dziś", "Today") : i === 1 ? tx("Jutro", "Tomorrow") : esc(DSHORT[dow(d)])}</span><b class="num">${parseDate(d).getDate()}</b></div>${ev.slice(0, 3).map((e) => `<button class="swEv" style="--ec:${person(e.person).color}" data-action="edit-event" data-id="${e.id}"><small class="num">${esc(e.start || "")}</small> ${esc(LT(e))}</button>`).join("")}${ev.length > 3 ? `<div class="xs faint">+${ev.length - 3}</div>` : ""}${m ? `<div class="swMeal">🍽 ${esc(m)}</div>` : ""}</div>`;
+  }).join("")}</section>`;
+}
 function renderPanel() {
   const mode = panelMode();
   panelShown = mode;
-  if (mode !== "live") bankOpen = false;
+  if (mode !== "live") {
+    panelStage = "clock";
+    panelGroup = "kids";
+  }
   if (mode === "night") return renderNight();
   if (mode === "saver") return renderSaver();
-  const t = today(), L = leaveInfo(), W = weatherBits(), pend = pendingItems().length;
+  const t = today(), W = weatherBits(), pend = pendingItems().length;
   const prep = tomorrowPrep(), tEv = eventsOn(tomorrow()), shop = shoppingOpen();
-  return `<div class="panel">
+  const hasPar = state.family.some((p) => p.role === "parent") && state.family.some((p) => p.role !== "parent");
+  const tabs = [["clock", "sun", tx("Czas i pogoda", "Time & weather")], ["day", "bars", tx("Plan dnia", "Today")], ["week", "calendar", tx("Tydzień", "Week")], ["bank", "check", tx("Bank zadań", "Task bank")]];
+  const wxS = wx && wx.cur ? `${wxIcon(wx.cur.code, wx.cur.day)[0]} ${Math.round(wx.cur.t)}°` : "";
+  const stage = panelStage === "day" ? renderRibbon(t) : panelStage === "week" ? stageWeek() : panelStage === "bank" ? renderBank() : stageClock();
+  return `<div class="panel p2">
   <header class="pHead">
-    <div class="pClock num">${hm()}</div>
-    <div style="min-width:0"><div class="pDate">${esc(longDate())}</div><div class="pWx">${W.line ? `<span>${esc(W.line)}</span>` : state.settings.lat == null ? "<span>Ustaw miejscowość w ustawieniach, żeby widzieć pogodę</span>" : ""}${W.wearTxt ? `<span class="wear">${esc(W.wearTxt)}</span>` : ""}</div></div>
+    ${panelStage === "clock" ? "" : `<div class="pMini"><b class="num">${hm()}</b><span>${esc(wxS)}</span></div>`}
+    <div class="seg stTabs" role="tablist">${tabs.map(([k, ic, n]) => `<button role="tab" aria-selected="${panelStage === k}" class="${panelStage === k ? "on" : ""}" data-action="stage" data-k="${k}">${icon(ic, 18)}<span class="lbl">${n}</span></button>`).join("")}</div>
     <div class="spacer"></div>
-    ${L.on ? `<div class="leavePill ${L.tone}"><span>Wyjście za</span><b class="num">${L.label}</b></div>` : `<div class="leavePill off">${esc(L.text)}</div>`}
-    ${pend ? `<button class="btn yolk" data-action="approvals">${icon("bell", 18)}<span class="lbl">${pend} do zatwierdzenia</span><span class="num" style="display:none">${pend}</span></button>` : ""}
+    ${hasPar ? `<div class="seg grpSeg">${[["kids", tx("Dzieci", "Kids")], ["parents", tx("Rodzice", "Parents")]].map(([k, n]) => `<button class="${panelGroup === k ? "on" : ""}" data-action="group" data-k="${k}" aria-pressed="${panelGroup === k}">${n}</button>`).join("")}</div>` : ""}
+    ${pend ? `<button class="btn yolk icon" data-action="approvals" aria-label="${pend} ${tx("do zatwierdzenia", "to approve")}">${icon("bell", 18)}<span class="badgeN num">${pend}</span></button>` : ""}
     <span class="syncBadge" id="syncBadgeP" hidden></span>
-    <button class="btn ${bankOpen ? "dark" : ""}" data-action="bank-toggle" aria-pressed="${bankOpen}">${icon("check", 18)}<span class="lbl">Bank zadań</span></button>
     <button class="btn icon" data-action="new-event" aria-label="Dodaj wydarzenie">${icon("plus")}</button>
     <button class="btn icon" data-action="fullscreen" aria-label="Pełny ekran">${icon("expand")}</button>
-    <button class="btn dark" data-action="exit-panel">${state.settings.parentPin ? icon("lock", 18) : icon("menu", 18)}<span class="lbl">Aplikacja</span></button>
+    <button class="btn dark icon" data-action="exit-panel" aria-label="Aplikacja">${state.settings.parentPin ? icon("lock", 18) : icon("menu", 18)}</button>
   </header>
-  ${bankOpen ? renderBank() : renderRibbon(t)}
-  <div class="pMain"><div class="people">${peopleCols(t)}</div>
+  <div class="pGrid"><div class="pLeft"><div class="pStage st-${panelStage}">${stage}</div><div class="prows">${panelPeople(t)}</div></div>
     <aside class="side">
-      <div class="sideBox"><h3>Na jutro <span>${tEv.length ? `pierwsze o ${esc(tEv[0].start || "—")}` : "bez wydarzeń"}</span></h3>${prep.length ? prep.map((l) => `<div class="prep"><span class="b">${l.b}</span><span>${esc(l.t)}</span></div>`).join("") : '<div class="faint sm">Nic specjalnego do przygotowania</div>'}</div>
-      <div class="sideBox"><h3>Obiad</h3><button class="mealBtn" data-action="edit-meal" data-date="${t}">${esc(state.meals[t] || "Dotknij, żeby wpisać")}</button></div>
+      <div class="sideBox"><h3>Na jutro <span>${tEv.length ? `${tx("pierwsze o", "first at")} ${esc(tEv[0].start || "—")}` : tx("bez wydarzeń", "no events")}</span></h3>${prep.length ? prep.map((l) => `<div class="prep"><span class="b">${l.b}</span><span>${esc(l.t)}</span></div>`).join("") : '<div class="faint sm">Nic specjalnego do przygotowania</div>'}</div>
+      <div class="sideBox"><h3>Obiad</h3><button class="mealBtn" data-action="edit-meal" data-date="${t}">${esc(mealTxt(t) || "Dotknij, żeby wpisać")}</button></div>
       <div class="sideBox"><h3>Zakupy <span>${shop.length ? `${shop.length} do kupienia` : "wszystko kupione"}</span>${state.settings.qrList && shop.length ? `<button class="btn sm" data-action="list-qr" aria-label="${tx("Kod QR listy zakupów", "Shopping list QR code")}">QR</button>` : ""}</h3>${shop.slice(0, 6).map((s) => `<button class="shopItem" data-action="shop" data-id="${s.id}"><span class="box"></span>${(shopInfo(s) || {}).e || ""} ${esc(shopTitle(s))}</button>`).join("")}${shop.length > 6 ? `<div class="xs faint" style="padding-top:6px">${lang === "en" ? `and ${shop.length - 6} more` : `i jeszcze ${shop.length - 6}`}</div>` : ""}<button class="btn sm" style="margin-top:8px;width:100%" data-action="new-shopping">${icon("plus", 16)} Dopisz</button></div>
     </aside></div></div>`;
 }
 function renderNight() {
   const tEv = eventsOn(tomorrow()), f = tEv[0], prep = tomorrowPrep().length, [l, tp] = drift();
-  return `<div class="night" aria-label="Tryb nocny"><div class="drift" style="left:${l}%;top:${tp}%"><div class="big num">${hm()}</div><div class="d">${esc(longDate())}</div><div class="nx">${f ? `Jutro: <b>${esc(f.start || "")} ${esc(f.title)}</b>, ${esc(person(f.person).name)}` : "Jutro bez wydarzeń w kalendarzu"}${prep ? `<br>Do przygotowania: ${prep}` : ""}${isLeaveDay(tomorrow()) ? `<br>Wyjście o ${esc(state.settings.leaveTime)}` : ""}</div></div><div class="hint">Dotknij ekranu, żeby wybudzić</div></div>`;
+  return `<div class="night" aria-label="Tryb nocny"><div class="drift" style="left:${l}%;top:${tp}%"><div class="big num">${hm()}</div><div class="d">${esc(longDate())}</div><div class="nx">${f ? `Jutro: <b>${esc(f.start || "")} ${esc(LT(f))}</b>, ${esc(person(f.person).name)}` : "Jutro bez wydarzeń w kalendarzu"}${prep ? `<br>Do przygotowania: ${prep}` : ""}${isLeaveDay(tomorrow()) ? `<br>Wyjście o ${esc(state.settings.leaveTime)}` : ""}</div></div><div class="hint">Dotknij ekranu, żeby wybudzić</div></div>`;
 }
 function renderSaver() {
   const ph = photos.length ? photos[slide % photos.length] : null, [l, tp] = drift(), W = weatherBits();
   const now = hm(), next = eventsOn(today()).find((e) => (e.end || e.start || "") > now);
-  return `<div class="saver">${ph ? `<img class="saverImg" src="${ph}" alt="">` : ""}<div class="drift" style="left:${l}%;top:${tp}%"><div class="big num">${now}</div><div class="d">${esc(longDate())}</div><div class="nx">${next ? `${next.start <= now ? tx("Teraz", "Now") : tx("Następne", "Next")}: ${esc(next.start)} ${esc(next.title)}` : "Na dziś koniec planów"}${W.line ? `<br>${esc(W.line)}` : ""}</div></div><div class="hint">Dotknij ekranu, żeby wrócić do panelu</div></div>`;
+  return `<div class="saver">${ph ? `<img class="saverImg" src="${ph}" alt="">` : ""}<div class="drift" style="left:${l}%;top:${tp}%"><div class="big num">${now}</div><div class="d">${esc(longDate())}</div><div class="nx">${next ? `${next.start <= now ? tx("Teraz", "Now") : tx("Następne", "Next")}: ${esc(next.start)} ${esc(LT(next))}` : "Na dziś koniec planów"}${W.line ? `<br>${esc(W.line)}` : ""}</div></div><div class="hint">Dotknij ekranu, żeby wrócić do panelu</div></div>`;
 }
 function renderDashboard() {
   const W = weatherBits(), prep = tomorrowPrep(), conf = conflictList(), pend = pendingItems();
@@ -2406,7 +2942,7 @@ function renderDashboard() {
     <section class="sect"><div class="sectHead"><h2>Ten tydzień</h2><div class="actions"><button class="btn icon sm" data-action="prev-week" aria-label="Poprzedni tydzień">${icon("left", 18)}</button><button class="btn sm" data-action="today-week">Dziś</button><button class="btn icon sm" data-action="next-week" aria-label="Następny tydzień">${icon("right", 18)}</button></div></div>
     <div class="wkStrip">${wk.map((d) => {
     const ev = eventsOn(d);
-    return `<button class="dbox ${d === today() ? "today" : ""}" data-action="choose-day" data-date="${d}"><div class="dh"><span class="dn">${DSHORT[dow(d)]}</span><span class="dd num">${parseDate(d).getDate()}</span></div>${ev.slice(0, 3).map((e) => `<div class="ev" style="--ec:${person(e.person).color}"><b>${esc(e.title)}</b><small class="num">${esc(e.start || "cały dzień")}</small></div>`).join("")}${ev.length > 3 ? `<div class="faint xs">i jeszcze ${ev.length - 3}</div>` : ""}${state.meals[d] ? `<div class="meal">🍽 ${esc(state.meals[d])}</div>` : ""}</button>`;
+    return `<button class="dbox ${d === today() ? "today" : ""}" data-action="choose-day" data-date="${d}"><div class="dh"><span class="dn">${DSHORT[dow(d)]}</span> <span class="dd num">${parseDate(d).getDate()}</span></div>${ev.slice(0, 3).map((e) => `<div class="ev" style="--ec:${person(e.person).color}"><b>${esc(LT(e))}</b><small class="num">${esc(e.start || "cały dzień")}</small></div>`).join("")}${ev.length > 3 ? `<div class="faint xs">i jeszcze ${ev.length - 3}</div>` : ""}${state.meals[d] ? `<div class="meal">🍽 ${esc(mealTxt(d))}</div>` : ""}</button>`;
   }).join("")}</div></section>
     <section class="sect"><div class="sectHead"><h2>Zadania na dziś</h2><button class="btn sm" data-page="tasks">Wszystkie zadania</button></div><div class="rows">${state.family.map((p) => {
     const l = tasksFor(p.id, today()), dn = l.filter((t) => entry(t, today())).length, rt = state.routines.filter((r) => r.person === p.id && routineToday(r));
@@ -2417,10 +2953,10 @@ function renderDashboard() {
   </div><div class="stack">
     ${pend.length ? `<section class="sect" style="background:var(--yolk-soft)"><div class="sectHead"><h2>Do zatwierdzenia</h2><button class="btn yolk sm" data-action="approvals">Przejrzyj (${pend.length})</button></div><div class="sm muted">Dzieci odhaczyły zadania. Punkty trafią na konto po zatwierdzeniu.</div></section>` : ""}
     <section class="sect"><h2>Na jutro</h2>${prep.length ? `<div class="rows">${prep.map((l) => `<div class="row"><span style="font-size:20px">${l.b}</span><div class="grow">${esc(l.t)}</div></div>`).join("")}</div>` : '<div class="empty">Na jutro nie trzeba niczego szykować</div>'}</section>
-    <section class="sect"><h2>Nakładające się wydarzenia</h2>${conf.length ? `<div class="rows">${conf.slice(0, 4).map((c) => `<div class="row"><div class="grow"><b>${esc(DFULL[dow(c.d)])}, ${esc(niceDate(c.d))}</b><small>${esc(c.a.start)} ${esc(c.a.title)} ${tx("i", "and")} ${esc(c.b.start)} ${esc(c.b.title)}</small></div></div>`).join("")}</div>` : '<div class="empty">W tym tygodniu nic się nie nakłada</div>'}</section>
+    <section class="sect"><h2>Nakładające się wydarzenia</h2>${conf.length ? `<div class="rows">${conf.slice(0, 4).map((c) => `<div class="row"><div class="grow"><b>${esc(DFULL[dow(c.d)])}, ${esc(niceDate(c.d))}</b><small>${esc(c.a.start)} ${esc(LT(c.a))} ${tx("i", "and")} ${esc(c.b.start)} ${esc(LT(c.b))}</small></div></div>`).join("")}</div>` : '<div class="empty">W tym tygodniu nic się nie nakłada</div>'}</section>
     <section class="sect"><div class="sectHead"><h2>Obiady</h2><button class="btn sm" data-page="meals">Plan posiłków</button></div><div class="rows">${[0, 1, 2, 3].map((i) => {
     const d = addDays(today(), i);
-    return `<button class="row" data-action="edit-meal" data-date="${d}"><div class="grow"><small>${i === 0 ? "Dziś" : i === 1 ? "Jutro" : esc(DFULL[dow(d)])}</small><b>${esc(state.meals[d] || "Nie zaplanowano")}</b></div>${icon("edit", 18)}</button>`;
+    return `<button class="row" data-action="edit-meal" data-date="${d}"><div class="grow"><small>${i === 0 ? "Dziś" : i === 1 ? "Jutro" : esc(DFULL[dow(d)])}</small><b>${esc(mealTxt(d) || "Nie zaplanowano")}</b></div>${icon("edit", 18)}</button>`;
   }).join("")}</div></section>
   </div></div></div>`;
 }
@@ -2431,7 +2967,7 @@ function renderWeek() {
     const h = j + 6;
     return `<div class="wkTime num">${pad(h)}:00</div>${wk.map((d) => `<div class="wkCell" data-action="add-hour" data-date="${d}" data-hour="${pad(h)}:00">${eventsOn(d).filter((e) => e.start && Number(e.start.slice(0, 2)) === h).map((e) => {
       const c = person(e.person).color;
-      return `<button class="wkEv" style="--ec:${c};--evt:${mix(c, "#FFFFFF", 0.82)}" data-action="edit-event" data-id="${e.id}"><b class="num">${esc(e.start)}</b> ${esc(e.title)}</button>`;
+      return `<button class="wkEv" style="--ec:${c};--evt:${mix(c, "#FFFFFF", 0.82)}" data-action="edit-event" data-id="${e.id}"><b class="num">${esc(e.start)}</b> ${esc(LT(e))}</button>`;
     }).join("")}</div>`).join("")}`;
   }).join("")}</div></div>`;
 }
@@ -2439,10 +2975,10 @@ function renderDay() {
   const ev = eventsOn(selected), isT = selected === today();
   return head(`${esc(DFULL[dow(selected)])}, ${esc(niceDate(selected))}`, isT ? "Dziś" : "", `<button class="btn icon" data-action="prev-day" aria-label="Dzień wcześniej">${icon("left")}</button><button class="btn" data-page="week">Tydzień</button><button class="btn icon" data-action="next-day" aria-label="Dzień później">${icon("right")}</button><button class="btn pri" data-action="new-event-day">${icon("plus", 18)} Wydarzenie</button>`) + `<div class="stack">${renderRibbon(selected)}<div class="cols"><section class="sect"><h2>Wydarzenia</h2>${ev.length ? `<div class="rows">${ev.map((e) => {
     const p = person(e.person);
-    return `<button class="row" data-action="edit-event" data-id="${e.id}"><span class="num" style="font-weight:600;width:56px">${esc(e.start || "—")}</span><span class="avatar" style="width:10px;height:38px;border-radius:5px;background:${p.color}"></span><div class="grow"><b>${esc(e.title)}</b><small>${esc([p.name, e.end ? tx("do ", "until ") + e.end : "", e.location, e.notes].filter(Boolean).join(", "))}</small></div>${icon("edit", 18)}</button>`;
+    return `<button class="row" data-action="edit-event" data-id="${e.id}"><span class="num" style="font-weight:600;width:56px">${esc(e.start || "—")}</span><span class="avatar" style="width:10px;height:38px;border-radius:5px;background:${p.color}"></span><div class="grow"><b>${esc(LT(e))}</b><small>${esc([p.name, e.end ? tx("do ", "until ") + e.end : "", e.location, e.notes].filter(Boolean).join(", "))}</small></div>${icon("edit", 18)}</button>`;
   }).join("")}</div>` : '<div class="empty">Ten dzień jest wolny. Dodaj wydarzenie przyciskiem u góry.</div>'}</section>
   <div class="stack"><section class="sect"><h2>Zadania tego dnia</h2><div class="rows">${state.family.concat([ANYONE]).map((p) => tasksFor(p.id, selected).map((t) => taskBtn(t, selected)).join("")).join("") || '<div class="empty">Brak zadań na ten dzień</div>'}</div></section>
-  <section class="sect"><h2>Obiad</h2><button class="row" data-action="edit-meal" data-date="${selected}"><div class="grow"><b>${esc(state.meals[selected] || "Nie zaplanowano")}</b></div>${icon("edit", 18)}</button></section></div></div></div>`;
+  <section class="sect"><h2>Obiad</h2><button class="row" data-action="edit-meal" data-date="${selected}"><div class="grow"><b>${esc(mealTxt(selected) || "Nie zaplanowano")}</b></div>${icon("edit", 18)}</button></section></div></div></div>`;
 }
 function renderTasks() {
   const pend = pendingItems().length;
@@ -2458,32 +2994,32 @@ function renderTasks() {
     body = `<section class="sect"><div class="sectHead"><div class="seg">${[["all", "Wszyscy"]].concat(state.family.map((p) => [p.id, p.name]), [["anyone", "Ktokolwiek"]]).map(([id, n]) => `<button class="${taskFilter === id ? "on" : ""}" data-action="filter" data-id="${id}">${esc(n)}</button>`).join("")}</div></div>
     ${list.length ? `<div class="rows">${list.map((t) => {
       const p = person(t.person);
-      return `<div class="row">${avatar(p)}<div class="grow"><b>${esc(t.title)}</b><small>${esc(p.name)}, ${isRep(t) ? `${icon("repeat", 13)} ${esc(daysLabel(t.days))}` : `${tx("jednorazowo", "one-off")}, ${esc(niceDate(t.due))}`}, ${t.points} XP</small></div><button class="btn icon sm" data-action="edit-task" data-id="${t.id}" aria-label="Edytuj">${icon("edit", 17)}</button></div>`;
+      return `<div class="row">${avatar(p)}<div class="grow"><b>${esc(LT(t))}</b><small>${esc(p.name)}, ${isRep(t) ? `${icon("repeat", 13)} ${esc(daysLabel(t.days))}` : `${tx("jednorazowo", "one-off")}, ${esc(niceDate(t.due))}`}, ${t.points} XP</small></div><button class="btn icon sm" data-action="edit-task" data-id="${t.id}" aria-label="Edytuj">${icon("edit", 17)}</button></div>`;
     }).join("")}</div>` : '<div class="empty">Brak zadań. Dodaj pierwsze przyciskiem u góry.</div>'}</section>`;
   } else if (taskTab === "routines") {
     body = `<section class="sect">${state.routines.length ? `<div class="rows">${state.routines.map((r) => {
       const p = person(r.person), s = streak(r);
-      return `<div class="row">${avatar(p)}<div class="grow"><b>${esc(r.name)}</b><small>${esc(p.name)}, ${r.when === "morning" ? tx("rano (do 12:00)", "mornings (until 12:00)") : r.when === "evening" ? tx("wieczorem (od 16:00)", "evenings (from 16:00)") : tx("przez cały dzień", "all day")}, ${esc(daysLabel(r.days))}, ${r.points} XP${s ? `, 🔥 ${s} ${tx("z rzędu", "in a row")}` : ""}</small><div class="stepPrev" style="margin-top:6px">${r.steps.map((x) => `<span title="${esc(x.label)}">${x.icon}</span>`).join("")}</div></div><button class="btn icon sm" data-action="edit-routine" data-id="${r.id}" aria-label="Edytuj">${icon("edit", 17)}</button></div>`;
+      return `<div class="row">${avatar(p)}<div class="grow"><b>${esc(LT(r, "name"))}</b><small>${esc(p.name)}, ${r.when === "morning" ? tx("rano (do 12:00)", "mornings (until 12:00)") : r.when === "evening" ? tx("wieczorem (od 16:00)", "evenings (from 16:00)") : tx("przez cały dzień", "all day")}, ${esc(daysLabel(r.days))}, ${r.points} XP${s ? `, 🔥 ${s} ${tx("z rzędu", "in a row")}` : ""}</small><div class="stepPrev" style="margin-top:6px">${r.steps.map((x) => `<span title="${esc(LT(x, "label"))}">${x.icon}</span>`).join("")}</div></div><button class="btn icon sm" data-action="edit-routine" data-id="${r.id}" aria-label="Edytuj">${icon("edit", 17)}</button></div>`;
     }).join("")}</div>` : '<div class="empty">Rutyna to stała lista kroków, np. poranek: łóżko, śniadanie, zęby, plecak. Dzieci odhaczają obrazki, a za całość dostają punkty.</div>'}</section>`;
   } else if (taskTab === "shop") {
     body = `<div class="cols even"><section class="sect"><h2>Kto wybiera awatar?</h2><p class="sm muted" style="margin:-6px 0 12px">Dzieci kupują awatary za punkty. Rodzice mają wszystkie za darmo. Na panelu wystarczy dotknąć swojego awatara.</p><div class="whoGrid">${state.family.map((p) => `<button class="whoBtn" data-action="avatars" data-p="${p.id}">${avatar(p, "lg")}${esc(p.name)}<small class="faint num">${p.role === "parent" ? "wszystkie za darmo" : p.points + " XP"}</small></button>`).join("")}</div></section>
-    <section class="sect"><div class="sectHead" style="margin-bottom:6px"><h2>Ceny</h2><button class="btn sm" data-action="open-prices">Zmień ceny</button></div><p class="sm muted" style="margin:0 0 18px">Ceny awatarów, nagród i punkty za zadania z banku ustawisz w jednym miejscu: Ustawienia, sekcja Cennik.</p><div class="sectHead"><h2>Awatary od rodziców</h2><button class="btn sm" data-action="new-shopitem">${icon("plus", 16)} Dodaj zdjęcie</button></div><p class="sm muted" style="margin:-4px 0 12px">Wgraj zdjęcie albo rysunek i ustal cenę. Pojawi się w sklepie każdego dziecka.</p>${state.shopItems.length ? `<div class="rows">${state.shopItems.map((it) => {
+    <section class="sect"><div class="sectHead" style="margin-bottom:6px"><h2>Ceny</h2><button class="btn sm" data-action="open-prices">Zmień ceny</button></div><p class="sm muted" style="margin:0 0 18px">Ceny awatarów, nagród i punkty za zadania z banku ustawisz w jednym miejscu: Ustawienia, sekcja Cennik.</p><div class="sectHead"><h2>Awatary od rodziców</h2><button class="btn sm" data-action="new-shopitem">${icon("plus", 16)} ${tx("Dodaj avatar", "Add avatar")}</button></div><p class="sm muted" style="margin:-4px 0 12px">${tx("Wgraj zdjęcie, rysunek albo ruchomy GIF i ustal cenę. Pojawi się w sklepie każdego dziecka.", "Upload a photo, drawing or animated GIF and set a price. It shows up in every child’s shop.")}</p>${state.shopItems.length ? `<div class="rows">${state.shopItems.map((it) => {
       const n = state.family.filter((p) => p.owned.includes("img:" + it.id)).length;
       return `<div class="row"><span class="avatar lg"><img src="${it.img}" alt=""></span><div class="grow"><b>${esc(it.name)}</b><small class="num">${it.cost ? it.cost + " XP" : "za darmo"}${n ? `, kupione: ${n}` : ""}</small></div><button class="btn icon sm" data-action="edit-shopitem" data-id="${it.id}" aria-label="Edytuj">${icon("edit", 17)}</button></div>`;
     }).join("")}</div>` : '<div class="empty">Na razie są tylko wbudowane awatary. Dodaj zdjęcie zwierzaka, ulubionej zabawki albo rysunek dziecka.</div>'}</section></div>`;
   } else {
-    body = `<div class="cols even"><section class="sect"><h2>Nagrody</h2>${state.rewards.length ? `<div class="rows">${state.rewards.map((r) => `<div class="row"><span style="font-size:26px">${r.emoji}</span><div class="grow"><b>${esc(r.title)}</b><small class="num">${r.cost} XP</small></div><button class="btn icon sm" data-action="edit-reward" data-id="${r.id}" aria-label="Edytuj">${icon("edit", 17)}</button></div>`).join("")}</div>` : '<div class="empty">Dodaj nagrody, na które dzieci mogą zbierać punkty</div>'}</section>
+    body = `<div class="cols even"><section class="sect"><h2>Nagrody</h2>${state.rewards.length ? `<div class="rows">${state.rewards.map((r) => `<div class="row"><span style="font-size:26px">${r.emoji}</span><div class="grow"><b>${esc(LT(r))}</b><small class="num">${r.cost} XP</small></div><button class="btn icon sm" data-action="edit-reward" data-id="${r.id}" aria-label="Edytuj">${icon("edit", 17)}</button></div>`).join("")}</div>` : '<div class="empty">Dodaj nagrody, na które dzieci mogą zbierać punkty</div>'}</section>
     <div class="stack"><section class="sect"><h2>Punkty i cele</h2><div class="rows">${state.family.map((p) => {
       const g = state.rewards.find((r) => r.id === p.goal);
-      return `<div class="row" style="flex-wrap:wrap">${avatar(p)}<div class="grow"><b>${esc(p.name)}</b><small class="num">${p.points} XP</small></div><select data-goal="${p.id}" style="width:auto;max-width:220px" aria-label="Cel dla: ${esc(p.name)}"><option value="">Bez celu</option>${state.rewards.map((r) => `<option value="${r.id}" ${r.id === p.goal ? "selected" : ""}>${r.emoji} ${esc(r.title)}</option>`).join("")}</select>${g && p.points >= g.cost ? `<button class="btn leaf sm" data-action="redeem" data-p="${p.id}" data-r="${g.id}">Odbierz</button>` : ""}</div>`;
+      return `<div class="row" style="flex-wrap:wrap">${avatar(p)}<div class="grow"><b>${esc(p.name)}</b><small class="num">${p.points} XP</small></div><select data-goal="${p.id}" style="width:auto;max-width:220px" aria-label="Cel dla: ${esc(p.name)}"><option value="">Bez celu</option>${state.rewards.map((r) => `<option value="${r.id}" ${r.id === p.goal ? "selected" : ""}>${r.emoji} ${esc(LT(r))}</option>`).join("")}</select>${g && p.points >= g.cost ? `<button class="btn leaf sm" data-action="redeem" data-p="${p.id}" data-r="${g.id}">Odbierz</button>` : ""}</div>`;
     }).join("")}</div></section>
-    <section class="sect"><h2>Odebrane nagrody</h2>${state.redemptions.length ? `<div class="rows">${state.redemptions.slice(0, 10).map((x) => `<div class="row"><span style="font-size:22px">${x.emoji}</span><div class="grow"><b>${esc(x.title)}</b><small>${esc(person(x.person).name)}, ${esc(niceDate(x.date))}, ${x.cost} XP</small></div></div>`).join("")}</div>` : '<div class="empty">Jeszcze nikt nie odebrał nagrody</div>'}</section></div></div>`;
+    <section class="sect"><h2>Odebrane nagrody</h2>${state.redemptions.length ? `<div class="rows">${state.redemptions.slice(0, 10).map((x) => `<div class="row"><span style="font-size:22px">${x.emoji}</span><div class="grow"><b>${esc(LT(x))}</b><small>${esc(person(x.person).name)}, ${esc(niceDate(x.date))}, ${x.cost} XP</small></div></div>`).join("")}</div>` : '<div class="empty">Jeszcze nikt nie odebrał nagrody</div>'}</section></div></div>`;
   }
   return head("Zadania i nagrody", "Odhaczaj zadania, buduj rutyny i zbieraj punkty na nagrody.", acts) + `<div class="seg" style="margin-bottom:18px" role="tablist">${tabs.map(([k, n]) => `<button role="tab" aria-selected="${taskTab === k}" class="${taskTab === k ? "on" : ""}" data-action="tab" data-tab="${k}">${n}</button>`).join("")}</div>` + body;
 }
 function renderMeals() {
   const wk = currentWeek(), bought = state.shopping.filter((s) => s.done).length;
-  return head("Posiłki i zakupy", `Tydzień ${esc(niceDate(wk[0]))} – ${esc(niceDate(wk[6]))}`, `<button class="btn icon" data-action="prev-week" aria-label="Poprzedni tydzień">${icon("left")}</button><button class="btn" data-action="today-week">Ten tydzień</button><button class="btn icon" data-action="next-week" aria-label="Następny tydzień">${icon("right")}</button>`) + `<div class="cols even"><section class="sect"><h2>Obiady</h2><div class="rows">${wk.map((d) => `<button class="row" data-action="edit-meal" data-date="${d}" ${d === today() ? 'style="box-shadow:inset 0 0 0 2px var(--cobalt)"' : ""}><div class="grow"><small>${esc(DFULL[dow(d)])}, ${esc(niceDate(d))}</small><b>${esc(state.meals[d] || "Nie zaplanowano")}</b></div>${icon("edit", 18)}</button>`).join("")}</div></section>
+  return head("Posiłki i zakupy", `Tydzień ${esc(niceDate(wk[0]))} – ${esc(niceDate(wk[6]))}`, `<button class="btn icon" data-action="prev-week" aria-label="Poprzedni tydzień">${icon("left")}</button><button class="btn" data-action="today-week">Ten tydzień</button><button class="btn icon" data-action="next-week" aria-label="Następny tydzień">${icon("right")}</button>`) + `<div class="cols even"><section class="sect"><h2>Obiady</h2><div class="rows">${wk.map((d) => `<button class="row" data-action="edit-meal" data-date="${d}" ${d === today() ? 'style="box-shadow:inset 0 0 0 2px var(--cobalt)"' : ""}><div class="grow"><small>${esc(DFULL[dow(d)])}, ${esc(niceDate(d))}</small><b>${esc(mealTxt(d) || "Nie zaplanowano")}</b></div>${icon("edit", 18)}</button>`).join("")}</div></section>
   <section class="sect"><div class="sectHead"><h2>${tx("Lista zakupów", "Shopping list")}</h2><div class="actions">${state.settings.qrList && state.shopping.some((s) => !s.done) ? `<button class="btn sm" data-action="list-qr">QR</button>` : ""}${bought ? `<button class="btn sm" data-action="shop-clear">${tx("Usuń kupione", "Clear bought")} (${bought})</button>` : ""}</div></div>
   ${shopFormHtml()}${renderShopList()}</section></div>
   <section class="sect" style="margin-top:18px"><div class="sectHead" style="margin-bottom:6px"><h2>${tx("Katalog produktów", "Product catalogue")}</h2><span class="sm muted">${tx("Dotknij, żeby dodać do listy", "Tap to add to the list")}</span></div>${renderCatalog()}</section>`;
@@ -2493,7 +3029,7 @@ function renderFamily() {
   return head("Domownicy", "Rodzic może zatwierdzać zadania i odbierać nagrody. Dziecko zbiera punkty.", `<button class="btn pri" data-action="new-person">${icon("plus", 18)} Domownik</button>`) + `<section class="sect"><div class="rows">${state.family.map((p) => {
     const ev = state.events.filter((e) => e.person === p.id && wk.includes(e.date)).length;
     const g = state.rewards.find((r) => r.id === p.goal);
-    return `<button class="row" data-action="edit-person" data-id="${p.id}">${avatar(p, "lg")}<div class="grow"><b style="font-size:18px">${esc(p.name)}</b><small>${p.role === "parent" ? tx("Rodzic", "Parent") : tx("Dziecko", "Child")}, ${p.points} XP, ${evCount(ev)}${g ? `, ${tx("cel", "goal")}: ${g.emoji} ${esc(g.title)}` : ""}</small></div>${icon("edit", 18)}</button>`;
+    return `<button class="row" data-action="edit-person" data-id="${p.id}">${avatar(p, "lg")}<div class="grow"><b style="font-size:18px">${esc(p.name)}</b><small>${p.role === "parent" ? tx("Rodzic", "Parent") : tx("Dziecko", "Child")}, ${p.points} XP, ${evCount(ev)}${g ? `, ${tx("cel", "goal")}: ${g.emoji} ${esc(LT(g))}` : ""}</small></div>${icon("edit", 18)}</button>`;
   }).join("")}</div></section>`;
 }
 function renderSettings() {
@@ -2523,6 +3059,7 @@ function renderSettings() {
     <section class="sect"><div class="sectHead"><h2>Zdjęcia do wygaszacza</h2><label class="btn sm" style="cursor:pointer">${icon("plus", 16)} Dodaj zdjęcia<input id="photoInput" type="file" accept="image/*" multiple hidden></label></div><p class="sm muted" style="margin:0">Zdjęcia są zmniejszane i trzymane tylko w tej przeglądarce. Zmieści się ich kilkanaście.</p>
       ${photos.length ? `<div class="thumbs">${photos.map((p, i) => `<div class="thumb"><img src="${p}" alt="Zdjęcie ${i + 1}"><button data-action="photo-del" data-i="${i}" aria-label="Usuń zdjęcie">${icon("x", 15)}</button></div>`).join("")}</div>` : ""}</section>
     <section class="sect"><h2>Dane</h2><div class="rows">
+      <div class="row"><div class="grow"><b>${tx("Tłumaczenia PL / EN", "PL / EN translations")}</b><small>${tx("Słownik dopisze angielskie nazwy do zadań, wydarzeń, rutyn i obiadów, które ich nie mają. Możesz je potem poprawić w edycji.", "The dictionary adds English names to tasks, events, routines and dinners that lack them. You can correct them later.")}</small></div><button class="btn sm" data-action="fill-en">${tx("Uzupełnij tłumaczenia", "Fill in translations")}</button></div>
       <div class="row"><div class="grow"><b>${tx("Katalog produktów", "Product catalogue")}</b><small>${state.catalog.length ? tx(`Produktów w katalogu: ${state.catalog.length}. Wczytanie pliku dopisze nowe i zaktualizuje ceny.`, `${state.catalog.length} products. Loading a file adds new ones and updates prices.`) : tx("Wczytaj plik z produktami (np. katalog-produktow.json)", "Load a product file (e.g. katalog-produktow.json)")}</small></div><button class="btn sm" data-action="cat-import">${tx("Wczytaj", "Load")}</button><input id="catFile" type="file" accept="application/json,.json" hidden></div>
       <div class="row"><div class="grow"><b>Kopia zapasowa</b><small>Pobierz wszystkie dane jako plik JSON (bez zdjęć)</small></div><button class="btn sm" data-action="export">Pobierz</button></div>
       <div class="row"><div class="grow"><b>Wczytaj kopię</b><small>Zastępuje obecne dane</small></div><button class="btn sm" data-action="import">Wczytaj</button><input id="importFile" type="file" accept="application/json,.json" hidden></div>
@@ -2653,7 +3190,7 @@ function renderMe() {
   const best = state.routines.filter((r) => r.person === p.id).reduce((m, r) => Math.max(m, streak(r)), 0);
   const myEv = (d) => eventsOn(d).filter((e) => e.person === p.id);
   const myTk = (d) => state.tasks.filter((x) => x.person === p.id && applies(x, d));
-  const prep = [...myEv(tm).filter((e) => e.notes).map((e) => ({ b: "📌", t: e.notes })), ...myTk(tm).filter((x) => !isRep(x)).map((x) => ({ b: "✅", t: x.title }))].filter((l, i, arr) => arr.findIndex((o) => prepKey(o.t) === prepKey(l.t)) === i);
+  const prep = [...myEv(tm).filter((e) => e.notes).map((e) => ({ b: "🔔", t: LT(e, "notes") })), ...myTk(tm).filter((x) => !isRep(x)).map((x) => ({ b: "✅", t: LT(x) }))].filter((l, i, arr) => arr.findIndex((o) => prepKey(o.t) === prepKey(l.t)) === i);
   const firstTm = myEv(tm)[0];
   const vars = `--pc:${pc};--on:${on};--tint:${mix(pc, "#FFFFFF", 0.84)};--barbg:${on === "#FFFFFF" ? "rgba(255,255,255,.28)" : "rgba(22,37,46,.12)"}`;
   return `<div class="mePage" style="${vars}">
@@ -2665,36 +3202,42 @@ function renderMe() {
   </header>
   <div class="cols">
     <section class="sect"><h2>Dziś</h2><div class="meToday">${rts.map(routineBlock).join("")}${tks.map((x) => taskBtn(x, t)).join("") || (rts.length ? "" : '<div class="free">Na dziś wolne 🎉</div>')}</div>
-      ${myEv(t).length ? `<h2 style="margin-top:18px">Moje wydarzenia dziś</h2><div class="rows">${myEv(t).map((e) => `<button class="row" data-action="edit-event" data-id="${e.id}"><span class="num" style="font-weight:600;width:52px">${esc(e.start || "—")}</span><div class="grow"><b>${esc(e.title)}</b><small>${esc([e.end ? tx("do ", "until ") + e.end : "", e.location].filter(Boolean).join(", "))}</small></div></button>`).join("")}</div>` : ""}</section>
+      ${myEv(t).length ? `<h2 style="margin-top:18px">Moje wydarzenia dziś</h2><div class="rows">${myEv(t).map((e) => `<button class="row" data-action="edit-event" data-id="${e.id}"><span class="num" style="font-weight:600;width:52px">${esc(e.start || "—")}</span><div class="grow"><b>${esc(LT(e))}</b><small>${esc([e.end ? tx("do ", "until ") + e.end : "", e.location].filter(Boolean).join(", "))}</small></div></button>`).join("")}</div>` : ""}</section>
     <div class="stack">
-      <section class="sect"><h2>Na jutro</h2>${firstTm ? `<p class="sm muted" style="margin:-6px 0 10px">${tx("Pierwsze", "First")}: ${esc(firstTm.start || "")} ${esc(firstTm.title)}</p>` : ""}${prep.length ? `<div class="rows">${prep.map((l) => `<div class="row"><span style="font-size:20px">${l.b}</span><div class="grow">${esc(l.t)}</div></div>`).join("")}</div>` : '<div class="empty">Nic do przygotowania</div>'}</section>
+      <section class="sect"><h2>Na jutro</h2>${firstTm ? `<p class="sm muted" style="margin:-6px 0 10px">${tx("Pierwsze", "First")}: ${esc(firstTm.start || "")} ${esc(LT(firstTm))}</p>` : ""}${prep.length ? `<div class="rows">${prep.map((l) => `<div class="row"><span style="font-size:20px">${l.b}</span><div class="grow">${esc(l.t)}</div></div>`).join("")}</div>` : '<div class="empty">Nic do przygotowania</div>'}</section>
       ${state.rewards.length && !par ? `<section class="sect"><h2>Nagrody</h2><div class="rows">${state.rewards.slice().sort((a, b) => a.cost - b.cost).map((r) => {
     const pct = Math.min(100, p.points / r.cost * 100), isG = p.goal === r.id;
-    return `<div class="rwRow"><span style="font-size:24px">${r.emoji}</span><div class="grow"><b>${esc(r.title)}</b><div class="bar" style="margin-top:6px"><i style="width:${pct}%"></i></div><small class="xs muted num">${Math.min(p.points, r.cost)} z ${r.cost} XP</small></div>${p.points >= r.cost ? `<button class="btn leaf sm" data-action="redeem" data-p="${p.id}" data-r="${r.id}">Odbierz</button>` : isG ? '<span class="chip">Mój cel</span>' : `<button class="btn sm" data-action="set-goal" data-p="${p.id}" data-r="${r.id}">Ustaw cel</button>`}</div>`;
+    return `<div class="rwRow"><span style="font-size:24px">${r.emoji}</span><div class="grow"><b>${esc(LT(r))}</b><div class="bar" style="margin-top:6px"><i style="width:${pct}%"></i></div><small class="xs muted num">${Math.min(p.points, r.cost)} z ${r.cost} XP</small></div>${p.points >= r.cost ? `<button class="btn leaf sm" data-action="redeem" data-p="${p.id}" data-r="${r.id}">Odbierz</button>` : isG ? '<span class="chip">Mój cel</span>' : `<button class="btn sm" data-action="set-goal" data-p="${p.id}" data-r="${r.id}">Ustaw cel</button>`}</div>`;
   }).join("")}</div></section>` : ""}
     </div>
   </div>
   <section class="sect" style="margin-top:18px"><div class="sectHead"><h2>Mój tydzień</h2><div class="actions"><button class="btn icon sm" data-action="me-week" data-n="-7" aria-label="Poprzedni tydzień">${icon("left", 18)}</button><button class="btn sm" data-action="me-week" data-n="0">Ten tydzień</button><button class="btn icon sm" data-action="me-week" data-n="7" aria-label="Następny tydzień">${icon("right", 18)}</button></div></div>
   <div class="meWeek">${wk.map((d) => {
     const ev = myEv(d), tk = myTk(d);
-    return `<div class="meDay ${d === t ? "today" : ""}"><div class="dh"><span>${DSHORT[dow(d)]}</span><b class="num">${parseDate(d).getDate()}</b></div>${ev.map((e) => `<div class="ev"><b>${esc(e.title)}</b><small class="num">${esc(e.start || "cały dzień")}${e.end ? "–" + esc(e.end) : ""}</small></div>`).join("")}${tk.map((x) => {
+    return `<div class="meDay ${d === t ? "today" : ""}"><div class="dh"><span>${DSHORT[dow(d)]}</span><b class="num">${parseDate(d).getDate()}</b></div>${ev.map((e) => `<div class="ev"><b>${esc(LT(e))}</b><small class="num">${esc(e.start || "cały dzień")}${e.end ? "–" + esc(e.end) : ""}</small></div>`).join("")}${tk.map((x) => {
       const e = entry(x, d);
-      return `<div class="tk ${e ? "done" : ""}"><span>${e ? "✓" : "○"}</span><span>${esc(x.title)}</span></div>`;
-    }).join("")}${state.routines.filter((r) => r.person === p.id && routineToday(r, d) && r.steps.length).map((r) => `<div class="tk ${r.credited[d] ? "done" : ""}"><span>${r.credited[d] ? "✓" : "🔁"}</span><span>${esc(r.name)}</span></div>`).join("")}${!ev.length && !tk.length && !state.routines.some((r) => r.person === p.id && routineToday(r, d) && r.steps.length) ? '<div class="none">Wolne</div>' : ""}</div>`;
+      return `<div class="tk ${e ? "done" : ""}"><span>${e ? "✓" : "○"}</span><span>${esc(LT(x))}</span></div>`;
+    }).join("")}${state.routines.filter((r) => r.person === p.id && routineToday(r, d) && r.steps.length).map((r) => `<div class="tk ${r.credited[d] ? "done" : ""}"><span>${r.credited[d] ? "✓" : "🔁"}</span><span>${esc(LT(r, "name"))}</span></div>`).join("")}${!ev.length && !tk.length && !state.routines.some((r) => r.person === p.id && routineToday(r, d) && r.steps.length) ? '<div class="none">Wolne</div>' : ""}</div>`;
   }).join("")}</div></section>
   </div>`;
 }
 const views = { me: renderMe, panel: renderPanel, dashboard: renderDashboard, week: renderWeek, day: renderDay, tasks: renderTasks, meals: renderMeals, family: renderFamily, settings: renderSettings };
 function render() {
   const main = document.getElementById("main");
-  const keep = [...main.querySelectorAll(".pcolBody,.people,.side")].map((el) => [el.scrollTop, el.scrollLeft]);
+  const SCR = ".pcolBody,.people,.side,.prows,.prowBody,.wkStrip,.bankRow";
+  const keep = [...main.querySelectorAll(SCR)].map((el) => [el.scrollTop, el.scrollLeft]);
   main.innerHTML = views[page]();
-  main.querySelectorAll(".pcolBody,.people,.side").forEach((el, i) => {
+  main.querySelectorAll(SCR).forEach((el, i) => {
     if (keep[i]) {
       el.scrollTop = keep[i][0];
       el.scrollLeft = keep[i][1];
     }
   });
+  {
+    const ws = main.querySelector(".wkStrip");
+    const td = ws && ws.querySelector(".today");
+    if (ws && td && ws.scrollWidth > ws.clientWidth + 4 && !ws.scrollLeft) ws.scrollLeft = Math.max(0, td.offsetLeft - ws.firstElementChild.offsetLeft);
+  }
   document.body.classList.toggle("panelMode", page === "panel" || page === "me" && meFrom === "panel");
   const navPage = page === "day" ? "week" : page;
   document.querySelectorAll(".nav,.tabs button").forEach((b) => b.classList.toggle("active", b.dataset.page === navPage));
@@ -2727,9 +3270,12 @@ const fld = (label, name, type = "text", value = "", attrs = "", cls = "") => `<
 const personSelect = (id, withAnyone) => `<label class="f">Kto<select name="person">${state.family.map((p) => `<option value="${p.id}" ${p.id === id ? "selected" : ""}>${esc(p.name)}</option>`).join("")}${withAnyone ? `<option value="anyone" ${id === "anyone" ? "selected" : ""}>Ktokolwiek (pierwszy chętny)</option>` : ""}</select></label>`;
 const daysPicker = (days) => `<div class="f full"><span>Dni tygodnia</span><div class="days">${DSHORT.map((n, i) => `<label class="day"><input type="checkbox" name="days" value="${i}" ${days.includes(i) ? "checked" : ""}><span>${n}</span></label>`).join("")}</div><div class="presets"><button type="button" class="btn sm" data-action="preset" data-p="all">Codziennie</button><button type="button" class="btn sm" data-action="preset" data-p="work">Dni robocze</button><button type="button" class="btn sm" data-action="preset" data-p="weekend">Weekend</button></div></div>`;
 function openEvent(date = today(), id = null, start = "08:00") {
-  var _a;
-  const e = state.events.find((v) => v.id === id) || { date, start, end: addMinutes(start, 60), title: "", person: ((_a = state.family[0]) == null ? void 0 : _a.id) || "", location: "", notes: "" };
-  formModal(id ? "Edytuj wydarzenie" : "Nowe wydarzenie", `<input type="hidden" name="id" value="${esc(e.id || "")}">${fld("Nazwa", "title", "text", e.title, 'required maxlength="100"', "full")}${personSelect(e.person)}${fld("Data", "date", "date", e.date, "required")}${fld("Od", "start", "time", e.start)}${fld("Do", "end", "time", e.end)}${fld("Miejsce", "location", "text", e.location, "", "full")}<label class="f full">Co przygotować<textarea name="notes" placeholder="Pojawi się w „Na jutro” dzień wcześniej">${esc(e.notes)}</textarea></label>`, "event", id ? `<button type="button" class="btn danger" data-action="delete-event" data-id="${esc(id)}">${icon("trash", 17)} Usuń</button>` : "");
+  const e = state.events.find((v) => v.id === id) || { date, start, end: addMinutes(start, 60), title: "", person: (state.family[0] || {}).id || "", location: "", notes: "" };
+  const rm = remN(e), who = e.remindWho || e.person;
+  formModal(id ? "Edytuj wydarzenie" : "Nowe wydarzenie", `<input type="hidden" name="id" value="${esc(e.id || "")}">${fld(tx("Nazwa (po polsku)", "Name (Polish)"), "title", "text", e.title, 'required maxlength="100"')}${enFld(tx("Nazwa po angielsku", "Name in English"), "titleEn", e.titleEn, tx("np. School", "e.g. School"))}${personSelect(e.person)}${fld("Data", "date", "date", e.date, "required")}${fld("Od", "start", "time", e.start)}${fld("Do", "end", "time", e.end)}${fld("Miejsce", "location", "text", e.location, "", "full")}
+  <div class="f full remBox"><span>🔔 ${tx("Przypomnienie", "Reminder")}</span><div class="seg remSeg">${[["none", tx("Bez", "None")], ["1", tx("Dzień wcześniej", "Day before")], ["2", tx("2 dni wcześniej", "2 days before")], ["0", tx("Tego dnia rano", "Same morning")]].map(([k, n]) => `<label class="${String(rm === null ? "none" : rm) === k ? "on" : ""}"><input type="radio" name="remind" value="${k}" ${String(rm === null ? "none" : rm) === k ? "checked" : ""} hidden>${n}</label>`).join("")}</div></div>
+  <label class="f full">${tx("Co zrobić (po polsku)", "What to do (Polish)")}<textarea name="notes" placeholder="${tx("np. Spakuj strój na WF", "e.g. Spakuj strój na WF")}">${esc(e.notes)}</textarea></label>${enFld(tx("Co zrobić po angielsku", "What to do in English"), "notesEn", e.notesEn, tx("np. Pack your PE kit", "e.g. Pack your PE kit"))}
+  <label class="f">${tx("Komu przypomnieć", "Remind whom")}<select name="remindWho">${state.family.map((p) => `<option value="${p.id}" ${p.id === who ? "selected" : ""}>${esc(p.name)}</option>`).join("")}</select></label><div class="hintTxt full">${tx("Przypomnienie pojawi się na panelu w wierszu tej osoby i w „Na jutro”. Dziecko odhacza je jak zadanie.", "The reminder shows on the panel in that person’s row and under “Tomorrow”. Kids tick it off like a task.")}</div>`, "event", id ? `<button type="button" class="btn danger" data-action="delete-event" data-id="${esc(id)}">${icon("trash", 17)} Usuń</button>` : "");
 }
 function addMinutes(t, m) {
   const x = Math.min(23 * 60 + 59, toMin(t) + m);
@@ -2738,23 +3284,23 @@ function addMinutes(t, m) {
 function openTask(id) {
   var _a, _b;
   const t = state.tasks.find((x) => x.id === id) || { title: "", person: ((_a = state.family.find((p) => p.role === "child")) == null ? void 0 : _a.id) || ((_b = state.family[0]) == null ? void 0 : _b.id) || "anyone", due: today(), repeat: "none", days: [dow(today())], points: 10 };
-  formModal(id ? "Edytuj zadanie" : "Nowe zadanie", `<input type="hidden" name="id" value="${esc(id || "")}">${fld("Zadanie", "title", "text", t.title, 'required maxlength="100"', "full")}${personSelect(t.person, true)}${fld("Punkty (XP)", "points", "number", t.points, 'min="0" max="1000"')}
+  formModal(id ? "Edytuj zadanie" : "Nowe zadanie", `<input type="hidden" name="id" value="${esc(id || "")}">${fld(tx("Zadanie (po polsku)", "Task (Polish)"), "title", "text", t.title, 'required maxlength="100"')}${enFld(tx("Po angielsku", "In English"), "titleEn", t.titleEn, tx("np. Feed the fish", "e.g. Feed the fish"))}${personSelect(t.person, true)}${fld("Punkty (XP)", "points", "number", t.points, 'min="0" max="1000"')}
   <label class="f">Jak często<select name="repeat" data-repeat><option value="none" ${!isRep(t) ? "selected" : ""}>Jednorazowo</option><option value="days" ${isRep(t) ? "selected" : ""}>Powtarzaj w wybrane dni</option></select></label>${fld(isRep(t) ? "Od kiedy" : "Termin", "due", "date", t.due, "required")}
   <div class="full" data-days ${isRep(t) ? "" : "hidden"}>${daysPicker(t.days.length ? t.days : [dow(today())])}</div>${id ? "" : '<label class="f check full"><input type="checkbox" name="saveBank">Zapisz też w banku zadań, żeby później przeciągać je na domowników</label>'}`, "task", id ? `<button type="button" class="btn danger" data-action="del-task" data-id="${id}">${icon("trash", 17)} Usuń</button>` : "");
 }
 function stepRow(s = { id: uid(), icon: "⭐", label: "" }) {
-  return `<div class="stepEdit"><input type="hidden" name="stepId" value="${esc(s.id)}"><select name="stepIcon" aria-label="Ikona">${STEP_ICONS.concat(STEP_ICONS.includes(s.icon) ? [] : [s.icon]).map((e) => `<option ${e === s.icon ? "selected" : ""}>${e}</option>`).join("")}</select><input name="stepLabel" value="${esc(s.label)}" placeholder="np. Umyj zęby" maxlength="30" required aria-label="Nazwa kroku"><button type="button" class="btn icon sm" data-action="rm-step" aria-label="Usuń krok">${icon("x", 16)}</button></div>`;
+  return `<div class="stepEdit"><input type="hidden" name="stepId" value="${esc(s.id)}"><select name="stepIcon" aria-label="Ikona">${STEP_ICONS.concat(STEP_ICONS.includes(s.icon) ? [] : [s.icon]).map((e) => `<option ${e === s.icon ? "selected" : ""}>${e}</option>`).join("")}</select><input name="stepLabel" value="${esc(s.label)}" placeholder="np. Umyj zęby" maxlength="30" required aria-label="Nazwa kroku"><input name="stepLabelEn" value="${esc(s.labelEn || "")}" data-en-of="stepLabel" placeholder="EN" maxlength="30" aria-label="${tx("Nazwa kroku po angielsku", "Step name in English")}"><button type="button" class="btn icon sm" data-action="rm-step" aria-label="Usuń krok">${icon("x", 16)}</button></div>`;
 }
 function openRoutine(id) {
   var _a, _b;
-  const r = state.routines.find((x) => x.id === id) || { name: "", person: ((_a = state.family.find((p) => p.role === "child")) == null ? void 0 : _a.id) || ((_b = state.family[0]) == null ? void 0 : _b.id), when: "morning", days: [0, 1, 2, 3, 4], points: 20, steps: [{ id: uid(), icon: "🪥", label: "Umyj zęby" }] };
-  formModal(id ? "Edytuj rutynę" : "Nowa rutyna", `<input type="hidden" name="id" value="${esc(id || "")}">${fld("Nazwa", "name", "text", r.name, 'required maxlength="40" placeholder="np. Poranek"')}${personSelect(r.person)}
+  const r = state.routines.find((x) => x.id === id) || { name: "", person: ((_a = state.family.find((p) => p.role === "child")) == null ? void 0 : _a.id) || ((_b = state.family[0]) == null ? void 0 : _b.id), when: "morning", days: [0, 1, 2, 3, 4], points: 20, steps: [{ id: uid(), icon: "🦷", label: "Umyj zęby" }] };
+  formModal(id ? "Edytuj rutynę" : "Nowa rutyna", `<input type="hidden" name="id" value="${esc(id || "")}">${fld(tx("Nazwa (po polsku)", "Name (Polish)"), "name", "text", r.name, 'required maxlength="40" placeholder="np. Poranek"')}${enFld(tx("Po angielsku", "In English"), "nameEn", r.nameEn, "")}${personSelect(r.person)}
   <label class="f">Kiedy widoczna<select name="when"><option value="morning" ${r.when === "morning" ? "selected" : ""}>Rano (do 12:00)</option><option value="evening" ${r.when === "evening" ? "selected" : ""}>Wieczorem (od 16:00)</option><option value="any" ${r.when === "any" ? "selected" : ""}>Przez cały dzień</option></select></label>${fld("Punkty za całość", "points", "number", r.points, 'min="0" max="1000"')}
   ${daysPicker(r.days)}<div class="f full"><span>Kroki (dziecko odhacza obrazki)</span><div class="rows" id="stepList">${r.steps.map(stepRow).join("")}</div><button type="button" class="btn sm" style="margin-top:8px;align-self:flex-start" data-action="add-step">${icon("plus", 16)} Dodaj krok</button></div>`, "routine", id ? `<button type="button" class="btn danger" data-action="del-routine" data-id="${id}">${icon("trash", 17)} Usuń</button>` : "");
 }
 function openReward(id) {
   const r = state.rewards.find((x) => x.id === id) || { title: "", emoji: "⭐", cost: 50 };
-  formModal(id ? "Edytuj nagrodę" : "Nowa nagroda", `<input type="hidden" name="id" value="${esc(id || "")}">${fld("Nagroda", "title", "text", r.title, 'required maxlength="60" placeholder="np. Wyjście na lody"', "full")}<label class="f">Ikona<select name="emoji" style="font-size:22px">${REWARD_ICONS.map((e) => `<option ${e === r.emoji ? "selected" : ""}>${e}</option>`).join("")}</select></label>${fld("Koszt (XP)", "cost", "number", r.cost, 'min="1" max="99999" required')}`, "reward", id ? `<button type="button" class="btn danger" data-action="del-reward" data-id="${id}">${icon("trash", 17)} Usuń</button>` : "");
+  formModal(id ? "Edytuj nagrodę" : "Nowa nagroda", `<input type="hidden" name="id" value="${esc(id || "")}">${fld(tx("Nagroda (po polsku)", "Reward (Polish)"), "title", "text", r.title, 'required maxlength="60" placeholder="np. Wyjście na lody"')}${enFld(tx("Po angielsku", "In English"), "titleEn", r.titleEn, "")}<label class="f">Ikona<select name="emoji" style="font-size:22px">${REWARD_ICONS.map((e) => `<option ${e === r.emoji ? "selected" : ""}>${e}</option>`).join("")}</select></label>${fld("Koszt (XP)", "cost", "number", r.cost, 'min="1" max="99999" required')}`, "reward", id ? `<button type="button" class="btn danger" data-action="del-reward" data-id="${id}">${icon("trash", 17)} Usuń</button>` : "");
 }
 function openPerson(id) {
   const p = state.family.find((x) => x.id === id) || { name: "", color: "#2BB0A8", role: "child", avatar: "", owned: [], photo: "", goal: "" };
@@ -2762,7 +3308,7 @@ function openPerson(id) {
   formModal(id ? "Edytuj domownika" : "Nowy domownik", `<input type="hidden" name="id" value="${esc(id || "")}">${fld("Imię", "name", "text", p.name, 'required maxlength="30"')}${fld("Kolor", "color", "color", p.color)}
   <label class="f">Rola<select name="role"><option value="child" ${p.role !== "parent" ? "selected" : ""}>${tx("Dziecko", "Child")}</option><option value="parent" ${p.role === "parent" ? "selected" : ""}>${tx("Rodzic", "Parent")}</option></select></label>
   <div class="f full"><span>Zdjęcie</span><div class="photoPick"><span class="avatar lg" id="personPrev" style="background:${p.color};color:${onColor(p.color)}">${p.photo ? `<img src="${p.photo}" alt="">` : initial(p)}</span><label class="btn sm" style="cursor:pointer">${icon("plus", 16)} ${p.photo ? "Zmień zdjęcie" : "Wgraj zdjęcie"}<input id="personPhoto" type="file" accept="image/*" hidden></label>${p.photo ? `<button type="button" class="btn sm danger" data-action="photo-remove">Usuń zdjęcie</button>` : ""}${id ? `<button type="button" class="btn sm" data-action="avatars" data-p="${id}">Wybierz awatar</button>` : ""}</div><span class="xs faint">Zdjęcie jest kadrowane do kółka i zostaje w tej przeglądarce. Własne zdjęcie jest zawsze za darmo.</span></div>
-  <label class="f full">Cel nagrody<select name="goal"><option value="">Bez celu</option>${state.rewards.map((r) => `<option value="${r.id}" ${r.id === p.goal ? "selected" : ""}>${r.emoji} ${esc(r.title)} (${r.cost} XP)</option>`).join("")}</select></label>`, "person", id && state.family.length > 1 ? `<button type="button" class="btn danger" data-action="del-person" data-id="${id}">${icon("trash", 17)} Usuń</button>` : "");
+  <label class="f full">Cel nagrody<select name="goal"><option value="">Bez celu</option>${state.rewards.map((r) => `<option value="${r.id}" ${r.id === p.goal ? "selected" : ""}>${r.emoji} ${esc(LT(r))} (${r.cost} XP)</option>`).join("")}</select></label>`, "person", id && state.family.length > 1 ? `<button type="button" class="btn danger" data-action="del-person" data-id="${id}">${icon("trash", 17)} Usuń</button>` : "");
 }
 let pendingPhoto, pendingImg = "", avConfirm = "";
 const tierCost = (t) => {
@@ -2868,14 +3414,31 @@ function pickAvatar(pid, k) {
   };
   state.settings.avatarPin ? requirePin(`${p.name} kupuje awatar za ${cost} XP`, buy) : buy();
 }
+const readDataUrl = (f) => new Promise((res, rej) => {
+  const r = new FileReader();
+  r.onload = () => res(r.result);
+  r.onerror = rej;
+  r.readAsDataURL(f);
+});
+async function isAnimated(f) {
+  if (f.type === "image/gif" || f.type === "image/svg+xml") return true;
+  try {
+    const b = new Uint8Array(await f.slice(0, 4096).arrayBuffer());
+    const tx2 = String.fromCharCode.apply(null, b.subarray(0, 4096));
+    return tx2.indexOf("ANIM") >= 0;
+  } catch (e) {
+    return true;
+  }
+}
 function openShopItem(id) {
   const it = state.shopItems.find((x) => x.id === id) || { name: "", cost: 60, img: "" };
   pendingImg = it.img;
-  formModal(id ? "Edytuj awatar" : "Nowy awatar do sklepu", `<input type="hidden" name="id" value="${esc(id || "")}"><div class="f full"><span>Zdjęcie lub rysunek</span><div class="photoPick"><span class="avatar lg" id="shopPrev" style="background:var(--surface-2);color:var(--ink-3)">${it.img ? `<img src="${it.img}" alt="">` : "?"}</span><label class="btn sm" style="cursor:pointer">${icon("plus", 16)} Wybierz zdjęcie<input id="shopImgInput" type="file" accept="image/*" hidden></label></div></div>${fld("Nazwa", "name", "text", it.name, 'required maxlength="30" placeholder="np. Nasz kot"')}${fld("Cena (XP)", "cost", "number", it.cost, 'min="0" max="9999"')}<div class="hintTxt">Cena 0 oznacza, że awatar jest dla wszystkich za darmo.</div>`, "shopitem", id ? `<button type="button" class="btn danger" data-action="del-shopitem" data-id="${id}">${icon("trash", 17)} Usuń</button>` : "");
+  formModal(id ? "Edytuj awatar" : "Nowy awatar do sklepu", `<input type="hidden" name="id" value="${esc(id || "")}"><div class="f full"><span>${tx("Obrazek", "Picture")}</span><div class="photoPick"><span class="avatar lg" id="shopPrev" style="background:var(--surface-2);color:var(--ink-3)">${it.img ? `<img src="${it.img}" alt="">` : "?"}</span><label class="btn sm" style="cursor:pointer">${icon("plus", 16)} ${tx("Wybierz plik", "Choose file")}<input id="shopImgInput" type="file" accept="image/png,image/jpeg,image/webp,image/gif,image/svg+xml" hidden></label></div>
+  <div class="avSpec"><b>${tx("Jaki plik?", "Which file?")}</b><ul><li>${tx("Kwadrat, najlepiej <b>256 × 256 px</b> (minimum 128 × 128). Postać na środku, bo avatar jest przycinany do kółka.", "Square, ideally <b>256 × 256 px</b> (at least 128 × 128). Keep the character centred, avatars are cropped to a circle.")}</li><li>${tx("<b>Nieruchomy:</b> JPG, PNG albo WebP. Większe zdjęcia zostaną same przycięte i zmniejszone.", "<b>Still:</b> JPG, PNG or WebP. Bigger photos are cropped and shrunk automatically.")}</li><li>${tx("<b>Ruchomy:</b> GIF, animowany WebP albo SVG, do <b>400 KB</b>. Wgrywany bez zmian, więc musi już być kwadratowy.", "<b>Animated:</b> GIF, animated WebP or SVG, up to <b>400 KB</b>. Uploaded as is, so it must already be square.")}</li></ul></div></div>${fld("Nazwa", "name", "text", it.name, 'required maxlength="30" placeholder="np. Nasz kot"')}${fld("Cena (XP)", "cost", "number", it.cost, 'min="0" max="9999"')}<div class="hintTxt">Cena 0 oznacza, że awatar jest dla wszystkich za darmo.</div>`, "shopitem", id ? `<button type="button" class="btn danger" data-action="del-shopitem" data-id="${id}">${icon("trash", 17)} Usuń</button>` : "");
 }
 function renderBank() {
   return `<section class="bank" aria-label="Bank zadań"><div><div class="lbl">Bank zadań</div><div class="xs faint">Przeciągnij na osobę albo dotknij</div></div>
-  <div class="bankRow">${state.bank.map((b) => `<button class="bchip" data-bank="${b.id}" data-action="bank-tap" data-id="${b.id}"><span class="e">${b.emoji}</span>${esc(b.title)}<span class="pt num">+${b.points}</span></button>`).join("")}<button class="bchip add" data-action="bank-new">${icon("plus", 16)} Nowe</button></div>
+  <div class="bankRow">${state.bank.map((b) => `<button class="bchip" data-bank="${b.id}" data-action="bank-tap" data-id="${b.id}"><span class="e">${b.emoji}</span>${esc(LT(b))}<span class="pt num">+${b.points}</span></button>`).join("")}<button class="bchip add" data-action="bank-new">${icon("plus", 16)} Nowe</button></div>
   <button class="btn icon sm" data-action="bank-manage" aria-label="Edytuj bank zadań">${icon("edit", 17)}</button></section>`;
 }
 function addFromBank(bid, pid, d) {
@@ -2883,11 +3446,11 @@ function addFromBank(bid, pid, d) {
   if (!b) return;
   d = d || today();
   if (state.tasks.some((t2) => t2.person === pid && !isRep(t2) && t2.due === d && t2.title === b.title && !t2.log[t2.due])) return toast(`${person(pid).name} ma już to zadanie ${d === today() ? "na dziś" : "na ten dzień"}`);
-  const t = { id: uid(), title: b.title, person: pid, points: b.points, repeat: "none", days: [], due: d, log: {} };
+  const t = { id: uid(), title: b.title, titleEn: b.titleEn || "", person: pid, points: b.points, repeat: "none", days: [], due: d, log: {} };
   state.tasks.push(t);
   save();
   render();
-  toast(`${b.emoji} ${b.title}: dodane dla ${person(pid).name}${d === today() ? "" : ", " + niceDate(d)}`, { label: "Cofnij", fn: () => {
+  toast(`${b.emoji} ${LT(b)}: dodane dla ${person(pid).name}${d === today() ? "" : ", " + niceDate(d)}`, { label: "Cofnij", fn: () => {
     state.tasks = state.tasks.filter((x) => x.id !== t.id);
     save();
     render();
@@ -2896,14 +3459,14 @@ function addFromBank(bid, pid, d) {
 function openBankPick(bid) {
   const b = state.bank.find((x) => x.id === bid);
   if (!b) return;
-  openModal(`<h2>${b.emoji} ${esc(b.title)}</h2><p class="lead">Dla kogo? Zadanie da +${b.points} XP.</p><div class="seg" style="background:var(--surface-2)">${[["today", "Dziś"], ["tomorrow", "Jutro"]].map(([k, n]) => `<button class="${bankDay === k ? "on" : ""}" data-action="bank-day" data-k="${k}" data-id="${bid}">${n}</button>`).join("")}</div><div class="whoGrid" style="margin-top:14px">${state.family.concat([ANYONE]).map((p) => `<button class="whoBtn" data-action="bank-assign" data-id="${bid}" data-p="${p.id}">${avatar(p, "lg")}${esc(p.name)}</button>`).join("")}</div><div class="mFoot"><span></span><button class="btn" data-action="close">Anuluj</button></div>`);
+  openModal(`<h2>${b.emoji} ${esc(LT(b))}</h2><p class="lead">Dla kogo? Zadanie da +${b.points} XP.</p><div class="seg" style="background:var(--surface-2)">${[["today", "Dziś"], ["tomorrow", "Jutro"]].map(([k, n]) => `<button class="${bankDay === k ? "on" : ""}" data-action="bank-day" data-k="${k}" data-id="${bid}">${n}</button>`).join("")}</div><div class="whoGrid" style="margin-top:14px">${state.family.concat([ANYONE]).map((p) => `<button class="whoBtn" data-action="bank-assign" data-id="${bid}" data-p="${p.id}">${avatar(p, "lg")}${esc(p.name)}</button>`).join("")}</div><div class="mFoot"><span></span><button class="btn" data-action="close">Anuluj</button></div>`);
 }
 function openBankManage() {
-  openModal(`<h2>Bank zadań</h2><p class="lead">Zadania, które często dajesz domownikom. Na panelu i w zakładce Zadania przeciągasz je palcem na osobę.</p>${state.bank.length ? `<div class="rows">${state.bank.map((b) => `<div class="row"><span style="font-size:24px">${b.emoji}</span><div class="grow"><b>${esc(b.title)}</b><small class="num">${b.points} XP</small></div><button class="btn icon sm" data-action="bank-edit" data-id="${b.id}" aria-label="Edytuj">${icon("edit", 17)}</button><button class="btn icon sm danger" data-action="bank-del" data-id="${b.id}" aria-label="Usuń z banku">${icon("trash", 17)}</button></div>`).join("")}</div>` : '<div class="empty">Bank jest pusty. Dodaj pierwsze zadanie.</div>'}<div class="mFoot"><button class="btn" data-action="bank-new">${icon("plus", 16)} Dodaj do banku</button><button class="btn pri" data-action="close">Gotowe</button></div>`, "wide");
+  openModal(`<h2>Bank zadań</h2><p class="lead">Zadania, które często dajesz domownikom. Na panelu i w zakładce Zadania przeciągasz je palcem na osobę.</p>${state.bank.length ? `<div class="rows">${state.bank.map((b) => `<div class="row"><span style="font-size:24px">${b.emoji}</span><div class="grow"><b>${esc(LT(b))}</b><small class="num">${b.points} XP</small></div><button class="btn icon sm" data-action="bank-edit" data-id="${b.id}" aria-label="Edytuj">${icon("edit", 17)}</button><button class="btn icon sm danger" data-action="bank-del" data-id="${b.id}" aria-label="Usuń z banku">${icon("trash", 17)}</button></div>`).join("")}</div>` : '<div class="empty">Bank jest pusty. Dodaj pierwsze zadanie.</div>'}<div class="mFoot"><button class="btn" data-action="bank-new">${icon("plus", 16)} Dodaj do banku</button><button class="btn pri" data-action="close">Gotowe</button></div>`, "wide");
 }
 function openBankItem(id) {
   const b = state.bank.find((x) => x.id === id) || { title: "", emoji: "✅", points: 10 };
-  formModal(id ? "Edytuj zadanie w banku" : "Nowe zadanie w banku", `<input type="hidden" name="id" value="${esc(id || "")}">${fld("Zadanie", "title", "text", b.title, 'required maxlength="60" placeholder="np. Wynieś śmieci"', "full")}<label class="f">Ikona<select name="emoji" style="font-size:22px">${BANK_ICONS.concat(BANK_ICONS.includes(b.emoji) ? [] : [b.emoji]).map((e) => `<option ${e === b.emoji ? "selected" : ""}>${e}</option>`).join("")}</select></label>${fld("Punkty (XP)", "points", "number", b.points, 'min="0" max="1000"')}`, "bank");
+  formModal(id ? "Edytuj zadanie w banku" : "Nowe zadanie w banku", `<input type="hidden" name="id" value="${esc(id || "")}">${fld(tx("Zadanie (po polsku)", "Task (Polish)"), "title", "text", b.title, 'required maxlength="60" placeholder="np. Wynieś śmieci"')}${enFld(tx("Po angielsku", "In English"), "titleEn", b.titleEn, "")}<label class="f">Ikona<select name="emoji" style="font-size:22px">${BANK_ICONS.concat(BANK_ICONS.includes(b.emoji) ? [] : [b.emoji]).map((e) => `<option ${e === b.emoji ? "selected" : ""}>${e}</option>`).join("")}</select></label>${fld("Punkty (XP)", "points", "number", b.points, 'min="0" max="1000"')}`, "bank");
 }
 document.addEventListener("pointerdown", (e) => {
   const c = e.target.closest(".bchip[data-bank]");
@@ -2949,7 +3512,7 @@ function endDrag(cancel) {
 document.addEventListener("pointerup", () => endDrag(false));
 document.addEventListener("pointercancel", () => endDrag(true));
 function openMeal(d) {
-  formModal(lang === "en" ? `Dinner: ${DFULL[dow(d)]}, ${niceDate(d)}` : `Obiad: ${DFULL[dow(d)].toLowerCase()}, ${niceDate(d)}`, `${fld("Co na obiad", "title", "text", state.meals[d] || "", 'maxlength="120" placeholder="Zostaw puste, by usunąć"', "full")}<input type="hidden" name="date" value="${d}">`, "meal");
+  formModal(lang === "en" ? `Dinner: ${DFULL[dow(d)]}, ${niceDate(d)}` : `Obiad: ${DFULL[dow(d)].toLowerCase()}, ${niceDate(d)}`, `${fld(tx("Co na obiad (po polsku)", "Dinner (Polish)"), "title", "text", state.meals[d] || "", 'maxlength="120" placeholder="Zostaw puste, by usunąć"')}${enFld(tx("Po angielsku", "In English"), "titleEn", (state.mealsEn || {})[d], "")}<input type="hidden" name="date" value="${d}">`, "meal");
 }
 function openShopping() {
   openModal(`<h2>${tx("Dopisz do zakupów", "Add to shopping")}</h2><p class="lead">${tx("Dotknij produktu albo wpisz nowy.", "Tap a product or type a new one.")}</p>${shopFormHtml()}${renderCatalog()}<div class="mFoot"><span class="xs faint">${tx("Twoje produkty", "Your products")}</span><button class="btn pri" data-action="close">${tx("Gotowe", "Done")}</button></div>`, "wide");
@@ -2957,7 +3520,7 @@ function openShopping() {
 function openWho(id, d) {
   const t = state.tasks.find((x) => x.id === id);
   if (!t) return;
-  openModal(`<h2>Kto to zrobił?</h2><p class="lead">${esc(t.title)}, +${t.points} XP</p><div class="whoGrid">${state.family.map((p) => `<button class="whoBtn" data-action="who" data-id="${id}" data-d="${d}" data-p="${p.id}">${avatar(p, "lg")}${esc(p.name)}</button>`).join("")}</div><div class="mFoot"><span></span><button class="btn" data-action="close">Anuluj</button></div>`);
+  openModal(`<h2>Kto to zrobił?</h2><p class="lead">${esc(LT(t))}, +${t.points} XP</p><div class="whoGrid">${state.family.map((p) => `<button class="whoBtn" data-action="who" data-id="${id}" data-d="${d}" data-p="${p.id}">${avatar(p, "lg")}${esc(p.name)}</button>`).join("")}</div><div class="mFoot"><span></span><button class="btn" data-action="close">Anuluj</button></div>`);
 }
 function openApprovals() {
   const items = pendingItems();
@@ -2968,7 +3531,7 @@ function openApprovals() {
   }
   openModal(`<h2>Do zatwierdzenia</h2><p class="lead">Sprawdź, czy zadanie jest zrobione. Punkty trafią na konto po zatwierdzeniu.</p><div class="rows">${items.map((x) => {
     const p = person(x.v.by);
-    return `<div class="row" style="flex-wrap:wrap">${avatar(p)}<div class="grow"><b>${esc(x.t.title)}</b><small>${esc(p.name)}, ${esc(niceDate(x.k))}, +${x.t.points} XP</small></div><button class="btn sm" data-action="reject" data-id="${x.t.id}" data-k="${x.k}">Cofnij</button><button class="btn leaf sm" data-action="approve" data-id="${x.t.id}" data-k="${x.k}">Zatwierdź</button></div>`;
+    return `<div class="row" style="flex-wrap:wrap">${avatar(p)}<div class="grow"><b>${esc(LT(x.t))}</b><small>${esc(p.name)}, ${esc(niceDate(x.k))}, +${x.t.points} XP</small></div><button class="btn sm" data-action="reject" data-id="${x.t.id}" data-k="${x.k}">Cofnij</button><button class="btn leaf sm" data-action="approve" data-id="${x.t.id}" data-k="${x.k}">Zatwierdź</button></div>`;
   }).join("")}</div><div class="mFoot"><button class="btn" data-action="close">Zamknij</button><button class="btn leaf" data-action="approve-all">Zatwierdź wszystkie</button></div>`);
 }
 let pinCb = null, pinBuf = "", pinReason = "";
@@ -3003,12 +3566,48 @@ function pinKey(k) {
   }
   document.getElementById("pinDots").innerHTML = Array.from({ length: pin.length }, (_, i) => `<i class="${i < pinBuf.length ? "on" : ""}"></i>`).join("");
 }
+function fillTranslations() {
+  let n = 0;
+  const f = (o, k) => {
+    if (o && o[k] && !o[k + "En"]) {
+      const v = cdEn(o[k]);
+      if (v && v !== o[k]) {
+        o[k + "En"] = v;
+        n++;
+      }
+    }
+  };
+  state.events.forEach((e) => {
+    f(e, "title");
+    f(e, "notes");
+  });
+  state.tasks.forEach((t) => f(t, "title"));
+  state.bank.forEach((b) => f(b, "title"));
+  state.rewards.forEach((r) => f(r, "title"));
+  state.routines.forEach((r) => {
+    f(r, "name");
+    r.steps.forEach((st) => f(st, "label"));
+  });
+  state.mealsEn = state.mealsEn || {};
+  Object.keys(state.meals).forEach((d) => {
+    if (!state.mealsEn[d]) {
+      const v = cdEn(state.meals[d]);
+      if (v && v !== state.meals[d]) {
+        state.mealsEn[d] = v;
+        n++;
+      }
+    }
+  });
+  return n;
+}
 function submitEditor(form) {
   const fd = new FormData(form), data = Object.fromEntries(fd);
   switch (form.dataset.type) {
     case "event": {
       if (data.end && data.start && data.end <= data.start) return toast("Koniec musi być później niż początek");
-      const e = { id: data.id || uid(), title: data.title.trim(), person: data.person, date: data.date, start: data.start, end: data.end, location: data.location.trim(), notes: data.notes.trim() };
+      const old = state.events.find((v) => v.id === data.id) || {};
+      const e = { id: data.id || uid(), title: data.title.trim(), titleEn: (data.titleEn || "").trim(), person: data.person, date: data.date, start: data.start, end: data.end, location: data.location.trim(), notes: data.notes.trim(), notesEn: (data.notesEn || "").trim(), remind: data.remind || "none", remindWho: data.remindWho || data.person, remDone: old.date === data.date ? old.remDone : void 0 };
+      if (e.remindWho === e.person) delete e.remindWho;
       const i = state.events.findIndex((v) => v.id === data.id);
       i >= 0 ? state.events[i] = e : state.events.push(e);
       selected = data.date;
@@ -3019,17 +3618,17 @@ function submitEditor(form) {
       const days = fd.getAll("days").map(Number);
       if (data.repeat === "days" && !days.length) return toast("Wybierz co najmniej jeden dzień");
       const old = state.tasks.find((t2) => t2.id === data.id);
-      const t = { id: data.id || uid(), title: data.title.trim(), person: data.person, points: Number(data.points) || 0, repeat: data.repeat, days: data.repeat === "days" ? days : [], due: data.due, log: old ? old.log : {} };
+      const t = { id: data.id || uid(), title: data.title.trim(), titleEn: (data.titleEn || "").trim(), person: data.person, points: Number(data.points) || 0, repeat: data.repeat, days: data.repeat === "days" ? days : [], due: data.due, log: old ? old.log : {} };
       if (old) {
         const i = state.tasks.indexOf(old);
         state.tasks[i] = t;
       } else state.tasks.push(t);
-      if (data.saveBank === "on" && !state.bank.some((x) => x.title.toLowerCase() === t.title.toLowerCase())) state.bank.push({ id: uid(), emoji: "✅", title: t.title, points: t.points });
+      if (data.saveBank === "on" && !state.bank.some((x) => x.title.toLowerCase() === t.title.toLowerCase())) state.bank.push({ id: uid(), emoji: "✅", title: t.title, titleEn: t.titleEn, points: t.points });
       toast(data.saveBank === "on" ? "Zadanie zapisane, jest też w banku" : "Zadanie zapisane");
       break;
     }
     case "bank": {
-      const it = { id: data.id || uid(), title: data.title.trim(), emoji: data.emoji, points: Math.max(0, Number(data.points) || 0) };
+      const it = { id: data.id || uid(), title: data.title.trim(), titleEn: (data.titleEn || "").trim(), emoji: data.emoji, points: Math.max(0, Number(data.points) || 0) };
       const i = state.bank.findIndex((x) => x.id === data.id);
       i >= 0 ? state.bank[i] = it : state.bank.push(it);
       save();
@@ -3041,18 +3640,18 @@ function submitEditor(form) {
     case "routine": {
       const days = fd.getAll("days").map(Number);
       if (!days.length) return toast("Wybierz co najmniej jeden dzień");
-      const ids = fd.getAll("stepId"), ic = fd.getAll("stepIcon"), lb = fd.getAll("stepLabel");
-      const steps = ids.map((id, i) => ({ id, icon: ic[i], label: lb[i].trim() })).filter((s) => s.label);
+      const ids = fd.getAll("stepId"), ic = fd.getAll("stepIcon"), lb = fd.getAll("stepLabel"), le = fd.getAll("stepLabelEn");
+      const steps = ids.map((id, i) => ({ id, icon: ic[i], label: lb[i].trim(), labelEn: (le[i] || "").trim() })).filter((s) => s.label);
       if (!steps.length) return toast("Dodaj co najmniej jeden krok");
       const old = state.routines.find((r2) => r2.id === data.id);
-      const r = { id: data.id || uid(), name: data.name.trim(), person: data.person, when: data.when, days, points: Number(data.points) || 0, steps, log: old ? old.log : {}, credited: old ? old.credited : {} };
+      const r = { id: data.id || uid(), name: data.name.trim(), nameEn: (data.nameEn || "").trim(), person: data.person, when: data.when, days, points: Number(data.points) || 0, steps, log: old ? old.log : {}, credited: old ? old.credited : {} };
       if (old) state.routines[state.routines.indexOf(old)] = r;
       else state.routines.push(r);
       toast("Rutyna zapisana");
       break;
     }
     case "reward": {
-      const r = { id: data.id || uid(), title: data.title.trim(), emoji: data.emoji, cost: Math.max(1, Number(data.cost) || 1) };
+      const r = { id: data.id || uid(), title: data.title.trim(), titleEn: (data.titleEn || "").trim(), emoji: data.emoji, cost: Math.max(1, Number(data.cost) || 1) };
       const i = state.rewards.findIndex((x) => x.id === data.id);
       i >= 0 ? state.rewards[i] = r : state.rewards.push(r);
       toast("Nagroda zapisana");
@@ -3090,9 +3689,12 @@ function submitEditor(form) {
       break;
     }
     case "meal": {
-      const v = data.title.trim();
+      const v = data.title.trim(), ve = (data.titleEn || "").trim();
+      state.mealsEn = state.mealsEn || {};
       if (v) state.meals[data.date] = v;
       else delete state.meals[data.date];
+      if (v && ve) state.mealsEn[data.date] = ve;
+      else delete state.mealsEn[data.date];
       break;
     }
     case "shopping":
@@ -3392,6 +3994,39 @@ document.addEventListener("click", (e) => {
     case "edit-person":
       openPerson(id);
       break;
+    case "stage": {
+      const k = b.dataset.k;
+      if (k === "bank" && panelStage !== "bank") requirePin("Bank zadań", () => {
+        panelStage = "bank";
+        render();
+      });
+      else {
+        panelStage = k;
+        render();
+      }
+      break;
+    }
+    case "group":
+      panelGroup = b.dataset.k;
+      render();
+      break;
+    case "rem-done": {
+      const ev = state.events.find((v) => v.id === id);
+      if (ev) {
+        ev.remDone = ev.remDone === b.dataset.d ? void 0 : b.dataset.d;
+        save();
+        render();
+        if (ev.remDone) celebrate(person(ev.remindWho || ev.person).color);
+      }
+      break;
+    }
+    case "fill-en": {
+      const n = fillTranslations();
+      save();
+      render();
+      toast(n ? tx(`Uzupełniono tłumaczenia: ${n}`, `Translations added: ${n}`) : tx("Nie znalazłem nic nowego do przetłumaczenia", "Nothing new to translate"));
+      break;
+    }
     case "bank-toggle":
       if (bankOpen) {
         bankOpen = false;
@@ -3702,6 +4337,9 @@ document.addEventListener("change", (e) => {
       render();
     }
   }
+  if (t.name === "remind") {
+    t.closest(".remSeg").querySelectorAll("label").forEach((l) => l.classList.toggle("on", l.contains(t)));
+  }
   if (t.dataset.goal) {
     const p = state.family.find((x) => x.id === t.dataset.goal);
     if (p) {
@@ -3719,11 +4357,39 @@ document.addEventListener("change", (e) => {
   if (t.id === "importFile") importData(t.files[0]);
   if (t.id === "catFile" && t.files[0]) importCatalog(t.files[0]);
   if (t.id === "photoInput") addPhotos([...t.files]);
-  if ((t.id === "personPhoto" || t.id === "shopImgInput") && t.files[0]) cropSquare(t.files[0]).then((d) => {
+  if (t.id === "shopImgInput" && t.files[0] && /gif|svg|webp/.test(t.files[0].type)) {
+    const fl = t.files[0];
+    isAnimated(fl).then((an) => {
+      if (!an && fl.type === "image/webp") return cropSquare(fl, 256);
+      if (fl.size > 400 * 1024) {
+        toast(tx("Ruchomy avatar może mieć najwyżej 400 KB", "An animated avatar can be at most 400 KB"));
+        return null;
+      }
+      return readDataUrl(fl);
+    }).then((d) => {
+      if (!d) return;
+      pendingImg = d;
+      document.getElementById("shopPrev").innerHTML = `<img src="${d}" alt="">`;
+    }).catch(() => toast("Nie udało się wczytać tego pliku"));
+  } else if ((t.id === "personPhoto" || t.id === "shopImgInput") && t.files[0]) cropSquare(t.files[0], t.id === "shopImgInput" ? 256 : 220).then((d) => {
     if (t.id === "personPhoto") pendingPhoto = d;
     else pendingImg = d;
     document.getElementById(t.id === "personPhoto" ? "personPrev" : "shopPrev").innerHTML = `<img src="${d}" alt="">`;
   }).catch(() => toast("Nie udało się wczytać tego pliku"));
+});
+document.addEventListener("input", (e) => {
+  const t = e.target;
+  if (!t || !t.form || t.form.getAttribute("id") !== "editor") return;
+  if (t.dataset.enOf) {
+    t.dataset.auto = t.value ? "0" : "";
+    return;
+  }
+  const row = t.name === "stepLabel" ? t.parentElement : t.form;
+  const en = row.querySelector(`[data-en-of="${t.name}"]`);
+  if (!en || en.dataset.auto === "0" && en.value) return;
+  const sug = cdEn(t.value);
+  en.value = sug;
+  en.dataset.auto = sug ? "1" : "";
 });
 document.addEventListener("submit", async (e) => {
   const f = e.target, fid = f.getAttribute("id");
@@ -3848,6 +4514,13 @@ function tick(force = false) {
   }
   const m = hm();
   if (page === "panel") {
+    const idleB = (Number(state.settings.idleMinutes) || 3) * 6e4;
+    if ((panelStage !== "clock" || panelGroup !== "kids") && Date.now() - lastInteract > idleB && !drag) {
+      panelStage = "clock";
+      panelGroup = "kids";
+      render();
+      return;
+    }
     const mode = panelMode();
     if (mode === "saver" && photos.length > 1 && Date.now() - lastSlide > 2e4) {
       slide++;
