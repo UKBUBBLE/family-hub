@@ -601,6 +601,30 @@ body:not(.panelMode) .mePage{padding:0}
 .dbox .dh{gap:6px;justify-content:flex-start}
 .dbox .ev small{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .wkEv{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+/* 1.6: powiększanie górnego pola, wybór dnia, zrobione zadania */
+.pStage{position:relative}
+.pStage[style*="height"]{overflow:hidden}
+.pStage[style*="height"]>.ribbon,.pStage[style*="height"]>.stClock,.pStage[style*="height"]>.stWeek{height:100%;box-sizing:border-box}
+.pStage[style*="height"] .ribbon{display:flex;flex-direction:column;justify-content:flex-start}
+.stGrip{position:absolute;right:4px;bottom:2px;width:46px;height:30px;display:grid;place-items:center;cursor:ns-resize;touch-action:none;z-index:5}
+.stGrip span{width:34px;height:6px;border-radius:6px;background:rgba(22,37,46,.22);box-shadow:0 -8px 0 -1px rgba(22,37,46,.12)}
+.pStage.resizing .stGrip span{background:var(--cobalt)}
+.pStage.resizing{outline:2px dashed var(--cobalt);outline-offset:2px;border-radius:var(--r-xl)}
+.swDay{cursor:pointer}
+.swDay.sel{background:var(--cobalt);color:#fff}
+.swDay.sel .swH,.swDay.sel .swH b,.swDay.sel .swEv small,.swDay.sel .swMeal{color:#fff}
+.swDay.sel .swEv{color:#fff}
+.swDay.today.sel{box-shadow:none}
+.dayBar{flex:none;display:flex;align-items:center;gap:10px;background:var(--cobalt);color:#fff;border-radius:var(--r-lg);padding:6px 8px 6px 14px;font-size:15px}
+.dayBar span{opacity:.85;font-size:13.5px;flex:1}
+.dayBar .btn{background:#fff;color:var(--ink);box-shadow:none}
+.doneChip{flex:none;align-self:stretch;width:74px;border-radius:14px;background:rgba(255,255,255,.55);box-shadow:inset 0 0 0 1.5px rgba(22,37,46,.12);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;color:var(--leaf)}
+.doneChip b{font-size:18px}
+.doneChip small{font-size:12px;color:var(--ink-2)}
+.doneChip.on{background:var(--leaf);color:#fff}.doneChip.on small{color:#fff}
+.doneSet{display:flex;gap:8px;flex:none}
+.prowBody .doneSet .task,.prowBody .doneSet .routine{opacity:.75}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
@@ -618,7 +642,7 @@ body:not(.panelMode) .mePage{padding:0}
       <div class="syncBadge" id="syncBadgeR" hidden></div>
       <button class="openPanel" data-page="panel"><span data-icon="tablet"></span>Otwórz panel ścienny</button>
       <div class="langSw seg" role="group" aria-label="Język"><button data-action="lang" data-l="pl" lang="pl">Polski</button><button data-action="lang" data-l="en" lang="en">English</button></div>
-      <div class="ver">Wersja 1.5, dane zapisane w tej przeglądarce</div>
+      <div class="ver">Wersja 1.6, dane zapisane w tej przeglądarce</div>
     </div>
   </aside>
   <main class="main" id="main"></main>
@@ -1345,7 +1369,7 @@ function applyLang() {
   document.documentElement.lang = lang;
 }
 applyLang();
-const DICT = { "Solistka": "Lead singer", "Tancerka": "Dancer", "Brokat": "Glitter", "Raperka": "Rapper", "Gwiazda": "Superstar", "Scena": "Stage", "Anuluj": "Cancel", "Aplikacja": "App", "Awatar": "Avatar", "Awatary": "Avatars", "Awatary od rodziców": "Avatars from parents", "Bank jest pusty. Dodaj pierwsze zadanie.": "The bank is empty. Add your first task.", "Bank zadań": "Task bank", "Bez celu": "No goal", "Brak wydarzeń z godziną": "No timed events", "Brak zadań na ten dzień": "No tasks for this day", "Brak zadań. Dodaj pierwsze przyciskiem u góry.": "No tasks yet. Add one with the button at the top.", "Burek": "Buddy", "Mruczek": "Whiskers", "Ośmiorniczka": "Octo", "Słoneczko": "Sunny", "Robo-Bip": "Robo-Beep", "Piłkarz": "Footballer", "Smoczek": "Little Dragon", "Rakieta": "Rocket", "Kosmonauta": "Astronaut", "Ufoludek": "Alien", "Pikselak": "Pixel Pal", "Kot ninja": "Ninja Cat", "Jednorożec": "Unicorn", "Lis DJ": "DJ Fox", "Ruchome": "Animated", "Ruchome legendarne": "Animated legends", "Na start": "Starter", "Zwierzaki": "Animals", "Legendarne": "Legendary", "Cel nagrody": "Reward goal", "Cena (XP)": "Price (XP)", "Cena 0 oznacza, że awatar jest dla wszystkich za darmo.": "A price of 0 makes the avatar free for everyone.", "Cena dotyczy całego poziomu w sklepie": "The price applies to the whole tier in the shop", "Cennik": "Prices", "Ceny": "Prices", "Ceny awatarów, nagród i punkty za zadania z banku ustawisz w jednym miejscu: Ustawienia, sekcja Cennik.": "Set avatar and reward prices, and points for bank tasks, in one place: Settings, Prices section.", "Co kupić?": "What do we need?", "Co na obiad": "What’s for dinner", "Co przygotować": "What to prepare", "Codziennie": "Every day", "Cofnij": "Undo", "Dane": "Data", "Dane przykładowe": "Sample data", "Data": "Date", "Dni robocze": "Weekdays", "Dni tygodnia": "Days of the week", "Do": "To", "Od": "From", "Do zatwierdzenia": "To approve", "Dodaj": "Add", "Dodaj do banku": "Add to bank", "Dodaj krok": "Add step", "Dodaj nagrody, na które dzieci mogą zbierać punkty": "Add rewards the kids can save points for", "Dodaj wydarzenie": "Add event", "Dodaj zdjęcia": "Add photos", "Dodaj zdjęcie": "Add photo", "Dom": "Home", "Domownicy": "Family", "Domownik": "Family member", "Domyślne ceny awatarów": "Default avatar prices", "Dopisz": "Add", "Dopisz do zakupów": "Add to shopping", "Dotknij ekranu, żeby wrócić do panelu": "Touch the screen to return to the panel", "Dotknij ekranu, żeby wybudzić": "Touch the screen to wake it", "Dotknij, żeby wpisać": "Tap to add", "Nasz dom": "Our home", "Dzieci kupują awatary za punkty. Rodzice mają wszystkie za darmo. Na panelu wystarczy dotknąć swojego awatara.": "Kids buy avatars with points. Parents get them all for free. On the panel, just tap your own avatar.", "Dzieci odhaczyły zadania. Punkty trafią na konto po zatwierdzeniu.": "The kids ticked off tasks. Points are added once you approve.", "Rodzic": "Parent", "Dzień później": "Next day", "Dzień wcześniej": "Previous day", "Dziś": "Today", "Jutro": "Tomorrow", "Jutro:": "Tomorrow:", "Teraz:": "Now:", "Dziś nic nie zaplanowano": "Nothing planned today", "Edytuj": "Edit", "Edytuj bank zadań": "Edit task bank", "Edytuj domownika": "Edit family member", "Edytuj nagrodę": "Edit reward", "Edytuj rutynę": "Edit routine", "Edytuj wydarzenie": "Edit event", "Edytuj zadanie": "Edit task", "Edytuj zadanie w banku": "Edit bank task", "Ekran startowy": "Start screen", "Gotowe": "Done", "Ikona": "Icon", "Ile punktów dostaje się za zadanie dodane z banku": "Points earned for a task added from the bank", "Ile punktów kosztuje nagroda": "How many points a reward costs", "Imię": "Name", "Jak często": "How often", "Jednorazowo": "One-off", "Jeszcze nikt nie odebrał nagrody": "No rewards claimed yet", "Język": "Language", "Kalendarz": "Calendar", "Kiedy widoczna": "When shown", "Kolor": "Colour", "Kopia zapasowa": "Backup", "Koszt (XP)": "Cost (XP)", "Kroki (dziecko odhacza obrazki)": "Steps (kids tick off the pictures)", "Kto": "Who", "Kto pierwszy, ten zbiera punkty": "First to do it gets the points", "Kto to zrobił?": "Who did it?", "Kto wybiera awatar?": "Who is choosing an avatar?", "Ktokolwiek": "Anyone", "Ktokolwiek (pierwszy chętny)": "Anyone (first to volunteer)", "Kupowanie awatarów wymaga PIN-u": "Buying avatars needs the PIN", "Lista jest pusta. Wpisz pierwszy produkt powyżej.": "The list is empty. Type the first item above.", "Lista zakupów": "Shopping list", "Masz": "You have", "Miejsce": "Place", "Miejscowość": "Town", "Moje wydarzenia dziś": "My events today", "Mój cel": "My goal", "Mój tydzień": "My week", "Na dziś wolne": "Nothing to do today", "Na dziś wolne 🎉": "Free today 🎉", "Na jutro": "For tomorrow", "Na razie są tylko wbudowane awatary. Dodaj zdjęcie zwierzaka, ulubionej zabawki albo rysunek dziecka.": "Only built-in avatars so far. Add a photo of a pet, a favourite toy or a child’s drawing.", "Nagroda": "Reward", "Nagrody": "Rewards", "Nakładające się wydarzenia": "Overlapping events", "Następny tydzień": "Next week", "Poprzedni tydzień": "Previous week", "Nawigacja": "Navigation", "Nazwa": "Name", "Nazwa domu": "Home name", "Nazwa kroku": "Step name", "Nic do przygotowania": "Nothing to prepare", "Nie zaplanowano": "Not planned", "Nieprawidłowy PIN, spróbuj jeszcze raz": "Wrong PIN, try again", "Nowa nagroda": "New reward", "Nowa rutyna": "New routine", "Nowe": "New", "Nowe wydarzenie": "New event", "Nowe zadanie": "New task", "Nowe zadanie w banku": "New bank task", "Nowy awatar do sklepu": "New avatar for the shop", "Nowy domownik": "New family member", "Nowy produkt": "New item", "Obiad": "Dinner", "Obiady": "Dinners", "Od kiedy": "Starting", "Odbierz": "Claim", "Odebrane nagrody": "Claimed rewards", "Odhaczaj zadania, buduj rutyny i zbieraj punkty na nagrody.": "Tick off tasks, build routines and save points for rewards.", "Odliczaj do wyjścia także w weekendy": "Count down to leaving at weekends too", "Odśwież pogodę": "Refresh weather", "Otwarcie ustawień": "Opening settings", "Otwórz panel ścienny": "Open wall panel", "0 wyłącza daną funkcję. Wygaszacz pokazuje zegar i zdjęcia, gdy nikt nie dotyka ekranu. Zegar co minutę lekko się przesuwa, żeby ekran się nie wypalał. Dopisz": "0 turns the feature off. The screensaver shows the clock and photos when nobody touches the screen. The clock shifts slightly every minute so the screen doesn’t burn in. Add", "do adresu, a aplikacja zawsze wystartuje w panelu.": "to the address and the app will always start on the panel.", "PIN chroni ustawienia, wyjście z panelu, zatwierdzanie zadań, odbieranie nagród i dodawanie awatarów do sklepu. To blokada przed dziećmi, a nie zabezpieczenie danych.": "The PIN protects settings, leaving the panel, approving tasks, claiming rewards and adding avatars to the shop. It keeps kids out; it doesn’t secure your data.", "PIN rodzica": "Parent PIN", "Panel ścienny": "Wall panel", "Pełny ekran": "Full screen", "Pierwsza litera imienia": "First letter of the name", "Plan dnia na osi czasu": "Day plan timeline", "Plan posiłków": "Meal plan", "Pobierz": "Download", "Pobierz wszystkie dane jako plik JSON (bez zdjęć)": "Download all data as a JSON file (without photos)", "Pogoda": "Weather", "Pojawi się w „Na jutro” dzień wcześniej": "Shows in “For tomorrow” the day before", "Posiłki": "Meals", "Posiłki i zakupy": "Meals and shopping", "Powrót do panelu po (min)": "Back to panel after (min)", "Powtarzaj w wybrane dni": "Repeat on chosen days", "Produkt": "Item", "Przeciągnij na osobę albo dotknij": "Drag onto a person or tap", "Przez cały dzień": "All day", "Przywróć": "Restore", "Pulpit": "Dashboard", "Punkty (XP)": "Points (XP)", "Punkty i cele": "Points and goals", "Punkty za całość": "Points for finishing", "Punkty za całą rutynę": "Points for the whole routine", "Rano (do 12:00)": "Mornings (until 12:00)", "Wieczorem (od 16:00)": "Evenings (from 16:00)", "Rodzic może zatwierdzać zadania i odbierać nagrody. Dziecko zbiera punkty.": "A parent can approve tasks and hand out rewards. A child collects points.", "Rodzice mają wszystkie awatary za darmo.": "Parents get every avatar for free.", "Rola": "Role", "Rutyna": "Routine", "Rutyna to stała lista kroków, np. poranek: łóżko, śniadanie, zęby, plecak. Dzieci odhaczają obrazki, a za całość dostają punkty.": "A routine is a fixed list of steps, e.g. morning: bed, breakfast, teeth, school bag. Kids tick off the pictures and earn points for finishing it.", "Rutyny": "Routines", "Rutyny na dziś": "Today’s routines", "Sklep z awatarami": "Avatar shop", "Sprawdź, czy zadanie jest zrobione. Punkty trafią na konto po zatwierdzeniu.": "Check the task is done. Points are added once you approve.", "Ten dzień jest wolny. Dodaj wydarzenie przyciskiem u góry.": "This day is free. Add an event with the button at the top.", "Ten tydzień": "This week", "Termin": "Due date", "Tryb nocny": "Night mode", "Tryb nocny do": "Night mode until", "Tryb nocny od": "Night mode from", "Twoje": "Yours", "Twój": "Yours", "Tydzień": "Week", "Ustaw PIN (4–6 cyfr)": "Set PIN (4–6 digits)", "Zmień PIN (4–6 cyfr)": "Change PIN (4–6 digits)", "Zostaw puste, by nie zmieniać": "Leave empty to keep it", "Ustaw miejscowość w ustawieniach, żeby widzieć pogodę": "Set your town in Settings to see the weather", "Ustawienia": "Settings", "Usuwa wszystko i wczytuje przykład": "Deletes everything and loads the example", "Usuń": "Delete", "Usuń PIN": "Remove PIN", "Usuń cyfrę": "Delete digit", "Usuń krok": "Remove step", "Usuń z banku": "Remove from bank", "Usuń zdjęcie": "Remove photo", "Używasz": "In use", "W tym tygodniu nic się nie nakłada": "Nothing overlaps this week", "Wczytaj": "Load", "Wczytaj kopię": "Load backup", "Wersja 1.5, dane zapisane w tej przeglądarce": "Version 1.5, data saved in this browser", "Wgraj zdjęcie": "Upload photo", "Zmień zdjęcie": "Change photo", "Wgraj zdjęcie albo rysunek i ustal cenę. Pojawi się w sklepie każdego dziecka.": "Upload a photo or drawing and set a price. It appears in every child’s shop.", "Więcej": "More", "Wolne": "Free", "Wróć": "Back", "Wróć do panelu": "Back to panel", "Wszyscy": "Everyone", "Wszystkie zadania": "All tasks", "Wybierz": "Choose", "Wybierz awatar": "Choose avatar", "Wybierz zdjęcie": "Choose photo", "Wydarzenia": "Events", "Wydarzenie": "Event", "Wygaszacz po (min)": "Screensaver after (min)", "Wyjście z domu": "Leaving home", "Wyjście za": "Leaving in", "Zadania": "Tasks", "Zadania dzieci wymagają zatwierdzenia przez rodzica": "Kids’ tasks need a parent’s approval", "Zadania i nagrody": "Tasks and rewards", "Zadania na dziś": "Today’s tasks", "Zadania tego dnia": "Tasks this day", "Zadania, które często dajesz domownikom. Na panelu i w zakładce Zadania przeciągasz je palcem na osobę.": "Tasks you hand out often. On the panel and in the Tasks tab, drag them onto a person.", "Zadanie": "Task", "Zakup trzeba potwierdzić drugim dotknięciem.": "Tap again to confirm a purchase.", "Zakupy": "Shopping", "Zamknij": "Close", "Zapisz": "Save", "Zapisz cennik": "Save prices", "Zapisz też w banku zadań, żeby później przeciągać je na domowników": "Also save it to the task bank so you can drag it onto family members later", "Zapisz ustawienia": "Save settings", "Zastępuje obecne dane": "Replaces the current data", "Zatwierdź": "Approve", "Zatwierdź wszystkie": "Approve all", "Zdjęcia do wygaszacza": "Screensaver photos", "Zdjęcia są zmniejszane i trzymane tylko w tej przeglądarce. Zmieści się ich kilkanaście.": "Photos are resized and kept only in this browser. There’s room for about a dozen.", "Zdjęcie": "Photo", "Zdjęcie jest kadrowane do kółka i zostaje w tej przeglądarce. Własne zdjęcie jest zawsze za darmo.": "The photo is cropped to a circle and stays in this browser. Your own photo is always free.", "Zdjęcie lub rysunek": "Photo or drawing", "Zmiana ceny nie zabiera awatarów, które dzieci już kupiły. 0 oznacza „za darmo”.": "Changing a price doesn’t take away avatars kids already bought. 0 means free.", "Zmień awatar": "Change avatar", "Zmień ceny": "Change prices", "Znajdź": "Find", "Zostaw puste, by usunąć": "Leave empty to remove", "Zrobione! Czeka na zatwierdzenie rodzica": "Done! Waiting for a parent to approve", "bez wydarzeń": "no events", "czeka na rodzica": "waiting for a parent", "np. 2580": "e.g. 2580", "np. Nasz kot": "e.g. Our cat", "np. Poranek": "e.g. Morning", "np. Umyj zęby": "e.g. Brush teeth", "np. Wyjście na lody": "e.g. Trip for ice cream", "np. Wynieś śmieci": "e.g. Take the rubbish out", "wszystkie za darmo": "all free", "wszystko kupione": "all bought", "za darmo": "free", "Wybierz cel nagrody poniżej": "Choose a reward goal below", "Ustaw cel": "Set goal", "Na dziś koniec planów": "No more plans today", "Jutro bez wydarzeń w kalendarzu": "No events tomorrow", "Brak wspólnych zadań na dziś": "No shared tasks today", ". Dotknij awatara, żeby go założyć albo kupić.": ". Tap an avatar to wear it or buy it.", "Awatar usunięty": "Avatar deleted", "Bank zadań zapisany": "Task bank saved", "Brak miejsca na kolejne zdjęcia. Usuń któreś, żeby dodać nowe.": "No room for more photos. Delete one to add new ones.", "Brak miejsca w przeglądarce. Usuń kilka zdjęć z wygaszacza lub sklepu.": "Browser storage is full. Delete some screensaver or shop photos.", "Brak połączenia z wyszukiwarką miejscowości": "Can’t reach the town search", "Dane wczytane": "Data loaded", "Dodaj co najmniej jeden krok": "Add at least one step", "Domownik zapisany": "Family member saved", "Koniec musi być później niż początek": "The end must be after the start", "Nagroda zapisana": "Reward saved", "Nie udało się pobrać pogody. Sprawdź połączenie z internetem.": "Couldn’t load the weather. Check the internet connection.", "Nie udało się wczytać tego pliku": "Couldn’t load this file", "Nie znaleziono takiej miejscowości": "Town not found", "Nowy cel ustawiony": "New goal set", "PIN musi mieć od 4 do 6 cyfr": "The PIN must have 4 to 6 digits", "PIN usunięty": "PIN removed", "Przywrócono domyślne ceny awatarów": "Default avatar prices restored", "Rutyna zapisana": "Routine saved", "Ustawienia zapisane": "Settings saved", "Wszystko zatwierdzone": "All approved", "Wybierz co najmniej jeden dzień": "Choose at least one day", "Wydarzenie usunięte": "Event deleted", "Wydarzenie zapisane": "Event saved", "Zadanie usunięte": "Task deleted", "Zapisano. Puste lub ujemne pola pominięto.": "Saved. Empty or negative fields were skipped.", "Cennik zapisany": "Prices saved", "Zadanie zapisane, jest też w banku": "Task saved and added to the bank", "Zadanie zapisane": "Task saved", "Awatar zapisany": "Avatar saved", "Awatar dodany do sklepu": "Avatar added to the shop", "to nie jest kopia Family Hub": "this is not a Family Hub backup", "Usunąć domownika? Jego zadania przejdą do „Ktokolwiek”.": "Delete this family member? Their tasks will move to “Anyone”.", "Usunąć ten awatar? Dzieci, które go kupiły, dostaną punkty z powrotem.": "Delete this avatar? Kids who bought it get their points back.", "Usunąć to wydarzenie?": "Delete this event?", "Usunąć to zadanie razem z historią?": "Delete this task and its history?", "Usunąć tę nagrodę?": "Delete this reward?", "Usunąć tę rutynę?": "Delete this routine?", "Usunąć wszystkie dane i wczytać przykład?": "Delete all data and load the example?", "Zastąpić obecne dane danymi z pliku?": "Replace the current data with the file?", "Dodawanie awatara do sklepu": "Adding an avatar to the shop", "Edycja awatara w sklepie": "Editing a shop avatar", "Wyjście z panelu": "Leaving the panel", "Zatwierdzanie zadań": "Approving tasks", "Zmiana cen": "Changing prices" };
+const DICT = { "Solistka": "Lead singer", "Tancerka": "Dancer", "Brokat": "Glitter", "Raperka": "Rapper", "Gwiazda": "Superstar", "Scena": "Stage", "Anuluj": "Cancel", "Aplikacja": "App", "Awatar": "Avatar", "Awatary": "Avatars", "Awatary od rodziców": "Avatars from parents", "Bank jest pusty. Dodaj pierwsze zadanie.": "The bank is empty. Add your first task.", "Bank zadań": "Task bank", "Bez celu": "No goal", "Brak wydarzeń z godziną": "No timed events", "Brak zadań na ten dzień": "No tasks for this day", "Brak zadań. Dodaj pierwsze przyciskiem u góry.": "No tasks yet. Add one with the button at the top.", "Burek": "Buddy", "Mruczek": "Whiskers", "Ośmiorniczka": "Octo", "Słoneczko": "Sunny", "Robo-Bip": "Robo-Beep", "Piłkarz": "Footballer", "Smoczek": "Little Dragon", "Rakieta": "Rocket", "Kosmonauta": "Astronaut", "Ufoludek": "Alien", "Pikselak": "Pixel Pal", "Kot ninja": "Ninja Cat", "Jednorożec": "Unicorn", "Lis DJ": "DJ Fox", "Ruchome": "Animated", "Ruchome legendarne": "Animated legends", "Na start": "Starter", "Zwierzaki": "Animals", "Legendarne": "Legendary", "Cel nagrody": "Reward goal", "Cena (XP)": "Price (XP)", "Cena 0 oznacza, że awatar jest dla wszystkich za darmo.": "A price of 0 makes the avatar free for everyone.", "Cena dotyczy całego poziomu w sklepie": "The price applies to the whole tier in the shop", "Cennik": "Prices", "Ceny": "Prices", "Ceny awatarów, nagród i punkty za zadania z banku ustawisz w jednym miejscu: Ustawienia, sekcja Cennik.": "Set avatar and reward prices, and points for bank tasks, in one place: Settings, Prices section.", "Co kupić?": "What do we need?", "Co na obiad": "What’s for dinner", "Co przygotować": "What to prepare", "Codziennie": "Every day", "Cofnij": "Undo", "Dane": "Data", "Dane przykładowe": "Sample data", "Data": "Date", "Dni robocze": "Weekdays", "Dni tygodnia": "Days of the week", "Do": "To", "Od": "From", "Do zatwierdzenia": "To approve", "Dodaj": "Add", "Dodaj do banku": "Add to bank", "Dodaj krok": "Add step", "Dodaj nagrody, na które dzieci mogą zbierać punkty": "Add rewards the kids can save points for", "Dodaj wydarzenie": "Add event", "Dodaj zdjęcia": "Add photos", "Dodaj zdjęcie": "Add photo", "Dom": "Home", "Domownicy": "Family", "Domownik": "Family member", "Domyślne ceny awatarów": "Default avatar prices", "Dopisz": "Add", "Dopisz do zakupów": "Add to shopping", "Dotknij ekranu, żeby wrócić do panelu": "Touch the screen to return to the panel", "Dotknij ekranu, żeby wybudzić": "Touch the screen to wake it", "Dotknij, żeby wpisać": "Tap to add", "Nasz dom": "Our home", "Dzieci kupują awatary za punkty. Rodzice mają wszystkie za darmo. Na panelu wystarczy dotknąć swojego awatara.": "Kids buy avatars with points. Parents get them all for free. On the panel, just tap your own avatar.", "Dzieci odhaczyły zadania. Punkty trafią na konto po zatwierdzeniu.": "The kids ticked off tasks. Points are added once you approve.", "Rodzic": "Parent", "Dzień później": "Next day", "Dzień wcześniej": "Previous day", "Dziś": "Today", "Jutro": "Tomorrow", "Jutro:": "Tomorrow:", "Teraz:": "Now:", "Dziś nic nie zaplanowano": "Nothing planned today", "Edytuj": "Edit", "Edytuj bank zadań": "Edit task bank", "Edytuj domownika": "Edit family member", "Edytuj nagrodę": "Edit reward", "Edytuj rutynę": "Edit routine", "Edytuj wydarzenie": "Edit event", "Edytuj zadanie": "Edit task", "Edytuj zadanie w banku": "Edit bank task", "Ekran startowy": "Start screen", "Gotowe": "Done", "Ikona": "Icon", "Ile punktów dostaje się za zadanie dodane z banku": "Points earned for a task added from the bank", "Ile punktów kosztuje nagroda": "How many points a reward costs", "Imię": "Name", "Jak często": "How often", "Jednorazowo": "One-off", "Jeszcze nikt nie odebrał nagrody": "No rewards claimed yet", "Język": "Language", "Kalendarz": "Calendar", "Kiedy widoczna": "When shown", "Kolor": "Colour", "Kopia zapasowa": "Backup", "Koszt (XP)": "Cost (XP)", "Kroki (dziecko odhacza obrazki)": "Steps (kids tick off the pictures)", "Kto": "Who", "Kto pierwszy, ten zbiera punkty": "First to do it gets the points", "Kto to zrobił?": "Who did it?", "Kto wybiera awatar?": "Who is choosing an avatar?", "Ktokolwiek": "Anyone", "Ktokolwiek (pierwszy chętny)": "Anyone (first to volunteer)", "Kupowanie awatarów wymaga PIN-u": "Buying avatars needs the PIN", "Lista jest pusta. Wpisz pierwszy produkt powyżej.": "The list is empty. Type the first item above.", "Lista zakupów": "Shopping list", "Masz": "You have", "Miejsce": "Place", "Miejscowość": "Town", "Moje wydarzenia dziś": "My events today", "Mój cel": "My goal", "Mój tydzień": "My week", "Na dziś wolne": "Nothing to do today", "Na dziś wolne 🎉": "Free today 🎉", "Na jutro": "For tomorrow", "Na razie są tylko wbudowane awatary. Dodaj zdjęcie zwierzaka, ulubionej zabawki albo rysunek dziecka.": "Only built-in avatars so far. Add a photo of a pet, a favourite toy or a child’s drawing.", "Nagroda": "Reward", "Nagrody": "Rewards", "Nakładające się wydarzenia": "Overlapping events", "Następny tydzień": "Next week", "Poprzedni tydzień": "Previous week", "Nawigacja": "Navigation", "Nazwa": "Name", "Nazwa domu": "Home name", "Nazwa kroku": "Step name", "Nic do przygotowania": "Nothing to prepare", "Nie zaplanowano": "Not planned", "Nieprawidłowy PIN, spróbuj jeszcze raz": "Wrong PIN, try again", "Nowa nagroda": "New reward", "Nowa rutyna": "New routine", "Nowe": "New", "Nowe wydarzenie": "New event", "Nowe zadanie": "New task", "Nowe zadanie w banku": "New bank task", "Nowy awatar do sklepu": "New avatar for the shop", "Nowy domownik": "New family member", "Nowy produkt": "New item", "Obiad": "Dinner", "Obiady": "Dinners", "Od kiedy": "Starting", "Odbierz": "Claim", "Odebrane nagrody": "Claimed rewards", "Odhaczaj zadania, buduj rutyny i zbieraj punkty na nagrody.": "Tick off tasks, build routines and save points for rewards.", "Odliczaj do wyjścia także w weekendy": "Count down to leaving at weekends too", "Odśwież pogodę": "Refresh weather", "Otwarcie ustawień": "Opening settings", "Otwórz panel ścienny": "Open wall panel", "0 wyłącza daną funkcję. Wygaszacz pokazuje zegar i zdjęcia, gdy nikt nie dotyka ekranu. Zegar co minutę lekko się przesuwa, żeby ekran się nie wypalał. Dopisz": "0 turns the feature off. The screensaver shows the clock and photos when nobody touches the screen. The clock shifts slightly every minute so the screen doesn’t burn in. Add", "do adresu, a aplikacja zawsze wystartuje w panelu.": "to the address and the app will always start on the panel.", "PIN chroni ustawienia, wyjście z panelu, zatwierdzanie zadań, odbieranie nagród i dodawanie awatarów do sklepu. To blokada przed dziećmi, a nie zabezpieczenie danych.": "The PIN protects settings, leaving the panel, approving tasks, claiming rewards and adding avatars to the shop. It keeps kids out; it doesn’t secure your data.", "PIN rodzica": "Parent PIN", "Panel ścienny": "Wall panel", "Pełny ekran": "Full screen", "Pierwsza litera imienia": "First letter of the name", "Plan dnia na osi czasu": "Day plan timeline", "Plan posiłków": "Meal plan", "Pobierz": "Download", "Pobierz wszystkie dane jako plik JSON (bez zdjęć)": "Download all data as a JSON file (without photos)", "Pogoda": "Weather", "Pojawi się w „Na jutro” dzień wcześniej": "Shows in “For tomorrow” the day before", "Posiłki": "Meals", "Posiłki i zakupy": "Meals and shopping", "Powrót do panelu po (min)": "Back to panel after (min)", "Powtarzaj w wybrane dni": "Repeat on chosen days", "Produkt": "Item", "Przeciągnij na osobę albo dotknij": "Drag onto a person or tap", "Przez cały dzień": "All day", "Przywróć": "Restore", "Pulpit": "Dashboard", "Punkty (XP)": "Points (XP)", "Punkty i cele": "Points and goals", "Punkty za całość": "Points for finishing", "Punkty za całą rutynę": "Points for the whole routine", "Rano (do 12:00)": "Mornings (until 12:00)", "Wieczorem (od 16:00)": "Evenings (from 16:00)", "Rodzic może zatwierdzać zadania i odbierać nagrody. Dziecko zbiera punkty.": "A parent can approve tasks and hand out rewards. A child collects points.", "Rodzice mają wszystkie awatary za darmo.": "Parents get every avatar for free.", "Rola": "Role", "Rutyna": "Routine", "Rutyna to stała lista kroków, np. poranek: łóżko, śniadanie, zęby, plecak. Dzieci odhaczają obrazki, a za całość dostają punkty.": "A routine is a fixed list of steps, e.g. morning: bed, breakfast, teeth, school bag. Kids tick off the pictures and earn points for finishing it.", "Rutyny": "Routines", "Rutyny na dziś": "Today’s routines", "Sklep z awatarami": "Avatar shop", "Sprawdź, czy zadanie jest zrobione. Punkty trafią na konto po zatwierdzeniu.": "Check the task is done. Points are added once you approve.", "Ten dzień jest wolny. Dodaj wydarzenie przyciskiem u góry.": "This day is free. Add an event with the button at the top.", "Ten tydzień": "This week", "Termin": "Due date", "Tryb nocny": "Night mode", "Tryb nocny do": "Night mode until", "Tryb nocny od": "Night mode from", "Twoje": "Yours", "Twój": "Yours", "Tydzień": "Week", "Ustaw PIN (4–6 cyfr)": "Set PIN (4–6 digits)", "Zmień PIN (4–6 cyfr)": "Change PIN (4–6 digits)", "Zostaw puste, by nie zmieniać": "Leave empty to keep it", "Ustaw miejscowość w ustawieniach, żeby widzieć pogodę": "Set your town in Settings to see the weather", "Ustawienia": "Settings", "Usuwa wszystko i wczytuje przykład": "Deletes everything and loads the example", "Usuń": "Delete", "Usuń PIN": "Remove PIN", "Usuń cyfrę": "Delete digit", "Usuń krok": "Remove step", "Usuń z banku": "Remove from bank", "Usuń zdjęcie": "Remove photo", "Używasz": "In use", "W tym tygodniu nic się nie nakłada": "Nothing overlaps this week", "Wczytaj": "Load", "Wczytaj kopię": "Load backup", "Wersja 1.6, dane zapisane w tej przeglądarce": "Version 1.6, data saved in this browser", "Wgraj zdjęcie": "Upload photo", "Zmień zdjęcie": "Change photo", "Wgraj zdjęcie albo rysunek i ustal cenę. Pojawi się w sklepie każdego dziecka.": "Upload a photo or drawing and set a price. It appears in every child’s shop.", "Więcej": "More", "Wolne": "Free", "Wróć": "Back", "Wróć do panelu": "Back to panel", "Wszyscy": "Everyone", "Wszystkie zadania": "All tasks", "Wybierz": "Choose", "Wybierz awatar": "Choose avatar", "Wybierz zdjęcie": "Choose photo", "Wydarzenia": "Events", "Wydarzenie": "Event", "Wygaszacz po (min)": "Screensaver after (min)", "Wyjście z domu": "Leaving home", "Wyjście za": "Leaving in", "Zadania": "Tasks", "Zadania dzieci wymagają zatwierdzenia przez rodzica": "Kids’ tasks need a parent’s approval", "Zadania i nagrody": "Tasks and rewards", "Zadania na dziś": "Today’s tasks", "Zadania tego dnia": "Tasks this day", "Zadania, które często dajesz domownikom. Na panelu i w zakładce Zadania przeciągasz je palcem na osobę.": "Tasks you hand out often. On the panel and in the Tasks tab, drag them onto a person.", "Zadanie": "Task", "Zakup trzeba potwierdzić drugim dotknięciem.": "Tap again to confirm a purchase.", "Zakupy": "Shopping", "Zamknij": "Close", "Zapisz": "Save", "Zapisz cennik": "Save prices", "Zapisz też w banku zadań, żeby później przeciągać je na domowników": "Also save it to the task bank so you can drag it onto family members later", "Zapisz ustawienia": "Save settings", "Zastępuje obecne dane": "Replaces the current data", "Zatwierdź": "Approve", "Zatwierdź wszystkie": "Approve all", "Zdjęcia do wygaszacza": "Screensaver photos", "Zdjęcia są zmniejszane i trzymane tylko w tej przeglądarce. Zmieści się ich kilkanaście.": "Photos are resized and kept only in this browser. There’s room for about a dozen.", "Zdjęcie": "Photo", "Zdjęcie jest kadrowane do kółka i zostaje w tej przeglądarce. Własne zdjęcie jest zawsze za darmo.": "The photo is cropped to a circle and stays in this browser. Your own photo is always free.", "Zdjęcie lub rysunek": "Photo or drawing", "Zmiana ceny nie zabiera awatarów, które dzieci już kupiły. 0 oznacza „za darmo”.": "Changing a price doesn’t take away avatars kids already bought. 0 means free.", "Zmień awatar": "Change avatar", "Zmień ceny": "Change prices", "Znajdź": "Find", "Zostaw puste, by usunąć": "Leave empty to remove", "Zrobione! Czeka na zatwierdzenie rodzica": "Done! Waiting for a parent to approve", "bez wydarzeń": "no events", "czeka na rodzica": "waiting for a parent", "np. 2580": "e.g. 2580", "np. Nasz kot": "e.g. Our cat", "np. Poranek": "e.g. Morning", "np. Umyj zęby": "e.g. Brush teeth", "np. Wyjście na lody": "e.g. Trip for ice cream", "np. Wynieś śmieci": "e.g. Take the rubbish out", "wszystkie za darmo": "all free", "wszystko kupione": "all bought", "za darmo": "free", "Wybierz cel nagrody poniżej": "Choose a reward goal below", "Ustaw cel": "Set goal", "Na dziś koniec planów": "No more plans today", "Jutro bez wydarzeń w kalendarzu": "No events tomorrow", "Brak wspólnych zadań na dziś": "No shared tasks today", ". Dotknij awatara, żeby go założyć albo kupić.": ". Tap an avatar to wear it or buy it.", "Awatar usunięty": "Avatar deleted", "Bank zadań zapisany": "Task bank saved", "Brak miejsca na kolejne zdjęcia. Usuń któreś, żeby dodać nowe.": "No room for more photos. Delete one to add new ones.", "Brak miejsca w przeglądarce. Usuń kilka zdjęć z wygaszacza lub sklepu.": "Browser storage is full. Delete some screensaver or shop photos.", "Brak połączenia z wyszukiwarką miejscowości": "Can’t reach the town search", "Dane wczytane": "Data loaded", "Dodaj co najmniej jeden krok": "Add at least one step", "Domownik zapisany": "Family member saved", "Koniec musi być później niż początek": "The end must be after the start", "Nagroda zapisana": "Reward saved", "Nie udało się pobrać pogody. Sprawdź połączenie z internetem.": "Couldn’t load the weather. Check the internet connection.", "Nie udało się wczytać tego pliku": "Couldn’t load this file", "Nie znaleziono takiej miejscowości": "Town not found", "Nowy cel ustawiony": "New goal set", "PIN musi mieć od 4 do 6 cyfr": "The PIN must have 4 to 6 digits", "PIN usunięty": "PIN removed", "Przywrócono domyślne ceny awatarów": "Default avatar prices restored", "Rutyna zapisana": "Routine saved", "Ustawienia zapisane": "Settings saved", "Wszystko zatwierdzone": "All approved", "Wybierz co najmniej jeden dzień": "Choose at least one day", "Wydarzenie usunięte": "Event deleted", "Wydarzenie zapisane": "Event saved", "Zadanie usunięte": "Task deleted", "Zapisano. Puste lub ujemne pola pominięto.": "Saved. Empty or negative fields were skipped.", "Cennik zapisany": "Prices saved", "Zadanie zapisane, jest też w banku": "Task saved and added to the bank", "Zadanie zapisane": "Task saved", "Awatar zapisany": "Avatar saved", "Awatar dodany do sklepu": "Avatar added to the shop", "to nie jest kopia Family Hub": "this is not a Family Hub backup", "Usunąć domownika? Jego zadania przejdą do „Ktokolwiek”.": "Delete this family member? Their tasks will move to “Anyone”.", "Usunąć ten awatar? Dzieci, które go kupiły, dostaną punkty z powrotem.": "Delete this avatar? Kids who bought it get their points back.", "Usunąć to wydarzenie?": "Delete this event?", "Usunąć to zadanie razem z historią?": "Delete this task and its history?", "Usunąć tę nagrodę?": "Delete this reward?", "Usunąć tę rutynę?": "Delete this routine?", "Usunąć wszystkie dane i wczytać przykład?": "Delete all data and load the example?", "Zastąpić obecne dane danymi z pliku?": "Replace the current data with the file?", "Dodawanie awatara do sklepu": "Adding an avatar to the shop", "Edycja awatara w sklepie": "Editing a shop avatar", "Wyjście z panelu": "Leaving the panel", "Zatwierdzanie zadań": "Approving tasks", "Zmiana cen": "Changing prices" };
 const PATS = [
   [/^(\d+) z (\d+) zrobione$/, "$1 of $2 done"],
   [/^Dziś: (\d+) z (\d+)$/, "Today: $1 of $2"],
@@ -1879,7 +1903,7 @@ const AV_TIERS = [
   { name: "Legendarne", cost: 250, items: ["👑", "🧙", "🦸", "🧜", "👽", "🐉", "🌈", "💎"] }
 ];
 const REWARD_ICONS = ["⭐", "🎬", "🍦", "🎮", "🍕", "🎨", "📱", "🧁", "🎁", "🎠", "🏊", "🎲", "📚", "💰"];
-const DEFAULTS = { homeName: "Nasz dom", leaveTime: "07:45", leaveWeekends: false, startPage: "dashboard", idleMinutes: 3, saverMinutes: 5, nightStart: "22:00", nightEnd: "06:30", parentPin: "", requireApproval: true, avatarPin: false, qrList: false, avPrices: {}, lang: "pl", lat: null, lon: null, locName: "" };
+const DEFAULTS = { homeName: "Nasz dom", leaveTime: "07:45", leaveWeekends: false, startPage: "dashboard", idleMinutes: 3, saverMinutes: 5, nightStart: "22:00", nightEnd: "06:30", parentPin: "", requireApproval: true, avatarPin: false, qrList: false, avPrices: {}, lang: "pl", lat: null, lon: null, locName: "", stageH: {} };
 function lastDays(n, days) {
   const out = [];
   let d = addDays(today(), -1);
@@ -2043,7 +2067,7 @@ const save = () => {
   return saveLocal();
 };
 const SYNCKEY = "familyhub-sync";
-const LOCAL_KEYS = ["lang", "startPage", "idleMinutes", "saverMinutes", "nightStart", "nightEnd", "qrList"];
+const LOCAL_KEYS = ["stageH", "lang", "startPage", "idleMinutes", "saverMinutes", "nightStart", "nightEnd", "qrList"];
 const COLS = ["family", "events", "tasks", "routines", "rewards", "redemptions", "shopItems", "bank", "catalog", "shopping"];
 const FB_RULES = '{\n  "rules": {\n    ".read": false,\n    ".write": false,\n    "families": {\n      "$family": {\n        ".read": "$family.length >= 20",\n        ".write": "$family.length >= 20"\n      }\n    }\n  }\n}';
 let sync = null;
@@ -2779,7 +2803,7 @@ window.addEventListener("resize", () => {
     }
   }, 250);
 });
-function renderRibbon(d) {
+function renderRibbon(d, fitH) {
   const S = 6 * 60, E = 22 * 60, span = E - S, pct = (m) => Math.max(0, Math.min(100, (m - S) / span * 100));
   const all = eventsOn(d), timed = all.filter((e) => e.start), untimed = all.filter((e) => !e.start);
   const ev = timed.map((e) => {
@@ -2787,11 +2811,12 @@ function renderRibbon(d) {
     const en = e.end && toMin(e.end) > s ? toMin(e.end) : s + 30;
     return { e, s, en };
   });
+  const ad = all.some((e) => !e.start) ? 40 : 0, avail = fitH ? fitH - 76 - ad : 0, maxL = fitH ? Math.max(3, Math.floor(avail / 34)) : 3;
   const lanes = [];
   ev.forEach((x) => {
     let i = lanes.findIndex((end) => end <= x.s);
     if (i < 0) {
-      if (lanes.length < 3) {
+      if (lanes.length < maxL) {
         i = lanes.length;
         lanes.push(0);
       } else i = lanes.indexOf(Math.min(...lanes));
@@ -2799,13 +2824,13 @@ function renderRibbon(d) {
     lanes[i] = x.en;
     x.lane = i;
   });
-  const LH = compactPanel() ? 34 : 44, H = Math.max(1, lanes.length) * LH - 6, isT = d === today(), now = toMin(hm());
+  const LH = fitH ? Math.max(34, Math.min(84, Math.floor((avail + 6) / Math.max(1, lanes.length)))) : compactPanel() ? 34 : 44, H = fitH ? Math.max(LH - 6, avail) : Math.max(1, lanes.length) * LH - 6, isT = d === today(), now = toMin(hm());
   const hours = [];
   for (let h = 6; h <= 22; h += 2) hours.push(h);
   const blocks = ev.map((x) => {
     const p = person(x.e.person);
     const w = pct(x.en) - pct(x.s);
-    return `<button class="rbEv ${isT && x.en <= now ? "past" : ""} ${w < 4.5 ? "tiny" : ""}" style="left:${pct(x.s)}%;width:max(calc(${w}% - 3px),10px);top:${x.lane * LH}px;background:${p.color};color:${onColor(p.color)}" data-action="edit-event" data-id="${x.e.id}" title="${esc(x.e.start + " " + x.e.title + ", " + p.name)}"><b>${esc(LT(x.e))}</b><small class="num">${esc(x.e.start)}${x.e.end ? "–" + esc(x.e.end) : ""}, ${esc(p.name)}</small></button>`;
+    return `<button class="rbEv ${isT && x.en <= now ? "past" : ""} ${w < 4.5 ? "tiny" : ""}" style="left:${pct(x.s)}%;width:max(calc(${w}% - 3px),10px);top:${x.lane * LH}px;${fitH ? `height:${LH - 6}px;` : ""}background:${p.color};color:${onColor(p.color)}" data-action="edit-event" data-id="${x.e.id}" title="${esc(x.e.start + " " + x.e.title + ", " + p.name)}"><b>${esc(LT(x.e))}</b><small class="num">${esc(x.e.start)}${x.e.end ? "–" + esc(x.e.end) : ""}, ${esc(p.name)}</small></button>`;
   }).join("");
   const lv = isT && isLeaveDay(d) ? toMin(state.settings.leaveTime) : null;
   return `<section class="ribbon" aria-label="Plan dnia na osi czasu">${untimed.length ? `<div class="rbAllDay">${untimed.map((e) => `<button class="chip" data-action="edit-event" data-id="${e.id}"><span class="avatar" style="width:12px;height:12px;background:${person(e.person).color}"></span>${esc(LT(e))}</button>`).join("")}</div>` : ""}
@@ -2855,19 +2880,29 @@ function head(title, sub, actions = "") {
   return `<header class="head"><div><h1>${title}</h1>${sub ? `<p>${sub}</p>` : ""}</div><div class="actions">${actions}</div></header>`;
 }
 const addBtns = () => `<button class="btn pri" data-action="new-event">${icon("plus", 18)} Wydarzenie</button><button class="btn" data-action="new-task">${icon("plus", 18)} Zadanie</button>`;
-let panelStage = "clock", panelGroup = "kids";
+let panelStage = "clock", panelGroup = "kids", panelDay = today(), showDone = {};
+const panelReset = () => {
+  panelStage = "clock";
+  panelGroup = "kids";
+  panelDay = today();
+  showDone = {};
+};
 function remTile(e, d) {
   const n = remN(e), dn = e.remDone === d, when = n === 0 ? tx("Dziś", "Today") : n === 1 ? tx("Jutro", "Tomorrow") : tx("Pojutrze", "In 2 days");
   return `<button class="task rem ${dn ? "done" : ""}" data-action="rem-done" data-id="${e.id}" data-d="${d}" aria-pressed="${dn}"><span class="tick">${dn ? icon("tick", 18) : icon("bell", 16)}</span><span class="t"><b>${esc(LT(e, "notes") || LT(e))}</b><small>${when}: ${esc(LT(e))}${e.start ? " " + esc(e.start) : ""}</small></span></button>`;
 }
 function personRow(p, d) {
-  const pc = p.color, on = onColor(pc), isAny = p.id === "anyone";
-  const rem = isAny ? "" : remindersFor(p.id, d).map((e) => remTile(e, d)).join("");
-  const rt = activeRoutines(p.id).map(routineBlock).join("");
-  const tk = tasksFor(p.id, d).map((t) => taskBtn(t, d)).join("");
-  return `<section class="prow" data-drop="${p.id}" style="--pc:${pc};--on:${on};--tint:${mix(pc, "#FFFFFF", 0.84)};--barbg:${on === "#FFFFFF" ? "rgba(255,255,255,.32)" : "rgba(22,37,46,.16)"}">
+  const pc = p.color, on = onColor(pc), isAny = p.id === "anyone", isT = d === today();
+  const rems = isAny ? [] : remindersFor(p.id, d), rts = isT ? activeRoutines(p.id) : [], tks = tasksFor(p.id, d);
+  const rDone = (e) => e.remDone === d, tDone = (t) => !!entry(t, d), rtDone = (r) => !!r.credited[d];
+  const act = rems.filter((e) => !rDone(e)).map((e) => remTile(e, d)).join("") + rts.filter((r) => !rtDone(r)).map(routineBlock).join("") + tks.filter((t) => !tDone(t)).map((t) => taskBtn(t, d)).join("");
+  const dn = rems.filter(rDone).map((e) => remTile(e, d)).join("") + rts.filter(rtDone).map(routineBlock).join("") + tks.filter(tDone).map((t) => taskBtn(t, d)).join("");
+  const nDone = rems.filter(rDone).length + rts.filter(rtDone).length + tks.filter(tDone).length, open = !!showDone[p.id];
+  const chip = nDone ? `<button class="doneChip ${open ? "on" : ""}" data-action="show-done" data-p="${p.id}" aria-pressed="${open}"><b class="num">✓ ${nDone}</b><small>${open ? tx("ukryj", "hide") : tx("zrobione", "done")}</small></button>` : "";
+  const empty = nDone ? `<div class="free">${tx("Wszystko zrobione! 🎉", "All done! 🎉")}</div>` : `<div class="free">${isAny ? tx("Brak wspólnych zadań", "No shared jobs") : isT ? tx("Na dziś wolne 🎉", "Free today 🎉") : tx("Nic na ten dzień", "Nothing that day")}</div>`;
+  return `<section class="prow" data-drop="${p.id}" data-day="${d}" style="--pc:${pc};--on:${on};--tint:${mix(pc, "#FFFFFF", 0.84)};--barbg:${on === "#FFFFFF" ? "rgba(255,255,255,.32)" : "rgba(22,37,46,.16)"}">
     <div class="prowHead"><div class="top">${isAny ? `<span class="avatar">${initial(p)}</span><span class="name">${esc(p.name)}</span>` : `<button class="avatar" data-action="me" data-p="${p.id}" aria-label="${tx("Mój widok", "My view")}: ${esc(p.name)}">${initial(p)}</button><div class="nm"><button class="name" data-action="me" data-p="${p.id}">${esc(p.name)}</button><span class="xp num">${p.points} XP</span></div>`}</div>${isAny ? `<div class="sub">${tx("Kto pierwszy, ten zbiera punkty", "First come, first served")}</div>` : goalHtml(p)}</div>
-    <div class="prowBody">${rem + rt + tk || `<div class="free">${isAny ? tx("Brak wspólnych zadań na dziś", "No shared jobs today") : tx("Na dziś wolne 🎉", "Free today 🎉")}</div>`}</div></section>`;
+    <div class="prowBody">${chip}${open ? `<div class="doneSet">${dn}</div>` : ""}${act || empty}</div></section>`;
 }
 function panelPeople(d) {
   const kids = state.family.filter((p) => p.role !== "parent"), pars = state.family.filter((p) => p.role === "parent");
@@ -2883,20 +2918,18 @@ function stageClock() {
   return `<section class="stClock"><div class="stTime"><div class="bigClock num">${hm()}</div><div class="stDate">${esc(longDate())}</div>${L.on ? `<div class="leavePill ${L.tone}"><span>${tx("Wyjście za", "Leaving in")}</span><b class="num">${L.label}</b></div>` : `<div class="stLeave">${esc(L.text)}</div>`}</div>
   <div class="stWx">${c ? `<div class="wxNow"><span class="wxE">${c[0]}</span><div><b class="num">${Math.round(wx.cur.t)}°</b><small>${esc(c[1])}</small></div></div>${W.wearTxt ? `<div class="wear">${esc(W.wearTxt)}</div>` : ""}<div class="wxDays">${days.map((x, i) => `<div class="wxD"><small>${i === 0 ? tx("Dziś", "Today") : i === 1 ? tx("Jutro", "Tomorrow") : esc(DSHORT[dow(x.d)])}</small><span>${wxIcon(x.code)[0]}</span><b class="num">${Math.round(x.max)}°</b><small class="num">${Math.round(x.min)}°${(x.rain || 0) >= 30 ? ` · ${x.rain}%` : ""}</small></div>`).join("")}</div>` : `<div class="wxNone">${esc(W.line || tx("Ustaw miejscowość w ustawieniach, żeby widzieć pogodę", "Set your town in settings to see the weather"))}</div>`}</div></section>`;
 }
-function stageWeek() {
-  const ds = Array.from({ length: 7 }, (_, i) => addDays(today(), i));
+function stageWeek(h) {
+  const ds = Array.from({ length: 7 }, (_, i) => addDays(today(), i)), nEv = h ? Math.max(2, Math.floor((h - 62) / 21)) : 3;
   return `<section class="stWeek">${ds.map((d, i) => {
     const ev = eventsOn(d), m = mealTxt(d);
-    return `<div class="swDay ${i === 0 ? "today" : ""}"><div class="swH"><span>${i === 0 ? tx("Dziś", "Today") : i === 1 ? tx("Jutro", "Tomorrow") : esc(DSHORT[dow(d)])}</span><b class="num">${parseDate(d).getDate()}</b></div>${ev.slice(0, 3).map((e) => `<button class="swEv" style="--ec:${person(e.person).color}" data-action="edit-event" data-id="${e.id}"><small class="num">${esc(e.start || "")}</small> ${esc(LT(e))}</button>`).join("")}${ev.length > 3 ? `<div class="xs faint">+${ev.length - 3}</div>` : ""}${m ? `<div class="swMeal">🍽 ${esc(m)}</div>` : ""}</div>`;
+    return `<div class="swDay ${i === 0 ? "today" : ""} ${d === panelDay ? "sel" : ""}" data-action="pday" data-date="${d}" role="button" tabindex="0" aria-pressed="${d === panelDay}"><div class="swH"><span>${i === 0 ? tx("Dziś", "Today") : i === 1 ? tx("Jutro", "Tomorrow") : esc(DSHORT[dow(d)])}</span><b class="num">${parseDate(d).getDate()}</b></div>${ev.slice(0, nEv).map((e) => `<button class="swEv" style="--ec:${person(e.person).color}" data-action="edit-event" data-id="${e.id}"><small class="num">${esc(e.start || "")}</small> ${esc(LT(e))}</button>`).join("")}${ev.length > nEv ? `<div class="xs faint">+${ev.length - nEv}</div>` : ""}${m ? `<div class="swMeal">🍽 ${esc(m)}</div>` : ""}</div>`;
   }).join("")}</section>`;
 }
 function renderPanel() {
   const mode = panelMode();
   panelShown = mode;
-  if (mode !== "live") {
-    panelStage = "clock";
-    panelGroup = "kids";
-  }
+  if (mode !== "live") panelReset();
+  if (panelStage !== "week" && panelStage !== "bank") panelDay = today();
   if (mode === "night") return renderNight();
   if (mode === "saver") return renderSaver();
   const t = today(), W = weatherBits(), pend = pendingItems().length;
@@ -2904,7 +2937,9 @@ function renderPanel() {
   const hasPar = state.family.some((p) => p.role === "parent") && state.family.some((p) => p.role !== "parent");
   const tabs = [["clock", "sun", tx("Czas i pogoda", "Time & weather")], ["day", "bars", tx("Plan dnia", "Today")], ["week", "calendar", tx("Tydzień", "Week")], ["bank", "check", tx("Bank zadań", "Task bank")]];
   const wxS = wx && wx.cur ? `${wxIcon(wx.cur.code, wx.cur.day)[0]} ${Math.round(wx.cur.t)}°` : "";
-  const stage = panelStage === "day" ? renderRibbon(t) : panelStage === "week" ? stageWeek() : panelStage === "bank" ? renderBank() : stageClock();
+  const sh = (state.settings.stageH || {})[panelStage];
+  const stage = panelStage === "day" ? renderRibbon(t, sh) : panelStage === "week" ? stageWeek(sh) : panelStage === "bank" ? renderBank() : stageClock();
+  const pd = panelDay, dayBar = pd !== t ? `<div class="dayBar">${icon("calendar", 18)}<b>${pd === tomorrow() ? tx("Jutro", "Tomorrow") : esc(DFULL[dow(pd)])}, ${esc(niceDate(pd))}</b><span>${tx("zadania na ten dzień", "jobs for this day")}</span><button class="btn sm" data-action="pday" data-date="${t}">${tx("Wróć do dziś", "Back to today")}</button></div>` : "";
   return `<div class="panel p2">
   <header class="pHead">
     ${panelStage === "clock" ? "" : `<div class="pMini"><b class="num">${hm()}</b><span>${esc(wxS)}</span></div>`}
@@ -2917,7 +2952,7 @@ function renderPanel() {
     <button class="btn icon" data-action="fullscreen" aria-label="Pełny ekran">${icon("expand")}</button>
     <button class="btn dark icon" data-action="exit-panel" aria-label="Aplikacja">${state.settings.parentPin ? icon("lock", 18) : icon("menu", 18)}</button>
   </header>
-  <div class="pGrid"><div class="pLeft"><div class="pStage st-${panelStage}">${stage}</div><div class="prows">${panelPeople(t)}</div></div>
+  <div class="pGrid"><div class="pLeft"><div class="pStage st-${panelStage}" ${sh ? `style="height:${sh}px"` : ""}>${stage}${panelStage !== "bank" ? `<div class="stGrip" data-grip aria-label="${tx("Przeciągnij, żeby zmienić wysokość", "Drag to resize")}" title="${tx("Przeciągnij w dół, żeby powiększyć", "Drag down to enlarge")}"><span></span></div>` : ""}</div>${dayBar}<div class="prows">${panelPeople(pd)}</div></div>
     <aside class="side">
       <div class="sideBox"><h3>Na jutro <span>${tEv.length ? `${tx("pierwsze o", "first at")} ${esc(tEv[0].start || "—")}` : tx("bez wydarzeń", "no events")}</span></h3>${prep.length ? prep.map((l) => `<div class="prep"><span class="b">${l.b}</span><span>${esc(l.t)}</span></div>`).join("") : '<div class="faint sm">Nic specjalnego do przygotowania</div>'}</div>
       <div class="sideBox"><h3>Obiad</h3><button class="mealBtn" data-action="edit-meal" data-date="${t}">${esc(mealTxt(t) || "Dotknij, żeby wpisać")}</button></div>
@@ -3498,6 +3533,52 @@ document.addEventListener("pointermove", (e) => {
     drag.over = t;
   }
 }, { passive: false });
+let rsz = null;
+document.addEventListener("pointerdown", (e) => {
+  const g = e.target.closest("[data-grip]");
+  if (!g) return;
+  const st = g.closest(".pStage");
+  rsz = { st, y: e.clientY, h: st.getBoundingClientRect().height, pid: e.pointerId };
+  st.classList.add("resizing");
+  try {
+    g.setPointerCapture(e.pointerId);
+  } catch (_) {
+  }
+  e.preventDefault();
+});
+document.addEventListener("pointermove", (e) => {
+  if (!rsz || e.pointerId !== rsz.pid) return;
+  e.preventDefault();
+  const mx = Math.max(160, window.innerHeight - 230), h = Math.round(Math.max(90, Math.min(mx, rsz.h + e.clientY - rsz.y)));
+  rsz.st.style.height = h + "px";
+  rsz.cur = h;
+}, { passive: false });
+const endRsz = () => {
+  if (!rsz) return;
+  const r = rsz;
+  rsz = null;
+  r.st.classList.remove("resizing");
+  if (r.cur && Math.abs(r.cur - r.h) > 4) {
+    state.settings.stageH = Object.assign({}, state.settings.stageH, { [panelStage]: r.cur });
+    swallow = true;
+    setTimeout(() => {
+      swallow = false;
+    }, 350);
+    saveLocal();
+    render();
+  }
+};
+document.addEventListener("pointerup", endRsz);
+document.addEventListener("dblclick", (e) => {
+  if (e.target.closest("[data-grip]")) {
+    const m = Object.assign({}, state.settings.stageH);
+    delete m[panelStage];
+    state.settings.stageH = m;
+    saveLocal();
+    render();
+  }
+});
+document.addEventListener("pointercancel", endRsz);
 function endDrag(cancel) {
   if (!drag) return;
   const d = drag;
@@ -3507,7 +3588,7 @@ function endDrag(cancel) {
   d.ghost.remove();
   document.body.classList.remove("dragging");
   if (d.over) d.over.classList.remove("dropHover");
-  if (!cancel && d.over) addFromBank(d.id, d.over.dataset.drop, today());
+  if (!cancel && d.over) addFromBank(d.id, d.over.dataset.drop, d.over.dataset.day || today());
 }
 document.addEventListener("pointerup", () => endDrag(false));
 document.addEventListener("pointercancel", () => endDrag(true));
@@ -3996,6 +4077,7 @@ document.addEventListener("click", (e) => {
       break;
     case "stage": {
       const k = b.dataset.k;
+      if (k !== "week" && k !== "bank") panelDay = today();
       if (k === "bank" && panelStage !== "bank") requirePin("Bank zadań", () => {
         panelStage = "bank";
         render();
@@ -4008,6 +4090,15 @@ document.addEventListener("click", (e) => {
     }
     case "group":
       panelGroup = b.dataset.k;
+      render();
+      break;
+    case "pday":
+      panelDay = b.dataset.date || today();
+      render();
+      break;
+    case "show-done":
+      showDone[b.dataset.p] = !showDone[b.dataset.p];
+      if (!showDone[b.dataset.p]) delete showDone[b.dataset.p];
       render();
       break;
     case "rem-done": {
@@ -4515,9 +4606,8 @@ function tick(force = false) {
   const m = hm();
   if (page === "panel") {
     const idleB = (Number(state.settings.idleMinutes) || 3) * 6e4;
-    if ((panelStage !== "clock" || panelGroup !== "kids") && Date.now() - lastInteract > idleB && !drag) {
-      panelStage = "clock";
-      panelGroup = "kids";
+    if ((panelStage !== "clock" || panelGroup !== "kids" || panelDay !== today() || Object.keys(showDone).length) && Date.now() - lastInteract > idleB && !drag && !rsz) {
+      panelReset();
       render();
       return;
     }
